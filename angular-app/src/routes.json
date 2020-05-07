@@ -1,6 +1,22 @@
 {
   "routes": [
     {
+      "route": "/login",
+      "serve": "/.auth/login/github"
+    },
+    {
+      "route": "/logout",
+      "serve": "/.auth/logout"
+    },
+    {
+      "route": "/.auth/login/twitter",
+      "statusCode": "404"
+    },
+    {
+      "route": "/admin",
+      "allowedRoles": ["authenticated"]
+    },
+    {
       "route": "/*",
       "serve": "/index.html",
       "statusCode": 200
