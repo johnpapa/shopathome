@@ -23,7 +23,7 @@ import { Component, OnInit } from '@angular/core';
         <div class="auth">
           <a *ngIf="!userInfo" href="/login/t">Twitter</a>
           <a *ngIf="!userInfo" href="/login/g">GitHub</a>
-          <a *ngIf="!userInfo" href="/login/f">FaceBook</a>
+          <a *ngIf="!userInfo" href="//.auth/login/facebook">FaceBook</a>
           <a *ngIf="userInfo" href="/logout">Logout</a>
           <div class="user" *ngIf="userInfo">
             <p>{{ userInfo?.userDetails }}</p>
