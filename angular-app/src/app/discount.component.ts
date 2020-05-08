@@ -43,6 +43,7 @@ import { DiscountService } from './discount.service';
   `,
 })
 export class DiscountComponent {
+  isAuth = false;
   userInfo: UserInfo;
   discounts$: Observable<Discount[]>;
 
@@ -55,6 +56,7 @@ export class DiscountComponent {
 
   async ngOnInit() {
     this.userInfo = await this.authService.getUserInfo();
+    this.isAuth = !!this.userInfo.userDetails;
     this.discountService.getAll();
   }
 
