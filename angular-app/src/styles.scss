@@ -23,6 +23,16 @@ $shade-light: #fafafa;
     border-right: solid $primary-light 10px;
   }
 }
+.discount-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 100px 200px;
+
+  label {
+    font-weight: bold;
+    padding-right: 8px;
+  }
+}
 
 .menu-list .router-link-active {
   color: #fff;

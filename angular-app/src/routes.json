@@ -1,11 +1,11 @@
 {
   "routes": [
     {
-      "route": "/login/g",
+      "route": "/login/gh",
       "serve": "/.auth/login/github"
     },
     {
-      "route": "/login/t",
+      "route": "/login/tw",
       "serve": "/.auth/login/twitter"
     },
     {
@@ -18,7 +18,11 @@
     },
     {
       "route": "/api/products",
-      "allowedRoles": ["admin"]
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/api/discounts",
+      "allowedRoles": ["preferred"]
     },
     {
       "route": "/*",
