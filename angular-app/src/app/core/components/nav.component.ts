@@ -17,7 +17,10 @@ import { Component, OnInit } from '@angular/core';
         </a>
         <a *ngIf="!userInfo" href="/login">Login</a>
         <a *ngIf="userInfo" href="/logout">Logout</a>
-        <p *ngIf="userInfo">{{ userInfo?.userDetails }}</p>
+        <div *ngIf="userInfo">
+          <p>{{ userInfo?.userDetails }}</p>
+          <p>({{ userInfo?.identityProvider }})</p>
+        </div>
       </ul>
     </nav>
   `,

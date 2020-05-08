@@ -17,10 +17,6 @@
       "allowedRoles": ["authenticated"]
     },
     {
-      "route": "/api/admin",
-      "allowedRoles": ["authenticated", "admin"]
-    },
-    {
       "route": "/*",
       "serve": "/index.html",
       "statusCode": 200

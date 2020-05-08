@@ -12,6 +12,10 @@ $shade-light: #fafafa;
 
 @import 'bulma/bulma.sass';
 
+.menu-list > div {
+  padding: 0.5em 0.75em;
+}
+
 .menu-list .router-link-active {
   color: #fff;
   background-color: $link;
