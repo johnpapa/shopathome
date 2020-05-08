@@ -8,7 +8,7 @@
     getProductsAction,
     deleteProductAction,
     addProductAction,
-    updateProductAction
+    updateProductAction,
   } from '../store';
 
   const { products } = state;
@@ -19,6 +19,7 @@
   let productToDelete = null;
   let message = '';
   let showModal = false;
+  let errorMessage = undefined;
 
   onMount(async () => await getProducts());
 
@@ -52,7 +53,12 @@
   }
 
   async function getProducts() {
-    await getProductsAction();
+    errorMessage = undefined;
+    try {
+      await getProductsAction();
+    } catch (error) {
+      errorMessage = 'Unauthorized';
+    }
   }
 
   async function save({ detail: product }) {
@@ -81,6 +87,7 @@
       <div class="column is-8">
         {#if !selected}
           <ProductList
+            {errorMessage}
             products={$products}
             on:deleted={askToDelete}
             on:selected={select} />

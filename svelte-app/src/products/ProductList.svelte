@@ -4,6 +4,7 @@
 
   const dispatch = createEventDispatcher();
   export let products = [];
+  export let errorMessage = undefined;
 
   function deleteProduct(product) {
     dispatch('deleted', product);
@@ -16,18 +17,21 @@
   const deleteOptions = {
     className: 'delete-item',
     label: 'Delete',
-    iconClasses: 'fas fa-trash'
+    iconClasses: 'fas fa-trash',
   };
 
   const editOptions = {
     className: 'edit-item',
     label: 'Edit',
-    iconClasses: 'fas fa-edit'
+    iconClasses: 'fas fa-edit',
   };
 </script>
 
 <div>
-  {#if !products.length}
+  {#if errorMessage}
+    <div>{errorMessage}</div>
+  {/if}
+  {#if !products.length && !errorMessage}
     <div>Loading data ...</div>
   {/if}
   <ul class="list">

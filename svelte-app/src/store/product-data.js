@@ -10,8 +10,9 @@ export async function getProductsAction() {
     const products = await parseList(response);
     store.getProducts(products);
     return products;
-  } catch (error) {
-    return console.log(error);
+  } catch (err) {
+    console.log(err);
+    throw new Error(err);
   }
 }
 
