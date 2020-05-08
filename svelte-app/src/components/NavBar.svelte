@@ -31,8 +31,8 @@
   }
 </script>
 
-<div>
-  <nav class="column is-2 menu">
+<div class="column is-2">
+  <nav class="menu">
     <p class="menu-label">Menu</p>
     <ul class="menu-list">
       <Link to="/home" {getProps}>Home</Link>
