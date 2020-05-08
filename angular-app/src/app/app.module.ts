@@ -5,14 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { routes } from './router';
 import { AppComponent } from './app.component';
 import { AppStoreModule } from './store/store.module';
-import { AboutComponent } from './about.component';
+import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
 import { externalModules } from './build-specific';
 import { declarations } from './core';
 import { DiscountComponent } from './discount.component';
 
 @NgModule({
-  declarations: [AppComponent, AboutComponent, DiscountComponent, declarations],
+  declarations: [AppComponent, HomeComponent, DiscountComponent, declarations],
   imports: [
     BrowserModule,
     HttpClientModule,

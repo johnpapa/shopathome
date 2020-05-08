@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-about',
+  selector: 'app-home',
   template: `
     <div class="content-container">
       <div class="content-title-group not-found">
@@ -23,4 +23,4 @@ import { Component } from '@angular/core';
     </div>
   `,
 })
-export class AboutComponent {}
+export class HomeComponent {}

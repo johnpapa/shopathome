@@ -8,14 +8,14 @@ import { UserInfo } from '../model';
     <nav class="menu">
       <p class="menu-label">Menu</p>
       <ul class="menu-list">
+        <a routerLink="/" routerLinkActive="router-link-active">
+          <span>Home</span>
+        </a>
         <a routerLink="/products" routerLinkActive="router-link-active">
           <span>Products</span>
         </a>
         <a routerLink="/discounts" routerLinkActive="router-link-active">
           <span>Discounts</span>
-        </a>
-        <a routerLink="/about" routerLinkActive="router-link-active">
-          <span>About</span>
         </a>
       </ul>
     </nav>
