@@ -31,10 +31,6 @@
     {
       "errorType": "NotFound",
       "serve": "/404.html"
-    },
-    {
-      "errorType": "Unauthenticated",
-      "serve": "/unauthenticated.html"
     }
   ]
 }

@@ -9,9 +9,6 @@ import { Component, OnInit } from '@angular/core';
         <a routerLink="/products" routerLinkActive="router-link-active">
           <span>Products</span>
         </a>
-        <a routerLink="/admin" routerLinkActive="router-link-active">
-          <span>Admin</span>
-        </a>
         <a routerLink="/about" routerLinkActive="router-link-active">
           <span>About</span>
         </a>
