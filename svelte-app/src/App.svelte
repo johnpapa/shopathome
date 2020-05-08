@@ -3,7 +3,7 @@
   import { Router, Link, Route } from 'svelte-routing';
   import Home from './Home.svelte';
   import Products from './products/Products.svelte';
-  import Discount from './discount.svelte';
+  import Discount from './Discount.svelte';
 
   import { HeaderBar, NavBar, PageNotFound, Redirect } from './components';
 
