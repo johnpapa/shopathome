@@ -10,7 +10,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/products',
+      redirect: '/home',
     },
     {
       path: '/products',
@@ -21,13 +21,13 @@ export default new Router({
         ),
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/home',
+      name: 'home',
       // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
+      // this generates a separate chunk (home.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "about" */ './views/about.vue'),
+        import(/* webpackChunkName: "home" */ './views/home.vue'),
     },
     {
       path: '*',

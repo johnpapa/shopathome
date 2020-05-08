@@ -1,6 +1,6 @@
 import React from 'react';
 
-const About = () => (
+const Home = () => (
   <div className="content-container">
     <div className="content-title-group not-found">
       <h2 class="title">My Shopping List</h2>
@@ -20,4 +20,4 @@ const About = () => (
   </div>
 );
 
-export default About;
+export default Home;
