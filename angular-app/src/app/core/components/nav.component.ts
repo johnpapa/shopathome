@@ -8,7 +8,7 @@ import { UserInfo } from '../model';
     <nav class="menu">
       <p class="menu-label">Menu</p>
       <ul class="menu-list">
-        <a routerLink="/" routerLinkActive="router-link-active">
+        <a routerLink="/home" routerLinkActive="router-link-active">
           <span>Home</span>
         </a>
         <a routerLink="/products" routerLinkActive="router-link-active">
