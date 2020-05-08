@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -15,11 +15,29 @@ import { Component } from '@angular/core';
         <a routerLink="/about" routerLinkActive="router-link-active">
           <span>About</span>
         </a>
-        <a routerLink="/signin" routerLinkActive="router-link-active">
-          <span>Sign in</span>
-        </a>
+        <a *ngIf="!userInfo" href="/login">Login</a>
+        <a *ngIf="userInfo" href="/logout">Logout</a>
+        <p *ngIf="userInfo">{{ userInfo?.userDetails }}</p>
       </ul>
     </nav>
   `,
 })
-export class NavComponent {}
+export class NavComponent implements OnInit {
+  userInfo: {
+    identityProvider: string;
+    userId: string;
+    userDetails: string;
+    userRoles: string[];
+  } = null;
+
+  async ngOnInit(): Promise<void> {
+    this.userInfo = await this.getUserInfo();
+  }
+
+  async getUserInfo() {
+    const response = await fetch('/.auth/me');
+    const payload = await response.json();
+    const { clientPrincipal } = payload;
+    return clientPrincipal;
+  }
+}
