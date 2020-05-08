@@ -103,7 +103,7 @@ export class ProductsComponent implements OnInit {
         /*.. do nothing for success.. */
       },
       (error: any) => {
-        this.errorMessage = error.message;
+        this.errorMessage = error.error.statusText;
       },
     );
     this.clear();
