@@ -11,10 +11,8 @@ import { DiscountService } from './discount.service';
         <div class="content-title-group">
           <h2 class="title">Discounts</h2>
         </div>
-        <div *ngIf="!isAuth">
-          Not Authorized
-        </div>
-        <div *ngIf="!discounts?.length && isAuth">
+        <div *ngIf="errorMessage">{{ errorMessage }}</div>
+        <div *ngIf="!discounts?.length && !errorMessage">
           Loading data ...
         </div>
         <ul class="list">
@@ -43,21 +41,29 @@ import { DiscountService } from './discount.service';
   `,
 })
 export class DiscountComponent {
-  isAuth = false;
-  userInfo: UserInfo;
+  // isAuth = false;
+  errorMessage: string;
+  // userInfo: UserInfo;
   discounts$: Observable<Discount[]>;
 
   constructor(
-    private discountService: DiscountService,
-    private authService: AuthService,
+    private discountService: DiscountService, // private authService: AuthService,
   ) {
     this.discounts$ = discountService.entities$;
   }
 
   async ngOnInit() {
-    this.userInfo = await this.authService.getUserInfo();
-    this.isAuth = !!this.userInfo?.userDetails;
-    this.discountService.getAll();
+    // this.userInfo = await this.authService.getUserInfo();
+    // this.isAuth = !!this.userInfo?.userDetails;
+    this.errorMessage = undefined;
+    this.discountService.getAll().subscribe(
+      (_) => {
+        /*.. do nothing for success.. */
+      },
+      (error) => {
+        this.errorMessage = error;
+      },
+    );
   }
 
   trackByDiscount(index: number, discount: Discount): number {

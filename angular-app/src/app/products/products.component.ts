@@ -17,7 +17,7 @@ import { ProductService } from './product.service';
           <app-product-list
             *ngIf="!selected"
             [products]="products"
-            [isAuth]="isAuth"
+            [errorMessage]="errorMessage"
             (selected)="select($event)"
             (deleted)="askToDelete($event)"
           ></app-product-list>
@@ -41,8 +41,9 @@ import { ProductService } from './product.service';
   `,
 })
 export class ProductsComponent implements OnInit {
-  isAuth = false;
-  userInfo: UserInfo;
+  errorMessage: string;
+  // isAuth = false;
+  // userInfo: UserInfo;
   selected: Product;
   products$: Observable<Product[]>;
   message = '?';
@@ -51,8 +52,8 @@ export class ProductsComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private authService: AuthService,
-  ) {
+  ) // private authService: AuthService,
+  {
     this.products$ = productService.entities$;
   }
 
@@ -95,9 +96,17 @@ export class ProductsComponent implements OnInit {
   }
 
   async getProducts() {
-    this.userInfo = await this.authService.getUserInfo();
-    this.isAuth = !!this.userInfo?.userDetails;
-    this.productService.getAll();
+    // this.userInfo = await this.authService.getUserInfo();
+    // this.isAuth = !!this.userInfo?.userDetails;
+    this.errorMessage = undefined;
+    this.productService.getAll().subscribe(
+      (_) => {
+        /*.. do nothing for success.. */
+      },
+      (error) => {
+        this.errorMessage = error;
+      },
+    );
     this.clear();
   }
 
