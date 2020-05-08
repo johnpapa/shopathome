@@ -9,8 +9,7 @@
       "serve": "/.auth/login/twitter"
     },
     {
-      "route": "/login/f",
-      "serve": "/.auth/login/facebook",
+      "route": "/.auth/login/facebook",
       "statusCode": "404"
     },
     {
