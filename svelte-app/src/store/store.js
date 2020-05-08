@@ -1,9 +1,13 @@
 import { writable } from 'svelte/store';
 
 const state = {
+  discounts: writable([]),
   products: writable([]),
 };
 
+const getDiscounts = (discounts) => {
+  state.discounts.update((old) => discounts);
+};
 const getProducts = (products) => {
   state.products.update((old) => products);
 };
@@ -27,4 +31,11 @@ const updateProduct = (product) => {
   });
 };
 
-export { state, addProduct, getProducts, updateProduct, deleteProduct };
+export {
+  state,
+  addProduct,
+  getProducts,
+  updateProduct,
+  deleteProduct,
+  getDiscounts,
+};

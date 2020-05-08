@@ -12,6 +12,32 @@ $shade-light: #fafafa;
 
 @import 'bulma/bulma.sass';
 
+.menu.auth {
+  margin-top: 3em;
+  div.user {
+    padding: 0.1em 0.75em;
+    color: $primary;
+  }
+  div.auth {
+    border-top: solid $primary-light 2px;
+    border-right: solid $primary-light 10px;
+    > a:hover {
+      background-color: $primary-light;
+      color: #fff;
+    }
+  }
+}
+.discount-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 100px 200px;
+
+  label {
+    font-weight: bold;
+    padding-right: 8px;
+  }
+}
+
 .menu-list .active-link,
 .menu-list .router-link-active {
   color: #fff;

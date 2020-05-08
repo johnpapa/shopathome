@@ -21,5 +21,6 @@
   <ul class="menu-list">
     <Link to="/home" {getProps}>Home</Link>
     <Link to="/products" {getProps}>Products</Link>
+    <Link to="/discounts" {getProps}>Discounts</Link>
   </ul>
 </nav>
