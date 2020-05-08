@@ -21,6 +21,10 @@ $shade-light: #fafafa;
   div.auth {
     border-top: solid $primary-light 2px;
     border-right: solid $primary-light 10px;
+    > a:hover {
+      background-color: #b52e31;
+      color: #fff;
+    }
   }
 }
 .discount-grid {
