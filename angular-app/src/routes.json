@@ -18,9 +18,8 @@
     },
     {
       "route": "/api/products",
-      "allowedRoles": ["authenticated", "admin"]
+      "allowedRoles": ["admin"]
     },
-
     {
       "route": "/*",
       "serve": "/index.html",
