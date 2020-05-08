@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Product } from '../core';
+import { Product, UserInfo, AuthService } from '../core';
 import { ProductService } from './product.service';
 
 @Component({
@@ -40,13 +40,18 @@ import { ProductService } from './product.service';
   `,
 })
 export class ProductsComponent implements OnInit {
+  isAuth = false;
+  userInfo: UserInfo;
   selected: Product;
   products$: Observable<Product[]>;
   message = '?';
   productToDelete: Product;
   showModal = false;
 
-  constructor(private productService: ProductService) {
+  constructor(
+    private productService: ProductService,
+    private authService: AuthService,
+  ) {
     this.products$ = productService.entities$;
   }
 
@@ -88,7 +93,9 @@ export class ProductsComponent implements OnInit {
     this.selected = <any>{};
   }
 
-  getProducts() {
+  async getProducts() {
+    this.userInfo = await this.authService.getUserInfo();
+    this.isAuth = !!this.userInfo?.userDetails;
     this.productService.getAll();
     this.clear();
   }

@@ -56,7 +56,7 @@ export class DiscountComponent {
 
   async ngOnInit() {
     this.userInfo = await this.authService.getUserInfo();
-    this.isAuth = !!this.userInfo.userDetails;
+    this.isAuth = !!this.userInfo?.userDetails;
     this.discountService.getAll();
   }
 
