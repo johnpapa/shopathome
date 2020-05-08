@@ -11,6 +11,9 @@ import { DiscountService } from './discount.service';
         <div class="content-title-group">
           <h2 class="title">Discounts</h2>
         </div>
+        <div *ngIf="!discounts">
+          Not Authorized
+        </div>
         <div *ngIf="!discounts?.length">
           Loading data ...
         </div>
@@ -27,7 +30,9 @@ import { DiscountService } from './discount.service';
               <div class="card-content">
                 <div class="content discount-grid">
                   <label>Store:</label><span>{{ discount.store }}</span>
-                  <label>Discount:</label><span>{{ discount.percentage }}</span> <label>Code:</label><span>{{ discount.code }}</span>
+                  <label>Discount:</label
+                  ><span>{{ discount.percentage }}</span> <label>Code:</label
+                  ><span>{{ discount.code }}</span>
                 </div>
               </div>
             </div>

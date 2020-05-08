@@ -10,6 +10,9 @@ import { Product } from '../core';
 @Component({
   selector: 'app-product-list',
   template: `
+    <div *ngIf="!products">
+      Not Authorized
+    </div>
     <div *ngIf="!products?.length">
       Loading data ...
     </div>

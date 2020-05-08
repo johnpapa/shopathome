@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { UserInfo } from '../model';
 
 @Component({
   selector: 'app-nav',
@@ -35,25 +37,11 @@ import { Component, OnInit } from '@angular/core';
   `,
 })
 export class NavComponent implements OnInit {
-  userInfo: {
-    identityProvider: string;
-    userId: string;
-    userDetails: string;
-    userRoles: string[];
-  } = null;
+  userInfo: UserInfo;
 
-  async ngOnInit(): Promise<void> {
-    this.userInfo = await this.getUserInfo();
-  }
+  constructor(private authService: AuthService) {}
 
-  async getUserInfo() {
-    try {
-      const response = await fetch('/.auth/me');
-      const payload = await response.json();
-      const { clientPrincipal } = payload;
-      return clientPrincipal;
-    } catch (error) {
-      console.error('No profile could be found');
-    }
+  async ngOnInit() {
+    this.userInfo = await this.authService.getUserInfo();
   }
 }
