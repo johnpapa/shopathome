@@ -17,6 +17,7 @@ import { ProductService } from './product.service';
           <app-product-list
             *ngIf="!selected"
             [products]="products"
+            [isAuth]="isAuth"
             (selected)="select($event)"
             (deleted)="askToDelete($event)"
           ></app-product-list>

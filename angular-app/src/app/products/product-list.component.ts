@@ -10,10 +10,10 @@ import { Product } from '../core';
 @Component({
   selector: 'app-product-list',
   template: `
-    <div *ngIf="!products">
+    <div *ngIf="!isAuth">
       Not Authorized
     </div>
-    <div *ngIf="!products?.length">
+    <div *ngIf="!products?.length && isAuth">
       Loading data ...
     </div>
     <ul class="list">
@@ -51,6 +51,7 @@ import { Product } from '../core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductListComponent {
+  @Input() isAuth = false;
   @Input() products: Product[];
   @Output() deleted = new EventEmitter<Product>();
   @Output() selected = new EventEmitter<Product>();
