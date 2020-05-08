@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Discount } from './core';
+import { Discount, AuthService, UserInfo } from './core';
 import { Observable } from 'rxjs';
 import { DiscountService } from './discount.service';
 
@@ -11,10 +11,10 @@ import { DiscountService } from './discount.service';
         <div class="content-title-group">
           <h2 class="title">Discounts</h2>
         </div>
-        <div *ngIf="!discounts">
+        <div *ngIf="!isAuth">
           Not Authorized
         </div>
-        <div *ngIf="!discounts?.length">
+        <div *ngIf="!discounts?.length && isAuth">
           Loading data ...
         </div>
         <ul class="list">
@@ -43,13 +43,18 @@ import { DiscountService } from './discount.service';
   `,
 })
 export class DiscountComponent {
+  userInfo: UserInfo;
   discounts$: Observable<Discount[]>;
 
-  constructor(private discountService: DiscountService) {
+  constructor(
+    private discountService: DiscountService,
+    private authService: AuthService,
+  ) {
     this.discounts$ = discountService.entities$;
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.userInfo = await this.authService.getUserInfo();
     this.discountService.getAll();
   }
 
