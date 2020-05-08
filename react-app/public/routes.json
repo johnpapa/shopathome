@@ -1,9 +1,43 @@
 {
   "routes": [
     {
+      "route": "/login/gh",
+      "serve": "/.auth/login/github"
+    },
+    {
+      "route": "/login/tw",
+      "serve": "/.auth/login/twitter"
+    },
+    {
+      "route": "/.auth/login/facebook",
+      "statusCode": "404"
+    },
+    {
+      "route": "/logout",
+      "serve": "/.auth/logout"
+    },
+    {
+      "route": "/api/products",
+      "allowedRoles": [
+        "authenticated"
+      ]
+    },
+    {
+      "route": "/api/discounts",
+      "allowedRoles": [
+        "preferred"
+      ]
+    },
+    {
       "route": "/*",
       "serve": "/index.html",
       "statusCode": 200
+    }
+  ],
+  "platformErrorOverrides": [
+    {
+      "errorType": "NotFound",
+      "serve": "/404.html"
     }
   ]
 }
