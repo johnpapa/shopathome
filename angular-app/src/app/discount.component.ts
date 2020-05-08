@@ -41,28 +41,20 @@ import { DiscountService } from './discount.service';
   `,
 })
 export class DiscountComponent {
-  // isAuth = false;
   errorMessage: string;
-  // userInfo: UserInfo;
   discounts$: Observable<Discount[]>;
 
-  constructor(
-    private discountService: DiscountService, // private authService: AuthService,
-  ) {
+  constructor(private discountService: DiscountService) {
     this.discounts$ = discountService.entities$;
   }
 
-  async ngOnInit() {
-    // this.userInfo = await this.authService.getUserInfo();
-    // this.isAuth = !!this.userInfo?.userDetails;
+  ngOnInit() {
     this.errorMessage = undefined;
     this.discountService.getAll().subscribe(
       (_) => {
         /*.. do nothing for success.. */
       },
-      (error: any) => {
-        this.errorMessage = error.error.statusText;
-      },
+      (error: any) => (this.errorMessage = error.error.statusText),
     );
   }
 

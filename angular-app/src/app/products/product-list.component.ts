@@ -51,7 +51,6 @@ import { Product } from '../core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductListComponent {
-  // @Input() isAuth = false;
   @Input() errorMessage = undefined;
   @Input() products: Product[];
   @Output() deleted = new EventEmitter<Product>();

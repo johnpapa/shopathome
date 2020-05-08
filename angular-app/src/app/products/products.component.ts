@@ -42,17 +42,13 @@ import { ProductService } from './product.service';
 })
 export class ProductsComponent implements OnInit {
   errorMessage: string;
-  // isAuth = false;
-  // userInfo: UserInfo;
   selected: Product;
   products$: Observable<Product[]>;
   message = '?';
   productToDelete: Product;
   showModal = false;
 
-  constructor(
-    private productService: ProductService, // private authService: AuthService,
-  ) {
+  constructor(private productService: ProductService) {
     this.products$ = productService.entities$;
   }
 
@@ -95,16 +91,12 @@ export class ProductsComponent implements OnInit {
   }
 
   async getProducts() {
-    // this.userInfo = await this.authService.getUserInfo();
-    // this.isAuth = !!this.userInfo?.userDetails;
     this.errorMessage = undefined;
     this.productService.getAll().subscribe(
       (_) => {
         /*.. do nothing for success.. */
       },
-      (error: any) => {
-        this.errorMessage = error.error.statusText;
-      },
+      (error: any) => (this.errorMessage = error.error.statusText),
     );
     this.clear();
   }
