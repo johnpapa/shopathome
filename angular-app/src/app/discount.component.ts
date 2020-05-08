@@ -60,8 +60,8 @@ export class DiscountComponent {
       (_) => {
         /*.. do nothing for success.. */
       },
-      (error) => {
-        this.errorMessage = error;
+      (error: any) => {
+        this.errorMessage = error.message;
       },
     );
   }

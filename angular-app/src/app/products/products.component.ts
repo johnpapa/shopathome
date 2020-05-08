@@ -51,9 +51,8 @@ export class ProductsComponent implements OnInit {
   showModal = false;
 
   constructor(
-    private productService: ProductService,
-  ) // private authService: AuthService,
-  {
+    private productService: ProductService, // private authService: AuthService,
+  ) {
     this.products$ = productService.entities$;
   }
 
@@ -103,8 +102,8 @@ export class ProductsComponent implements OnInit {
       (_) => {
         /*.. do nothing for success.. */
       },
-      (error) => {
-        this.errorMessage = error;
+      (error: any) => {
+        this.errorMessage = error.message;
       },
     );
     this.clear();
