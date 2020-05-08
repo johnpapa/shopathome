@@ -23,7 +23,15 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "src/public/",
+                "output": "/"
+              }
+            ],
             "stylePreprocessorOptions": {
               "includePaths": ["src/styles"]
             },

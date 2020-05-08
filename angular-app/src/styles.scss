@@ -12,8 +12,21 @@ $shade-light: #fafafa;
 
 @import 'bulma/bulma.sass';
 
-.menu-list > div {
-  padding: 0.5em 0.75em;
+.menu-list {
+  > div.user {
+    padding: 0.5em 0.75em;
+    color: $primary;
+  }
+  > div.auth {
+    border-top: solid $primary-light 2px;
+    border-right: solid $primary-light 10px;
+  }
+}
+.menu.auth {
+  margin-top: 3em;
+  > .user {
+    color: $primary;
+  }
 }
 
 .menu-list .router-link-active {

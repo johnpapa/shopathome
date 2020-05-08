@@ -1,25 +1,41 @@
 {
   "routes": [
     {
-      "route": "/login",
+      "route": "/login/g",
       "serve": "/.auth/login/github"
+    },
+    {
+      "route": "/login/t",
+      "serve": "/.auth/login/twitter"
+    },
+    {
+      "route": "/login/f",
+      "serve": "/.auth/login/facebook",
+      "statusCode": "404"
     },
     {
       "route": "/logout",
       "serve": "/.auth/logout"
     },
     {
-      "route": "/.auth/login/twitter",
-      "statusCode": "404"
-    },
-    {
       "route": "/api/products",
       "allowedRoles": ["authenticated"]
     },
+
     {
       "route": "/*",
       "serve": "/index.html",
       "statusCode": 200
+    }
+  ],
+  "platformErrorOverrides": [
+    {
+      "errorType": "NotFound",
+      "serve": "/404.html"
+    },
+    {
+      "errorType": "Unauthenticated",
+      "serve": "/unauthenticated.html"
     }
   ]
 }

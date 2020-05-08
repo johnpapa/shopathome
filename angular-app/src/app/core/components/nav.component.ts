@@ -15,11 +15,20 @@ import { Component, OnInit } from '@angular/core';
         <a routerLink="/about" routerLinkActive="router-link-active">
           <span>About</span>
         </a>
-        <a *ngIf="!userInfo" href="/login">Login</a>
-        <a *ngIf="userInfo" href="/logout">Logout</a>
-        <div *ngIf="userInfo">
-          <p>{{ userInfo?.userDetails }}</p>
-          <p>({{ userInfo?.identityProvider }})</p>
+      </ul>
+    </nav>
+    <nav class="menu auth">
+      <p class="menu-label">Auth</p>
+      <ul class="menu-list">
+        <div class="auth">
+          <a *ngIf="!userInfo" href="/login/t">Twitter</a>
+          <a *ngIf="!userInfo" href="/login/g">GitHub</a>
+          <a *ngIf="!userInfo" href="/login/f">FaceBook</a>
+          <a *ngIf="userInfo" href="/logout">Logout</a>
+          <div class="user" *ngIf="userInfo">
+            <p>{{ userInfo?.userDetails }}</p>
+            <p>({{ userInfo?.identityProvider }})</p>
+          </div>
         </div>
       </ul>
     </nav>
