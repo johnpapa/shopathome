@@ -17,6 +17,7 @@ function useProducts() {
     // Selectors
     products: useSelector((state) => state.products.data),
     selectedProduct: useSelector((state) => state.selectedProduct),
+    error: useSelector((state) => state.products.error),
 
     // Dispatchers
     // Wrap any dispatcher that could be called within a useEffect() in a useCallback()

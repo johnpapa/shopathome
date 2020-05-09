@@ -8,6 +8,7 @@ function ProductList({
   handleSelectProduct,
   products,
   history,
+  errorMessage,
 }) {
   function selectProduct(e) {
     const product = getSelectedProduct(e);
@@ -27,7 +28,10 @@ function ProductList({
 
   return (
     <div>
-      {products.length === 0 && <div>Loading data ...</div>}
+      {errorMessage && <div>{errorMessage}</div>}
+      {(!products || !products.length) && !errorMessage && (
+        <div>Loading data ...</div>
+      )}
       <ul className="list">
         {products.map((product, index) => (
           <li key={product.id} role="presentation">

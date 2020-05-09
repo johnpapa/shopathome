@@ -19,6 +19,7 @@ function Products({ history }) {
     selectProduct,
     selectedProduct,
     updateProduct,
+    error: errorMessage,
   } = useProducts();
 
   useEffect(() => {
@@ -88,6 +89,7 @@ function Products({ history }) {
               path="/products"
               component={() => (
                 <ProductList
+                  errorMessage={errorMessage}
                   products={products}
                   selectedProduct={selectedProduct}
                   handleSelectProduct={handleSelectProduct}

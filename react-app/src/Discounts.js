@@ -3,22 +3,14 @@ import { withRouter } from 'react-router';
 import useDiscounts from './useDiscounts';
 
 function Discounts() {
-  let errorMessage = undefined;
-
-  const { getDiscounts, discounts } = useDiscounts();
+  const { getDiscounts, discounts, error: errorMessage } = useDiscounts();
 
   useEffect(() => {
-    getDiscounts();
+    const fetchData = async () => {
+      await getDiscounts();
+    };
+    fetchData();
   }, [getDiscounts]);
-
-  // async function getDiscounts() {
-  //   errorMessage = undefined;
-  //   try {
-  //     await getDiscountsAction();
-  //   } catch (error) {
-  //     errorMessage = 'Unauthorized';
-  //   }
-  // }
 
   return (
     <div className="content-container">
@@ -26,24 +18,27 @@ function Discounts() {
         <h2 className="title">My Discounts</h2>
         <div>
           {errorMessage && <div>{errorMessage}</div>}
-          {!discounts.length && !errorMessage && <div>Loading data ...</div>}
+          {(!discounts || !discounts.length) && !errorMessage && (
+            <div>Loading data ...</div>
+          )}
           <ul className="list">
-            {discounts.map((discount, index) => (
-              <li key={discount.id} role="presentation">
-                <div className="card">
-                  <div className="card-content">
-                    <div className="content discount-grid">
-                      <label>Store:</label>
-                      <span>{discount.store}</span>
-                      <label>Discount:</label>
-                      <span>{discount.percentage}</span>
-                      <label>Code:</label>
-                      <span>{discount.code}</span>
+            {discounts &&
+              discounts.map((discount, index) => (
+                <li key={discount.id} role="presentation">
+                  <div className="card">
+                    <div className="card-content">
+                      <div className="content discount-grid">
+                        <label>Store:</label>
+                        <span>{discount.store}</span>
+                        <label>Discount:</label>
+                        <span>{discount.percentage}</span>
+                        <label>Code:</label>
+                        <span>{discount.code}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </li>
-            ))}
+                </li>
+              ))}
           </ul>
         </div>
       </div>

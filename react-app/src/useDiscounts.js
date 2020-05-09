@@ -10,10 +10,11 @@ function useDiscounts() {
   return {
     // Selectors
     discounts: useSelector((state) => state.discounts.data),
+    error: useSelector((state) => state.discounts.error),
 
     // Dispatchers
     // Wrap any dispatcher that could be called within a useEffect() in a useCallback()
-    getDiscounts: useCallback(() => dispatch(loadDiscountsAction()), [
+    getDiscounts: useCallback((e) => dispatch(loadDiscountsAction()), [
       dispatch,
     ]), // called within a useEffect()
   };
