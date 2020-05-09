@@ -1,3 +1,7 @@
+$primary: $svelte;
+$primary-light: $svelte-light;
+$link: $primary; // #00b3e6; // #ff4081;
+$info: $primary;
 $vue: #42b883;
 $vue-light: #42b883;
 $angular: #b52e31;
@@ -6,10 +10,6 @@ $react: #00b3e6;
 $react-light: #61dafb;
 $svelte: #ff3e00;
 $svelte-light: #f38560;
-$primary: $svelte;
-$primary-light: $svelte-light;
-$link: $primary; // #00b3e6; // #ff4081;
-$info: $primary;
 $shade-light: #fafafa;
 
 @import '~bulma/bulma.sass';
@@ -21,8 +21,7 @@ $shade-light: #fafafa;
     color: $primary;
   }
   div.auth {
-    border-top: solid $primary-light 2px;
-    border-right: solid $primary-light 10px;
+    border-left: solid $primary-light 2px;
     > a:hover {
       background-color: $primary-light;
       color: #fff;

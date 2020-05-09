@@ -21,8 +21,7 @@ $shade-light: #fafafa;
     color: $primary;
   }
   div.auth {
-    border-top: solid $primary-light 2px;
-    border-right: solid $primary-light 10px;
+    border-left: solid $primary-light 2px;
     > a:hover {
       background-color: $primary-light;
       color: #fff;
