@@ -25,7 +25,10 @@
         </Link>
       </button>
       <button class="button" aria-label="My Discounts">
-        <a href="https://github.com/johnpapa/b20" target="_blank">
+        <a
+          href="https://github.com/johnpapa/b20"
+          target="_blank"
+          rel="noopener noreferrer">
           <i class="fab fa-github" />
           Code in GitHub
         </a>

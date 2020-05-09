@@ -29,7 +29,11 @@ import { Component } from '@angular/core';
             </a>
           </button>
           <button class="button" aria-label="My Discounts">
-            <a href="https://github.com/johnpapa/b20" target="_blank">
+            <a
+              href="https://github.com/johnpapa/b20"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i class="fab fa-github"></i>
               Code in GitHub
             </a>
