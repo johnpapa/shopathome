@@ -26,6 +26,7 @@ import { UserInfo } from '../model';
         <a *ngIf="!userInfo" href="/.auth/login/facebook">FaceBook</a>
         <a *ngIf="userInfo" href="/logout">Logout</a>
         <div class="user" *ngIf="userInfo">
+          <p>Welcome</p>
           <p>{{ userInfo?.userDetails }}</p>
           <p>({{ userInfo?.identityProvider }})</p>
         </div>

@@ -11,7 +11,7 @@ $primary-light: $svelte-light;
 $link: $primary; // #00b3e6; // #ff4081;
 $info: $primary;
 $shade-light: #fafafa;
-$light-gray: #999;
+$light-gray: #777;
 
 @import '~bulma/bulma.sass';
 
@@ -30,7 +30,9 @@ $light-gray: #999;
       border: 1px solid #ddd;
       &:hover {
         background-color: #ddd;
-        a { color: $primary; }
+        a {
+          color: $primary;
+        }
       }
       a {
         color: $light-gray;
@@ -71,7 +73,7 @@ $light-gray: #999;
     margin-top: 3em;
     div.user {
       padding: 0.1em 0.75em;
-      color: $primary;
+      color: $light-gray;
     }
     div.auth {
       > a:hover {

@@ -45,6 +45,7 @@ export default {
         <a v-if="!userInfo" href="/.auth/login/facebook">FaceBook</a>
         <a v-if="userInfo" href="/logout">Logout</a>
         <div class="user" v-if="userInfo">
+          <p>Welcome</p>
           <p>{{ userInfo.userDetails }}</p>
           <p>({{ userInfo.identityProvider }})</p>
         </div>

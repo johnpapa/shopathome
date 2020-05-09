@@ -5,10 +5,9 @@ function NavBar(props) {
   const [userInfo, setUserInfo] = useState();
 
   useEffect(() => {
-    async function getUserInfo2() {
+    (async () => {
       setUserInfo(await getUserInfo());
-    }
-    getUserInfo2();
+    })();
   }, []);
 
   async function getUserInfo() {
@@ -54,6 +53,7 @@ function NavBar(props) {
             <div>
               <a href="/logout">Logout</a>
               <div className="user">
+                <p>Welcome</p>
                 <p>{userInfo && userInfo.userDetails}</p>
                 <p>({userInfo && userInfo.identityProvider})</p>
               </div>

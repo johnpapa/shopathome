@@ -51,6 +51,7 @@
       {#if userInfo}
         <a href="/logout">Logout</a>
         <div class="user">
+          <p>Welcome</p>
           <p>{userInfo && userInfo.userDetails}</p>
           <p>({userInfo && userInfo.identityProvider})</p>
         </div>
