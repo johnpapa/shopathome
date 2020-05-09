@@ -1,22 +1,15 @@
-import React, { useEffect } from 'react';
-// import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-
 function NavBar(props) {
-  let userInfo;
-
-  // const dispatch = useDispatch();
-
-  // let getUserInfo = useCallback(() => dispatch(getUserInfoAction()), [
-  //   dispatch,
-  // ]);
+  const [userInfo, setUserInfo] = useState();
 
   useEffect(() => {
-    userInfo = getUserInfo();
-  }, [getUserInfo]);
+    async function getUserInfo2() {
+      setUserInfo(await getUserInfo());
+    }
+    getUserInfo2();
+  }, []);
 
   async function getUserInfo() {
     try {
@@ -31,7 +24,6 @@ function NavBar(props) {
   }
 
   return (
-    // const NavBar = (props) => (
     <div className="column is-2">
       <nav className="menu">
         <p className="menu-label">Menu</p>
