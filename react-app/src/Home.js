@@ -10,26 +10,26 @@ const Home = () => (
       </p>
       <p>Log in to start enjoying your benefits.</p>
       <br />
-      <div class="button-group">
-        <button class="button" aria-label="My List" tabindex="0">
+      <div className="button-group">
+        <button className="button" aria-label="My List" tabindex="0">
           <a href="/products">
-            <i class="fas fa-clipboard-list"></i>
+            <i className="fas fa-clipboard-list"></i>
             My List
           </a>
         </button>
-        <button class="button" aria-label="My Discounts">
+        <button className="button" aria-label="My Discounts">
           <a href="/discounts">
-            <i class="fas fa-money-bill-alt"></i>
+            <i className="fas fa-money-bill-alt"></i>
             My Discounts
           </a>
         </button>
-        <button class="button" aria-label="My Discounts">
+        <button className="button" aria-label="My Discounts">
           <a
             href="https://github.com/johnpapa/b20"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="fab fa-github"></i>
+            <i className="fab fa-github"></i>
             Code in GitHub
           </a>
         </button>
