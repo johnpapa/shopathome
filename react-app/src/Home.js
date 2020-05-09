@@ -11,7 +11,7 @@ const Home = () => (
       <p>Log in to start enjoying your benefits.</p>
       <br />
       <div className="button-group">
-        <button className="button" aria-label="My List" tabindex="0">
+        <button className="button" aria-label="My List" tabIndex="0">
           <a href="/products">
             <i className="fas fa-clipboard-list"></i>
             My List
