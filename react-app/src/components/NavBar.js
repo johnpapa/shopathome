@@ -1,5 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, useHistory } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+
+function CurrentRoute(props) {
+  const { provider } = props;
+  let location = useLocation();
+  let history = useHistory();
+  console.log(location);
+  console.log(history);
+  // const url = `/login/${provider}?post_login_redirect_uri=www.shophome.dev/products`;
+  const url = `/login/${provider}?post_login_redirect_uri=${window.location.href}/${location.pathname}`;
+  return <a href={url}>{provider}</a>;
+  // return <span>Path : {location.pathname}</span>
+}
 
 function NavBar(props) {
   const [userInfo, setUserInfo] = useState();
@@ -44,7 +57,7 @@ function NavBar(props) {
         <div className="menu-list auth">
           {!userInfo && (
             <div>
-              <a href="/login/tw">Twitter</a>
+              <CurrentRoute provider="tw"></CurrentRoute>
               <a href="/login/gh">GitHub</a>
               <a href="/.auth/login/facebook">FaceBook</a>
             </div>
