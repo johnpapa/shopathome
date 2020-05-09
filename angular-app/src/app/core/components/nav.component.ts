@@ -21,18 +21,16 @@ import { UserInfo } from '../model';
     </nav>
     <nav class="menu auth">
       <p class="menu-label">Auth</p>
-      <ul class="menu-list">
-        <div class="auth">
-          <a *ngIf="!userInfo" href="/login/tw">Twitter</a>
-          <a *ngIf="!userInfo" href="/login/gh">GitHub</a>
-          <a *ngIf="!userInfo" href="/.auth/login/facebook">FaceBook</a>
-          <a *ngIf="userInfo" href="/logout">Logout</a>
-          <div class="user" *ngIf="userInfo">
-            <p>{{ userInfo?.userDetails }}</p>
-            <p>({{ userInfo?.identityProvider }})</p>
-          </div>
+      <div class="menu-list auth">
+        <a *ngIf="!userInfo" href="/login/tw">Twitter</a>
+        <a *ngIf="!userInfo" href="/login/gh">GitHub</a>
+        <a *ngIf="!userInfo" href="/.auth/login/facebook">FaceBook</a>
+        <a *ngIf="userInfo" href="/logout">Logout</a>
+        <div class="user" *ngIf="userInfo">
+          <p>{{ userInfo?.userDetails }}</p>
+          <p>({{ userInfo?.identityProvider }})</p>
         </div>
-      </ul>
+      </div>
     </nav>
   `,
 })

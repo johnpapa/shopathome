@@ -42,21 +42,19 @@
   </nav>
   <nav class="menu auth">
     <p class="menu-label">Auth</p>
-    <ul class="menu-list">
-      <div class="auth">
-        {#if !userInfo}
-          <a href="/login/tw">Twitter</a>
-          <a href="/login/gh">GitHub</a>
-          <a href="/.auth/login/facebook">FaceBook</a>
-        {/if}
-        {#if userInfo}
-          <a href="/logout">Logout</a>
-          <div class="user">
-            <p>{userInfo && userInfo.userDetails}</p>
-            <p>({userInfo && userInfo.identityProvider})</p>
-          </div>
-        {/if}
-      </div>
-    </ul>
+    <div class="menu-list auth">
+      {#if !userInfo}
+        <a href="/login/tw">Twitter</a>
+        <a href="/login/gh">GitHub</a>
+        <a href="/.auth/login/facebook">FaceBook</a>
+      {/if}
+      {#if userInfo}
+        <a href="/logout">Logout</a>
+        <div class="user">
+          <p>{userInfo && userInfo.userDetails}</p>
+          <p>({userInfo && userInfo.identityProvider})</p>
+        </div>
+      {/if}
+    </div>
   </nav>
 </div>
