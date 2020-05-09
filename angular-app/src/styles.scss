@@ -20,6 +20,9 @@ $light-gray: #999;
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 170px 170px 170px;
+    @include until($tablet) {
+      grid-template-columns: 170px 170px;
+    }
     margin-top: 20px;
     > button.button {
       background-color: $shade-light;

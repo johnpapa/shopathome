@@ -20,6 +20,9 @@ $light-gray: #999;
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 170px 170px 170px;
+    @include until($tablet) {
+      grid-template-columns: 170px 170px;
+    }
     margin-top: 20px;
     > button.button {
       background-color: $shade-light;
@@ -27,7 +30,9 @@ $light-gray: #999;
       border: 1px solid #ddd;
       &:hover {
         background-color: #ddd;
-        a { color: $primary; }
+        a {
+          color: $primary;
+        }
       }
       a {
         color: $light-gray;
@@ -49,9 +54,6 @@ $light-gray: #999;
     color: $primary;
     font-weight: bold;
   }
-  // @include until($tablet) {
-  //   display: none;
-  // }
   .menu-list {
     border-left: solid $primary-light 2px;
     .active-link,
