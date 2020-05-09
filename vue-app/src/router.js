@@ -21,6 +21,12 @@ export default new Router({
         ),
     },
     {
+      path: '/discounts',
+      name: 'discounts',
+      component: () =>
+        import(/* webpackChunkName: "discount" */ './views/discounts.vue'),
+    },
+    {
       path: '/home',
       name: 'home',
       // route level code-splitting

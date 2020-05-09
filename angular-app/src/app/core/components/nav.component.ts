@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
 import { UserInfo } from '../model';
 
 @Component({
@@ -37,9 +36,19 @@ import { UserInfo } from '../model';
 export class NavComponent implements OnInit {
   userInfo: UserInfo;
 
-  constructor(private authService: AuthService) {}
-
   async ngOnInit() {
-    this.userInfo = await this.authService.getUserInfo();
+    this.userInfo = await this.getUserInfo();
+  }
+
+  async getUserInfo() {
+    try {
+      const response = await fetch('/.auth/me');
+      const payload = await response.json();
+      const { clientPrincipal } = payload;
+      return clientPrincipal;
+    } catch (error) {
+      console.error('No profile could be found');
+      return undefined;
+    }
   }
 }

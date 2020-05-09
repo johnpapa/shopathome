@@ -9,7 +9,7 @@ import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
 import { externalModules } from './build-specific';
 import { declarations } from './core';
-import { DiscountComponent } from './discount.component';
+import { DiscountComponent } from './discounts.component';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, DiscountComponent, declarations],

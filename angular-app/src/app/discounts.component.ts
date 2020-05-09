@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Discount, AuthService, UserInfo } from './core';
+import { Discount } from './core';
 import { Observable } from 'rxjs';
 import { DiscountService } from './discount.service';
 
