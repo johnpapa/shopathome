@@ -5,13 +5,11 @@ import { NavLink } from 'react-router-dom';
 function CurrentRoute(props) {
   const { provider } = props;
   let location = useLocation();
-  let history = useHistory();
-  console.log(location);
-  console.log(history);
   // const url = `/login/${provider}?post_login_redirect_uri=www.shophome.dev/products`;
-  const url = `/login/${provider}?post_login_redirect_uri=${window.location.href}/${location.pathname}`;
+  const redirect = `post_login_redirect_uri = ${window.location.href}/${location.pathname}`;
+  const url = `/.auth/login/${provider}?${redirect}`;
+
   return <a href={url}>{provider}</a>;
-  // return <span>Path : {location.pathname}</span>
 }
 
 function NavBar(props) {
@@ -57,9 +55,9 @@ function NavBar(props) {
         <div className="menu-list auth">
           {!userInfo && (
             <div>
-              <CurrentRoute provider="tw"></CurrentRoute>
-              <a href="/login/gh">GitHub</a>
-              <a href="/.auth/login/facebook">FaceBook</a>
+              <CurrentRoute provider="twitter"></CurrentRoute>
+              <CurrentRoute provider="github"></CurrentRoute>
+              <CurrentRoute provider="facebook"></CurrentRoute>
             </div>
           )}
           {userInfo && (

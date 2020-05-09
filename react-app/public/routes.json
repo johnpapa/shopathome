@@ -1,14 +1,6 @@
 {
   "routes": [
     {
-      "route": "/login/gh",
-      "serve": "/.auth/login/github"
-    },
-    {
-      "route": "/login/tw",
-      "serve": "/.auth/login/twitter"
-    },
-    {
       "route": "/.auth/login/facebook",
       "statusCode": "404"
     },
@@ -26,15 +18,11 @@
     },
     {
       "route": "/api/products",
-      "allowedRoles": [
-        "authenticated"
-      ]
+      "allowedRoles": ["authenticated"]
     },
     {
       "route": "/api/discounts",
-      "allowedRoles": [
-        "preferred"
-      ]
+      "allowedRoles": ["preferred"]
     },
     {
       "route": "/*",
