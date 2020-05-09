@@ -29,10 +29,10 @@ const NavBar = (props) => (
           Home
         </NavLink>
         <NavLink to="/products" activeClassName="active-link">
-          Products
+          My List
         </NavLink>
         <NavLink to="/discounts" activeClassName="active-link">
-          Discounts
+          My Discounts
         </NavLink>
       </ul>
       {props.children}

@@ -33,8 +33,8 @@ export default {
       <p class="menu-label">Menu</p>
       <ul class="menu-list">
         <router-link to="/home">Home</router-link>
-        <router-link to="/products">Products</router-link>
-        <router-link to="/discounts">Discounts</router-link>
+        <router-link to="/products">My List</router-link>
+        <router-link to="/discounts">My Discounts</router-link>
       </ul>
     </nav>
     <nav class="menu auth">

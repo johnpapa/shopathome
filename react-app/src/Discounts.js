@@ -22,8 +22,8 @@ function Discounts() {
 
   return (
     <div className="content-container">
-      <div className="content-title-group not-found">
-        <h2 className="title">My Shopping List</h2>
+      <div className="content-title-group">
+        <h2 className="title">My Discounts</h2>
         <div>
           {errorMessage && <div>{errorMessage}</div>}
           {!discounts.length && !errorMessage && <div>Loading data ...</div>}

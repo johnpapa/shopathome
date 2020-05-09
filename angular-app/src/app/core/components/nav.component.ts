@@ -11,10 +11,10 @@ import { UserInfo } from '../model';
           <span>Home</span>
         </a>
         <a routerLink="/products" routerLinkActive="router-link-active">
-          <span>Products</span>
+          <span>My List</span>
         </a>
         <a routerLink="/discounts" routerLinkActive="router-link-active">
-          <span>Discounts</span>
+          <span>My Discounts</span>
         </a>
       </ul>
     </nav>

@@ -9,7 +9,7 @@ import { DiscountService } from './discount.service';
     <div class="container columns">
       <div *ngIf="discounts$ | async as discounts" class="column is-8">
         <div class="content-title-group">
-          <h2 class="title">Discounts</h2>
+          <h2 class="title">My Discounts</h2>
         </div>
         <div *ngIf="errorMessage">{{ errorMessage }}</div>
         <div *ngIf="!discounts?.length && !errorMessage">

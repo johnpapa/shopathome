@@ -36,8 +36,8 @@
     <p class="menu-label">Menu</p>
     <ul class="menu-list">
       <Link to="/home" {getProps}>Home</Link>
-      <Link to="/products" {getProps}>Products</Link>
-      <Link to="/discounts" {getProps}>Discounts</Link>
+      <Link to="/products" {getProps}>My List</Link>
+      <Link to="/discounts" {getProps}>My Discounts</Link>
     </ul>
   </nav>
   <nav class="menu auth">

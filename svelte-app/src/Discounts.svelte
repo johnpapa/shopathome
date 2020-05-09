@@ -18,8 +18,8 @@
 </script>
 
 <div class="content-container">
-  <div class="content-title-group not-found">
-    <h2 class="title">My Shopping List</h2>
+  <div class="content-title-group">
+    <h2 class="title">My Discounts</h2>
     <div>
       {#if errorMessage}
         <div>{errorMessage}</div>

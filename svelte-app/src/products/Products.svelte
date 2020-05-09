@@ -15,7 +15,7 @@
 
   let selected = undefined;
   let routePath = '/products';
-  let title = 'Products';
+  let title = 'My List';
   let productToDelete = null;
   let message = '';
   let showModal = false;

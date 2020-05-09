@@ -16,7 +16,7 @@ export default {
       routePath: '/products',
       selected: null,
       showModal: false,
-      title: 'Products',
+      title: 'My List',
     };
   },
   components: {
