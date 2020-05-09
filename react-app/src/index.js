@@ -7,7 +7,7 @@ import createSagaMiddleware from 'redux-saga';
 import App from './App';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import app, { productSaga } from './store';
+import app, { productSaga, discountSaga } from './store';
 
 // create and configure reduxer middleware ( saga is a middleware )
 const sagaMiddleware = createSagaMiddleware();
@@ -15,10 +15,11 @@ const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   app,
-  composeEnhancers(applyMiddleware(sagaMiddleware))
+  composeEnhancers(applyMiddleware(sagaMiddleware)),
 );
 
 sagaMiddleware.run(productSaga);
+sagaMiddleware.run(discountSaga);
 
 ReactDOM.render(
   <Provider store={store}>
@@ -27,7 +28,7 @@ ReactDOM.render(
     </BrowserRouter>
   </Provider>,
 
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change

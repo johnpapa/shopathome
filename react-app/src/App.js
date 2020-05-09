@@ -7,7 +7,10 @@ import { HeaderBar, NavBar, NotFound } from './components';
 import Home from './Home';
 
 const Products = withRouter(
-  lazy(() => import(/* webpackChunkName: "products" */ './products/Products'))
+  lazy(() => import(/* webpackChunkName: "products" */ './products/Products')),
+);
+const Discounts = withRouter(
+  lazy(() => import(/* webpackChunkName: "discounts" */ './Discounts')),
 );
 
 class App extends Component {
@@ -22,6 +25,7 @@ class App extends Component {
               <Switch>
                 <Redirect from="/" exact to="/home" />
                 <Route path="/home" component={Home} />
+                <Route path="/discounts" component={Discounts} />
                 <Route path="/products" component={Products} />
                 <Route exact path="**" component={NotFound} />
               </Switch>
