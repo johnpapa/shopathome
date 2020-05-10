@@ -11,6 +11,10 @@ export default {
       type: Array,
       default: () => [],
     },
+    errorMessage: {
+      type: String,
+      default: () => '',
+    },
   },
   components: {
     CardContent,
@@ -31,7 +35,8 @@ export default {
 
 <template>
   <div>
-    <div v-if="!products.length">
+    <div v-if="errorMessage">{{ errorMessage }}</div>
+    <div v-if="!products.length && !errorMessage">
       Loading data ...
     </div>
     <ul class="list">

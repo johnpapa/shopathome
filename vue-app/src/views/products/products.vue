@@ -56,7 +56,7 @@ export default {
       this.closeModal();
       if (this.productToDelete) {
         captains.log(
-          `You said you want to delete ${this.productToDelete.name}`
+          `You said you want to delete ${this.productToDelete.name}`,
         );
         this.deleteProductAction(this.productToDelete);
       }
@@ -66,7 +66,12 @@ export default {
       this.selected = {};
     },
     getProducts() {
-      this.getProductsAction();
+      this.errorMessage = undefined;
+      try {
+        this.getProductsAction();
+      } catch (error) {
+        this.errorMessage = 'Unauthorized';
+      }
       this.clear();
     },
     save(product) {
@@ -97,6 +102,7 @@ export default {
         <ProductList
           v-if="!selected"
           :products="products"
+          :errorMessage="errorMessage"
           @selected="select($event)"
           @deleted="askToDelete($event)"
         ></ProductList>
