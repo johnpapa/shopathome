@@ -46,7 +46,7 @@ export default {
       <div class="menu-list auth">
         <template v-if="!userInfo">
           <template v-for="provider in providers">
-            <AuthLogin :provider="provider" />
+            <AuthLogin :key="provider" :provider="provider" />
           </template>
         </template>
         <AuthLogout v-if="userInfo" />
