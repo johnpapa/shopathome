@@ -42,6 +42,7 @@ export default {
         return products;
       } catch (error) {
         captains.error(error);
+        throw new Error(error);
       }
     },
     async deleteProductAction({ commit }, product) {
@@ -52,6 +53,7 @@ export default {
         return null;
       } catch (error) {
         captains.error(error);
+        throw new Error(error);
       }
     },
     async updateProductAction({ commit }, product) {
@@ -65,6 +67,7 @@ export default {
         return updatedproduct;
       } catch (error) {
         captains.error(error);
+        throw new Error(error);
       }
     },
     async addProductAction({ commit }, product) {
@@ -75,6 +78,7 @@ export default {
         return addedProduct;
       } catch (error) {
         captains.error(error);
+        throw new Error(error);
       }
     },
   },
