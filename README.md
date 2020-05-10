@@ -2,7 +2,7 @@
 
 This repository contains apps that can be used with as a starting point for some MS Learn Modules. because everyone has their own preference for their JavaScript frameworks/library, you can choose which one you prefer.
 
-The shopping theme is used throughout the app.
+The Shop at Home theme is used throughout the app. View it live at <https://www.shopathome.dev>.
 
 ## Contents
 
