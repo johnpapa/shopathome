@@ -56,7 +56,7 @@
       {/if}
     </div>
   </nav>
-  {#if !userInfo}
+  {#if userInfo}
     <div class="user">
       <p>Welcome</p>
       <p>{userInfo && userInfo.userDetails}</p>
