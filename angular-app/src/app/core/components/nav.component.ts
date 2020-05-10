@@ -21,9 +21,11 @@ import { UserInfo } from '../model';
     <nav class="menu auth">
       <p class="menu-label">Auth</p>
       <div class="menu-list auth">
-        <a *ngIf="!userInfo" href="/login/tw">Twitter</a>
-        <a *ngIf="!userInfo" href="/login/gh">GitHub</a>
-        <a *ngIf="!userInfo" href="/.auth/login/facebook">FaceBook</a>
+        <ng-container *ngIf="!userInfo">
+          <ng-container *ngFor="let provider of providers">
+            <app-auth-login [provider]="provider"></app-auth-login>
+          </ng-container>
+        </ng-container>
         <a *ngIf="userInfo" href="/logout">Logout</a>
         <div class="user" *ngIf="userInfo">
           <p>Welcome</p>
@@ -35,6 +37,7 @@ import { UserInfo } from '../model';
   `,
 })
 export class NavComponent implements OnInit {
+  providers = ['twitter', 'github', 'facebook'];
   userInfo: UserInfo;
 
   async ngOnInit() {
