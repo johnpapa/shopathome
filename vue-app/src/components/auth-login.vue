@@ -9,10 +9,9 @@ export default {
   },
   methods: {
     goAuth() {
-      let host = window.location.host;
-      let pathname = window.location.pathname;
-      let redirect = `post_login_redirect_uri=${host}${pathname}`;
-      let url = `/.auth/login/${provider}?${redirect}`;
+      const { host, pathname } = window.location;
+      const redirect = `post_login_redirect_uri=${host}${pathname}`;
+      const url = `/.auth/login/${this.provider}?${redirect}`;
       window.location.href = url;
     },
   },

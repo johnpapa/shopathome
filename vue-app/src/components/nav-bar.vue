@@ -1,9 +1,13 @@
 <script>
-import AuthLogin from '@/components/auth-login';
-import AuthLogout from '@/components/auth-logout';
+import AuthLogin from '@/components/auth-login.vue';
+import AuthLogout from '@/components/auth-logout.vue';
 
 export default {
   name: 'NavBar',
+  components: {
+    AuthLogin,
+    AuthLogout,
+  },
   data() {
     return {
       userInfo: {

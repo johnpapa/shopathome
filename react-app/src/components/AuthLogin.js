@@ -3,15 +3,10 @@ import React from 'react';
 export function AuthLogin(props) {
   const { provider } = props;
 
-  let host = window.location.host;
-  let pathname;
-  let redirect;
-  let url;
-
   function goAuth() {
-    pathname = window.location.pathname;
-    redirect = `post_login_redirect_uri=${host}${pathname}`;
-    url = `/.auth/login/${provider}?${redirect}`;
+    const { host, pathname } = window.location;
+    const redirect = `post_login_redirect_uri=${host}${pathname}`;
+    const url = `/.auth/login/${provider}?${redirect}`;
     window.location.href = url;
   }
 

@@ -26,7 +26,7 @@ import { UserInfo } from '../model';
             <app-auth-login [provider]="provider"></app-auth-login>
           </ng-container>
         </ng-container>
-        <a *ngIf="userInfo" href="/logout">Logout</a>
+        <app-auth-logout *ngIf="userInfo"></app-auth-logout>
         <div class="user" *ngIf="userInfo">
           <p>Welcome</p>
           <p>{{ userInfo?.userDetails }}</p>

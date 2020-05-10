@@ -6,11 +6,10 @@ import { Component, Input } from '@angular/core';
 })
 export class AuthLoginComponent {
   @Input() provider = '';
-  private host = window.location.host;
 
   goAuth() {
-    const pathname = window.location.pathname;
-    const redirect = `post_login_redirect_uri=${this.host}${pathname}`;
+    const { host, pathname } = window.location;
+    const redirect = `post_login_redirect_uri=${host}${pathname}`;
     const url = `/.auth/login/${this.provider}?${redirect}`;
     window.location.href = url;
   }

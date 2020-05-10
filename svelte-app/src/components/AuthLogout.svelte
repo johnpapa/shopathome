@@ -1,13 +1,8 @@
 <script>
-  let host = window.location.host;
-  let pathname;
-  let redirect;
-  let url;
-
   function goAuth() {
-    pathname = window.location.pathname;
-    redirect = `post_logout_redirect_uri=${host}${pathname}`;
-    url = `/.auth/logout?${redirect}`;
+    const { host, pathname } = window.location;
+    const redirect = `post_logout_redirect_uri=${host}${pathname}`;
+    const url = `/.auth/logout?${redirect}`;
     window.location.href = url;
   }
 </script>
