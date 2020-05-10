@@ -31,7 +31,7 @@ function Discounts() {
                         <label>Store:</label>
                         <span>{discount.store}</span>
                         <label>Discount:</label>
-                        <span>{discount.percentage}</span>
+                        <span>{discount.percentage}%</span>
                         <label>Code:</label>
                         <span>{discount.code}</span>
                       </div>

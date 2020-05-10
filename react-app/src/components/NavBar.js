@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { AuthRoute } from './AuthRoute';
+import { AuthLogin } from './AuthLogin';
+import { AuthLogout } from './AuthLogout';
 
 function NavBar(props) {
+  const providers = ['twitter', 'github', 'facebook'];
   const [userInfo, setUserInfo] = useState();
 
   useEffect(() => {
@@ -45,14 +47,14 @@ function NavBar(props) {
         <div className="menu-list auth">
           {!userInfo && (
             <div>
-              <AuthRoute provider="twitter"></AuthRoute>
-              <AuthRoute provider="github"></AuthRoute>
-              <AuthRoute provider="facebook"></AuthRoute>
+              {providers.map((provider) => (
+                <AuthLogin key={provider} provider={provider}></AuthLogin>
+              ))}
             </div>
           )}
           {userInfo && (
             <div>
-              <a href="/logout">Logout</a>
+              <AuthLogout></AuthLogout>
               <div className="user">
                 <p>Welcome</p>
                 <p>{userInfo && userInfo.userDetails}</p>

@@ -1,8 +1,6 @@
 import React from 'react';
 
-export function AuthRoute(props) {
-  const { provider } = props;
-
+export function AuthLogout() {
   let host = window.location.host;
   let pathname;
   let redirect;
@@ -11,9 +9,13 @@ export function AuthRoute(props) {
   function goAuth() {
     pathname = window.location.pathname;
     redirect = `post_login_redirect_uri=${host}${pathname}`;
-    url = `/.auth/login/${provider}?${redirect}`;
+    url = `/.auth/logout?${redirect}`;
     window.location.href = url;
   }
 
-  return <div className="auth-link" onClick={goAuth}>{provider}</div>;
+  return (
+    <div className="auth-link" onClick={goAuth}>
+      Logout
+    </div>
+  );
 }
