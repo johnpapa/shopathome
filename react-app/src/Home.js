@@ -3,7 +3,7 @@ import React from 'react';
 const Home = () => (
   <div className="content-container">
     <div className="content-title-group">
-      <h2 className="title">My Shopping List</h2>
+      <h2 className="title">Shop at Home</h2>
       <p>
         Manage your shopping list! Become a preferred customer and gain access
         to discount codes, too.

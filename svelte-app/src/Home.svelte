@@ -4,7 +4,7 @@
 
 <div class="content-container">
   <div class="content-title-group">
-    <h2 class="title">My Shopping List</h2>
+    <h2 class="title">Shop at Home</h2>
     <p>
       Manage your shopping list! Become a preferred customer and gain access to
       discount codes, too.
