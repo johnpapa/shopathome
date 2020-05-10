@@ -1,8 +1,5 @@
-import React from 'react';
-
-export function AuthRoute(props) {
-  const { provider } = props;
-
+<script>
+  export let provider = '';
   let host = window.location.host;
   let pathname;
   let redirect;
@@ -14,6 +11,6 @@ export function AuthRoute(props) {
     url = `/.auth/login/${provider}?${redirect}`;
     window.location.href = url;
   }
+</script>
 
-  return <div onClick={goAuth}>{provider}</div>;
-}
+<div on:click={goAuth}>{provider}</div>

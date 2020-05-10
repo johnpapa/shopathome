@@ -2,9 +2,11 @@
   import { getContext, onMount } from 'svelte';
   import { Router, Link, Route } from 'svelte-routing';
   import { ROUTER } from 'svelte-routing/src/contexts';
+  import AuthRoute from './AuthRoute.svelte';
 
   const { activeRoute } = getContext(ROUTER);
   let userInfo = undefined;
+  let providers = ['twitter', 'github', 'facebook'];
 
   onMount(async () => (userInfo = await getUserInfo()));
 
@@ -44,9 +46,9 @@
     <p class="menu-label">Auth</p>
     <div class="menu-list auth">
       {#if !userInfo}
-        <a href="/login/tw">Twitter</a>
-        <a href="/login/gh">GitHub</a>
-        <a href="/.auth/login/facebook">FaceBook</a>
+        {#each providers as provider (provider)}
+          <AuthRoute {provider} />
+        {/each}
       {/if}
       {#if userInfo}
         <a href="/logout">Logout</a>
