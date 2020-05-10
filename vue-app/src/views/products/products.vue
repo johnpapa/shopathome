@@ -26,8 +26,8 @@ export default {
     ProductDetail,
     Modal,
   },
-  created() {
-    this.getProducts();
+  async created() {
+    await this.getProducts();
   },
   computed: {
     ...mapGetters('products', { products: 'products' }),
@@ -66,10 +66,10 @@ export default {
     enableAddMode() {
       this.selected = {};
     },
-    getProducts() {
+    async getProducts() {
       this.errorMessage = undefined;
       try {
-        this.getProductsAction();
+        await this.getProductsAction();
       } catch (error) {
         this.errorMessage = 'Unauthorized';
       }
