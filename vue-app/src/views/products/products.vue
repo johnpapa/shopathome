@@ -11,8 +11,9 @@ export default {
   name: 'Products',
   data() {
     return {
-      productToDelete: null,
+      errorMessage: '',
       message: '',
+      productToDelete: null,
       routePath: '/products',
       selected: null,
       showModal: false,
