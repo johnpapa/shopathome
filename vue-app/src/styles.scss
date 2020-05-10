@@ -27,7 +27,7 @@ $light-gray: #777;
     > button.button {
       background-color: $shade-light;
       width: 170px;
-      border: 1px solid #ddd;
+      border: 1px solid $light-gray;
       &:hover {
         background-color: #eee;
         a {
