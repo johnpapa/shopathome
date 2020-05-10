@@ -60,7 +60,7 @@ export default {
       try {
         const response = await axios.put(
           `${API}/products/${product.id}`,
-          product
+          product,
         );
         const updatedproduct = parseItem(response, 200);
         commit(UPDATE_PRODUCT, updatedproduct);
