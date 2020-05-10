@@ -2,7 +2,7 @@
   import { getContext, onMount } from 'svelte';
   import { Router, Link, Route } from 'svelte-routing';
   import { ROUTER } from 'svelte-routing/src/contexts';
-  import AuthRoute from './AuthRoute.svelte';
+  import AuthLogin from './AuthLogin.svelte';
 
   const { activeRoute } = getContext(ROUTER);
   let userInfo = undefined;
@@ -47,7 +47,7 @@
     <div class="menu-list auth">
       {#if !userInfo}
         {#each providers as provider (provider)}
-          <AuthRoute {provider} />
+          <AuthLogin {provider} />
         {/each}
       {/if}
       {#if userInfo}
