@@ -3,6 +3,7 @@
   import { Router, Link, Route } from 'svelte-routing';
   import { ROUTER } from 'svelte-routing/src/contexts';
   import AuthLogin from './AuthLogin.svelte';
+  import AuthLogout from './AuthLogout.svelte';
 
   const { activeRoute } = getContext(ROUTER);
   let userInfo = undefined;
@@ -51,7 +52,7 @@
         {/each}
       {/if}
       {#if userInfo}
-        <a href="/logout">Logout</a>
+        <AuthLogout />
         <div class="user">
           <p>Welcome</p>
           <p>{userInfo && userInfo.userDetails}</p>
