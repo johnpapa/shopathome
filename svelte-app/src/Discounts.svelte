@@ -36,7 +36,7 @@
                   <label>Store:</label>
                   <span>{store}</span>
                   <label>Discount:</label>
-                  <span>{percentage}</span>
+                  <span>{percentage}%</span>
                   <label>Code:</label>
                   <span>{code}</span>
                 </div>

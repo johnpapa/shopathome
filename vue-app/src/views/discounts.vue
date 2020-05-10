@@ -48,7 +48,7 @@ export default {
             <div class="card-content">
               <div class="content discount-grid">
                 <label>Store:</label><span>{{ discount.store }}</span>
-                <label>Discount:</label><span>{{ discount.percentage }}</span>
+                <label>Discount:</label><span>{{ discount.percentage }}%</span>
                 <label>Code:</label><span>{{ discount.code }}</span>
               </div>
             </div>
