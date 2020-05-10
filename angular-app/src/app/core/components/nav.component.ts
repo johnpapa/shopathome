@@ -27,13 +27,13 @@ import { UserInfo } from '../model';
           </ng-container>
         </ng-container>
         <app-auth-logout *ngIf="userInfo"></app-auth-logout>
-        <div class="user" *ngIf="userInfo">
-          <p>Welcome</p>
-          <p>{{ userInfo?.userDetails }}</p>
-          <p>({{ userInfo?.identityProvider }})</p>
-        </div>
       </div>
     </nav>
+    <div class="user" *ngIf="userInfo">
+      <p>Welcome</p>
+      <p>{{ userInfo?.userDetails }}</p>
+      <p>{{ userInfo?.identityProvider }}</p>
+    </div>
   `,
 })
 export class NavComponent implements OnInit {

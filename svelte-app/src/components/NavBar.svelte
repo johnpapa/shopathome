@@ -53,12 +53,14 @@
       {/if}
       {#if userInfo}
         <AuthLogout />
-        <div class="user">
-          <p>Welcome</p>
-          <p>{userInfo && userInfo.userDetails}</p>
-          <p>({userInfo && userInfo.identityProvider})</p>
-        </div>
       {/if}
     </div>
   </nav>
+  {#if !userInfo}
+    <div class="user">
+      <p>Welcome</p>
+      <p>{userInfo && userInfo.userDetails}</p>
+      <p>{userInfo && userInfo.identityProvider}</p>
+    </div>
+  {/if}
 </div>

@@ -54,12 +54,12 @@ export default {
           </template>
         </template>
         <AuthLogout v-if="userInfo" />
-        <div class="user" v-if="userInfo">
-          <p>Welcome</p>
-          <p>{{ userInfo.userDetails }}</p>
-          <p>({{ userInfo.identityProvider }})</p>
-        </div>
       </div>
     </nav>
+    <div class="user" v-if="userInfo">
+      <p>Welcome</p>
+      <p>{{ userInfo.userDetails }}</p>
+      <p>{{ userInfo.identityProvider }}</p>
+    </div>
   </div>
 </template>

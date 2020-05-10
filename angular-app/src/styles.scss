@@ -54,9 +54,6 @@ $light-gray: #777;
     color: $primary;
     font-weight: bold;
   }
-  // @include until($tablet) {
-  //   display: none;
-  // }
   .menu-list {
     border-left: solid $primary-light 2px;
     .active-link,
@@ -71,10 +68,6 @@ $light-gray: #777;
   }
   &.auth {
     margin-top: 3em;
-    div.user {
-      padding: 0.1em 0.75em;
-      color: $light-gray;
-    }
     div.auth-link {
       cursor: pointer;
       padding: 0.5em 0.75em;
@@ -84,6 +77,14 @@ $light-gray: #777;
       }
     }
   }
+}
+
+.user {
+  color: $light-gray;
+  margin-top: 2em;
+  padding-top: 1em;
+  padding-left: 0.25em;
+  border-top: 1px solid #999;
 }
 
 .discount-grid {

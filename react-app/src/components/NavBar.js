@@ -55,15 +55,19 @@ function NavBar(props) {
           {userInfo && (
             <div>
               <AuthLogout></AuthLogout>
-              <div className="user">
-                <p>Welcome</p>
-                <p>{userInfo && userInfo.userDetails}</p>
-                <p>({userInfo && userInfo.identityProvider})</p>
-              </div>
             </div>
           )}
         </div>
       </nav>
+      {userInfo && (
+        <div>
+          <div className="user">
+            <p>Welcome</p>
+            <p>{userInfo && userInfo.userDetails}</p>
+            <p>{userInfo && userInfo.identityProvider}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
