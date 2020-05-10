@@ -1,4 +1,7 @@
 <script>
+import AuthLogin from '@/components/auth-login';
+import AuthLogout from '@/components/auth-logout';
+
 export default {
   name: 'NavBar',
   data() {
@@ -7,6 +10,7 @@ export default {
         type: Object,
         default() {},
       },
+      providers: ['twitter', 'github', 'facebook'],
     };
   },
   async created() {
@@ -40,10 +44,12 @@ export default {
     <nav class="menu auth">
       <p class="menu-label">Auth</p>
       <div class="menu-list auth">
-        <a v-if="!userInfo" href="/login/tw">Twitter</a>
-        <a v-if="!userInfo" href="/login/gh">GitHub</a>
-        <a v-if="!userInfo" href="/.auth/login/facebook">FaceBook</a>
-        <a v-if="userInfo" href="/logout">Logout</a>
+        <template v-if="!userInfo">
+          <template v-for="provider in providers">
+            <AuthLogin :provider="provider" />
+          </template>
+        </template>
+        <AuthLogout v-if="userInfo" />
         <div class="user" v-if="userInfo">
           <p>Welcome</p>
           <p>{{ userInfo.userDetails }}</p>
