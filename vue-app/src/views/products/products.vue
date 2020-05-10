@@ -27,7 +27,7 @@ export default {
     Modal,
   },
   created() {
-    this.getProductsAction();
+    this.getProducts();
   },
   computed: {
     ...mapGetters('products', { products: 'products' }),
