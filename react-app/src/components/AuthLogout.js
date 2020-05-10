@@ -8,7 +8,7 @@ export function AuthLogout() {
 
   function goAuth() {
     pathname = window.location.pathname;
-    redirect = `post_login_redirect_uri=${host}${pathname}`;
+    redirect = `post_logout_redirect_uri=${host}${pathname}`;
     url = `/.auth/logout?${redirect}`;
     window.location.href = url;
   }
