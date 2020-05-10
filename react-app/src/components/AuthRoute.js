@@ -15,5 +15,5 @@ export function AuthRoute(props) {
     window.location.href = url;
   }
 
-  return <div onClick={goAuth}>{provider}</div>;
+  return <div className="auth-link" onClick={goAuth}>{provider}</div>;
 }

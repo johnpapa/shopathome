@@ -13,4 +13,4 @@
   }
 </script>
 
-<div on:click={goAuth}>{provider}</div>
+<div class="auth-link" on:click={goAuth}>{provider}</div>

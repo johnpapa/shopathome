@@ -30,7 +30,9 @@ $light-gray: #777;
       border: 1px solid #ddd;
       &:hover {
         background-color: #eee;
-        a { color: $primary; }
+        a {
+          color: $primary;
+        }
       }
       a {
         color: $light-gray;
@@ -73,8 +75,10 @@ $light-gray: #777;
       padding: 0.1em 0.75em;
       color: $light-gray;
     }
-    div.auth {
-      > a:hover {
+    div.auth-link {
+      cursor: pointer;
+      padding: 0.5em 0.75em;
+      &:hover {
         background-color: $primary-light;
         color: #fff;
       }
