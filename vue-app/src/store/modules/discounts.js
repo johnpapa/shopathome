@@ -26,6 +26,7 @@ export default {
         return discounts;
       } catch (error) {
         captains.error(error);
+        throw new Error(error);
       }
     },
   },
