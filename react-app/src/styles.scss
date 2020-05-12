@@ -49,7 +49,12 @@ $light-gray: #777;
   }
 }
 
+.column.is-2 {
+  min-width: 130px;
+  margin-right: 1em;
+}
 .menu {
+  min-width: inherit;
   .menu-label {
     color: $primary;
     font-weight: bold;
