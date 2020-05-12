@@ -7,7 +7,7 @@
 
   const { activeRoute } = getContext(ROUTER);
   let userInfo = undefined;
-  const providers = ['twitter', 'github', 'facebook'];
+  const providers = ['twitter', 'github', 'aad', 'google', 'facebook'];
 
   onMount(async () => (userInfo = await getUserInfo()));
 

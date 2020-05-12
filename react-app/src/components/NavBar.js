@@ -4,7 +4,7 @@ import { AuthLogin } from './AuthLogin';
 import { AuthLogout } from './AuthLogout';
 
 function NavBar(props) {
-  const providers = ['twitter', 'github', 'facebook'];
+  const providers = ['twitter', 'github', 'aad', 'google', 'facebook'];
   const [userInfo, setUserInfo] = useState();
 
   useEffect(() => {

@@ -37,7 +37,7 @@ import { UserInfo } from '../model';
   `,
 })
 export class NavComponent implements OnInit {
-  providers = ['twitter', 'github', 'facebook'];
+  providers = ['twitter', 'github', 'aad', 'google', 'facebook'];
   userInfo: UserInfo;
 
   async ngOnInit() {
