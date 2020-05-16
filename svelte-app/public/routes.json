@@ -13,15 +13,11 @@
       "serve": "/.auth/logout"
     },
     {
-      "route": "/api/x/products/*",
+      "route": "/api/discounts",
       "allowedRoles": ["preferred"]
     },
     {
-      "route": "/api/products",
-      "allowedRoles": ["authenticated"]
-    },
-    {
-      "route": "/api/discounts",
+      "route": "/api/x/*",
       "allowedRoles": ["preferred"]
     },
     {
