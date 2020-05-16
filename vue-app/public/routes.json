@@ -9,16 +9,16 @@
       "statusCode": "404"
     },
     {
-      "route": "/logout",
-      "serve": "/.auth/logout"
-    },
-    {
-      "route": "/api/products",
-      "allowedRoles": ["authenticated"]
-    },
-    {
       "route": "/api/discounts",
       "allowedRoles": ["preferred"]
+    },
+    {
+      "route": "/api/x/*",
+      "allowedRoles": ["preferred"]
+    },
+    {
+      "route": "/api/*",
+      "allowedRoles": ["authenticated"]
     },
     {
       "route": "/*",

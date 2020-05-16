@@ -6,7 +6,7 @@
       "direction": "in",
       "name": "req",
       "methods": ["put"],
-      "route": "products/{id}"
+      "route": "x/products/{id}"
     },
     {
       "type": "http",
