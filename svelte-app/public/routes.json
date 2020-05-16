@@ -25,7 +25,7 @@
       "allowedRoles": ["preferred"]
     },
     {
-      "route": "/api",
+      "route": "/api/*",
       "allowedRoles": ["authenticated"]
     },
     {
