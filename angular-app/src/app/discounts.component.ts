@@ -8,9 +8,11 @@ import { DiscountService } from './discount.service';
   template: `
     <div class="container columns">
       <div *ngIf="discounts$ | async as discounts" class="column is-8">
-        <div class="content-title-group">
-          <h2 class="title">My Discounts</h2>
-        </div>
+        <app-list-header
+          title="My Discounts"
+          (refresh)="getDiscounts()"
+          [showAdd]="showAdd"
+        ></app-list-header>
         <div *ngIf="errorMessage">{{ errorMessage }}</div>
         <div *ngIf="!discounts?.length && !errorMessage">
           Loading data ...
@@ -42,6 +44,7 @@ import { DiscountService } from './discount.service';
 })
 export class DiscountComponent {
   errorMessage: string;
+  showAdd = false;
   discounts$: Observable<Discount[]>;
 
   constructor(private discountService: DiscountService) {
@@ -49,6 +52,10 @@ export class DiscountComponent {
   }
 
   ngOnInit() {
+    this.getDiscounts();
+  }
+
+  getDiscounts() {
     this.errorMessage = undefined;
     this.discountService.getAll().subscribe(
       (_) => {

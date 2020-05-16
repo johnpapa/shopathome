@@ -1,5 +1,6 @@
 <script>
 import { mapActions, mapGetters } from 'vuex';
+import ListHeader from '@/components/list-header.vue';
 
 export default {
   name: 'Discounts',
@@ -7,6 +8,9 @@ export default {
     return {
       errorMessage: '',
     };
+  },
+  components: {
+    ListHeader,
   },
   async created() {
     await this.getDiscounts();
@@ -31,9 +35,11 @@ export default {
 <template>
   <div class="container columns">
     <div v-if="discounts" class="column is-8">
-      <div class="content-title-group">
-        <h2 class="title">Discounts</h2>
-      </div>
+      <ListHeader
+        title="My Discounts"
+        @refresh="getDiscounts"
+        :showAdd="false"
+      ></ListHeader>
       <div v-if="errorMessage">{{ errorMessage }}</div>
       <div v-if="!discounts.length && !errorMessage">
         Loading data ...

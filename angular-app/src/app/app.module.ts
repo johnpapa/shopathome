@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { externalModules } from './build-specific';
 import { declarations } from './core';
 import { DiscountComponent } from './discounts.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, DiscountComponent, declarations],
@@ -18,6 +19,7 @@ import { DiscountComponent } from './discounts.component';
     HttpClientModule,
     RouterModule.forRoot(routes),
     AppStoreModule,
+    SharedModule,
     externalModules,
   ],
   bootstrap: [AppComponent],
