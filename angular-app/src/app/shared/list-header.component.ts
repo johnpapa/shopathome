@@ -5,9 +5,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   template: `
     <div class="content-title-group">
       <a router-link="/">
-        <h2 class="title">{{title}}</h2>
+        <h2 class="title">{{ title }}</h2>
       </a>
       <button
+        *ngIf="showAdd"
         class="button add-button"
         (click)="handleAdd()"
         aria-label="add"
@@ -22,10 +23,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
         <i class="fas fa-sync" aria-hidden="true"></i>
       </button>
     </div>
-  `
+  `,
 })
 export class ListHeaderComponent implements OnInit {
   @Input() title: string;
+  @Input() showAdd: boolean = true;
   @Output() add = new EventEmitter();
   @Output() refresh = new EventEmitter();
 

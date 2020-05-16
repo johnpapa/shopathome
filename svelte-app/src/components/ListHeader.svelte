@@ -5,6 +5,7 @@
   const dispatch = createEventDispatcher();
   export let title = '';
   export let routePath = '';
+  export let showAdd = true;
 
   function add() {
     dispatch('add');
@@ -15,9 +16,11 @@
   <Link to={routePath}>
     <h2 class="title">{title}</h2>
   </Link>
-  <button class="button add-button" on:click={() => add()} aria-label="add">
-    <i class="fas fa-plus" aria-hidden="true" />
-  </button>
+  {#if showAdd}
+    <button class="button add-button" on:click={() => add()} aria-label="add">
+      <i class="fas fa-plus" aria-hidden="true" />
+    </button>
+  {/if}
   <button
     class="button refresh-button"
     on:click={() => dispatch('refresh')}
