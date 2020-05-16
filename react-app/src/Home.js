@@ -25,7 +25,7 @@ const Home = () => (
         </button>
         <button className="button" aria-label="My Discounts">
           <a
-            href="https://github.com/johnpapa/b20"
+            href="https://github.com/johnpapa/shopathome"
             target="_blank"
             rel="noopener noreferrer"
           >

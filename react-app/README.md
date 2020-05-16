@@ -4,7 +4,7 @@ This project was created to help represent a fundamental app written with React.
 
 ## Getting Started
 
-1. Create a repository from this template repository <https://github.com/johnpapa/b20/generate>
+1. Create a repository from this template repository <https://github.com/johnpapa/shopathome/generate>
 
 1. Enter the name of your new repository as _my-static-web-app_
 

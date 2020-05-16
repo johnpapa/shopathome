@@ -4,7 +4,7 @@ This project is an Azure Functions app, that responds to GET, POST, PUT, and DEL
 
 ## Getting Started
 
-1. Create a repository from this template repository <https://github.com/johnpapa/b20/generate>
+1. Create a repository from this template repository <https://github.com/johnpapa/shopathome/generate>
 
 1. Enter the name of your new repository as _mslearn-staticwebapp_
 

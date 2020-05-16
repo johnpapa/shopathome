@@ -26,7 +26,7 @@
       </button>
       <button class="button" aria-label="My Discounts">
         <a
-          href="https://github.com/johnpapa/b20"
+          href="https://github.com/johnpapa/shopathome"
           target="_blank"
           rel="noopener noreferrer">
           <i class="fab fa-github" />
