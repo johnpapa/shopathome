@@ -24,13 +24,13 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match you app requirements. ######
-          app_location: "svelte-app" # App source code path 👈 Change this
+          app_location: "vue-app" # App source code path 👈 Change this
           api_location: "api" # Api source code path - optional
           # Built app content directory
           # app_artifact_location: 'dist/angular-app' # 👈 Angular
           # app_artifact_location: 'build' # 👈 React
-          app_artifact_location: "public" # 👈 Svelte
-          # app_artifact_location: 'dist' # 👈 Vue
+          # app_artifact_location: "public" # 👈 Svelte
+          app_artifact_location: "dist" # 👈 Vue
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
