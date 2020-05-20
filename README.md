@@ -4,6 +4,9 @@ This repository contains apps that can be used with as a starting point for some
 
 The Shop at Home theme is used throughout the app. View it live at <https://www.shopathome.dev>.
 
+
+[![Deploy to Azure button](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/?feature.customportal=false&WT.mc_id=build2020_swa-github-jopapa#create/Microsoft.StaticApp)
+
 ## Contents
 
 The apps written in the following JavaScript frameworks/libraries:
