@@ -17,7 +17,7 @@ The apps written in the following JavaScript frameworks/libraries:
 | folder          | Description                                                                                  |
 | --------------- | -------------------------------------------------------------------------------------------- |
 | **angular-app** | [Sample Angular app](https://github.com/johnpapa/shopathome/blob/master/angular-app)         |
-| **api-starter** | [Sample Azure Functions app](https://github.com/johnpapa/shopathome/blob/master/api-starter) |
+| **api** | [Sample Azure Functions app](https://github.com/johnpapa/shopathome/blob/master/api) |
 | **react-app**   | [Sample React app](https://github.com/johnpapa/shopathome/blob/master/react-app)             |
 | **svelte-app**  | [Sample Svelte app](https://github.com/johnpapa/shopathome/blob/master/svelte-app)           |
 | **vue-app**     | [Sample Vue app](https://github.com/johnpapa/shopathome/blob/master/vue-app)                 |
