@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import { ListHeader, Modal } from '../components';
   import ProductList from './ProductList.svelte';

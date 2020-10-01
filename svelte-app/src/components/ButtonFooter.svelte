@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher } from 'svelte';
 
   const dispatch = createEventDispatcher();
@@ -7,7 +7,7 @@
   export let className = '';
   export let label = '';
   export let dataIndex = 0;
-  export let dataId = '';
+  export let dataId: number = 0;
   export let iconClasses = '';
 
   function handleClick() {

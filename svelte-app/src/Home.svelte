@@ -1,5 +1,5 @@
-<script>
-  import { Router, Link, Route } from 'svelte-routing';
+<script lang="ts">
+  import { Link } from 'svelte-routing';
 </script>
 
 <div class="content-container">
@@ -13,10 +13,7 @@
     <br />
     <div class="button-group">
       <button class="button" aria-label="My List" tabindex="0">
-        <Link to="/products">
-          <i class="fas fa-clipboard-list" />
-          My List
-        </Link>
+        <Link to="/products"><i class="fas fa-clipboard-list" /> My List</Link>
       </button>
       <button class="button" aria-label="My Discounts">
         <Link to="/discounts">

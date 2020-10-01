@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import HeaderBarBrand from './HeaderBarBrand.svelte';
 </script>
 

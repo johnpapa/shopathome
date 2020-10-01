@@ -1,16 +1,17 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher } from 'svelte';
   import { ButtonFooter, CardContent } from '../components';
+  import { Product } from '../models';
 
   const dispatch = createEventDispatcher();
-  export let products = [];
+  export let products: Product[] = [];
   export let errorMessage = undefined;
 
-  function deleteProduct(product) {
+  function deleteProduct(product: Product): any {
     dispatch('deleted', product);
   }
 
-  function selectProduct(product) {
+  function selectProduct(product: Product): any {
     dispatch('selected', product);
   }
 
