@@ -7,11 +7,11 @@
   export let products: Product[] = [];
   export let errorMessage = undefined;
 
-  function deleteProduct(product: Product): any {
+  function deleteProduct(product: Product) {
     dispatch('deleted', product);
   }
 
-  function selectProduct(product: Product): any {
+  function selectProduct(product: Product) {
     dispatch('selected', product);
   }
 
@@ -46,13 +46,13 @@
               dataId={id}
               dataIndex={i}
               item={products[i]}
-              on:clicked={deleteProduct(products[i])} />
+              on:clicked={() => deleteProduct(products[i])} />
             <ButtonFooter
               {...editOptions}
               dataId={id}
               dataIndex={i}
               item={products[i]}
-              on:clicked={selectProduct(products[i])} />
+              on:clicked={() => selectProduct(products[i])} />
           </footer>
         </div>
       </li>
