@@ -4,7 +4,7 @@ import productsModule from './modules/products';
 
 export * from './modules/mutation-types';
 
-export default createStore({
+const store = createStore({
   strict: process.env.NODE_ENV !== 'production',
   modules: {
     products: productsModule,
@@ -12,5 +12,9 @@ export default createStore({
   },
   actions: {},
   mutiations: {},
-  state: {},
+  state() {
+    return {};
+  },
 });
+
+export default store;

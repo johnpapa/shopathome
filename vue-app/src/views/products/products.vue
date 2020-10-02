@@ -1,16 +1,24 @@
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { computed, onMounted, reactive, ref, toRefs } from 'vue';
 import ListHeader from '@/components/list-header.vue';
 import Modal from '@/components/modal.vue';
 import ProductDetail from './product-detail.vue';
 import ProductList from './product-list.vue';
+import store from '../../store';
 
 const captains = console;
 
 export default {
   name: 'Products',
-  data() {
-    return {
+  components: {
+    ListHeader,
+    ProductList,
+    ProductDetail,
+    Modal,
+  },
+
+  setup() {
+    const state = reactive({
       errorMessage: '',
       message: '',
       productToDelete: null,
@@ -18,74 +26,71 @@ export default {
       selected: null,
       showModal: false,
       title: 'My List',
+      count: 0,
+      products: computed(() => store.getters['products/products']),
+    });
+
+    const askToDelete = (product) => {
+      state.productToDelete = product;
+      state.showModal = true;
+      if (state.productToDelete.name) {
+        state.message = `Would you like to delete ${state.productToDelete.name}?`;
+        captains.log(state.message);
+      }
     };
-  },
-  components: {
-    ListHeader,
-    ProductList,
-    ProductDetail,
-    Modal,
-  },
-  async created() {
-    await this.getProducts();
-  },
-  computed: {
-    ...mapGetters('products', { products: 'products' }),
-  },
-  methods: {
-    ...mapActions('products', [
-      'getProductsAction',
-      'deleteProductAction',
-      'addProductAction',
-      'updateProductAction',
-    ]),
-    askToDelete(product) {
-      this.productToDelete = product;
-      this.showModal = true;
-      if (this.productToDelete.name) {
-        this.message = `Would you like to delete ${this.productToDelete.name}?`;
-        captains.log(this.message);
-      }
-    },
-    clear() {
-      this.selected = null;
-    },
-    closeModal() {
-      this.showModal = false;
-    },
-    deleteProduct() {
-      this.closeModal();
-      if (this.productToDelete) {
+    const clear = () => {
+      state.selected = ref(null);
+    };
+    const closeModal = () => {
+      state.showModal = false;
+    };
+    const deleteProduct = () => {
+      closeModal();
+      if (state.productToDelete) {
         captains.log(
-          `You said you want to delete ${this.productToDelete.name}`,
+          `You said you want to delete ${state.productToDelete.name}`,
         );
-        this.deleteProductAction(this.productToDelete);
+        store.dispatch('products/deleteProductAction', state.productToDelete);
       }
-      this.clear();
-    },
-    enableAddMode() {
-      this.selected = {};
-    },
-    async getProducts() {
-      this.errorMessage = undefined;
+      clear();
+    };
+    const enableAddMode = () => {
+      state.selected = ref({});
+    };
+    const getProducts = async () => {
+      state.errorMessage = undefined;
       try {
-        await this.getProductsAction();
+        store.dispatch('products/getProductsAction');
       } catch (error) {
-        this.errorMessage = 'Unauthorized';
+        state.errorMessage = 'Unauthorized';
       }
-      this.clear();
-    },
-    save(product) {
+      clear();
+    };
+    const save = (product) => {
       captains.log('product changed', product);
       if (product.id) {
-        this.updateProductAction(product);
+        store.dispatch('products/updateProductAction', product);
       } else {
-        this.addProductAction(product);
+        store.dispatch('products/addProductAction', product);
       }
-    },
-    select(product) {
-      this.selected = product;
-    },
+    };
+    const select = (p) => {
+      state.selected = ref(p);
+    };
+
+    onMounted(async () => getProducts());
+
+    return {
+      ...toRefs(state),
+      askToDelete,
+      clear,
+      closeModal,
+      deleteProduct,
+      enableAddMode,
+      getProducts,
+      save,
+      select,
+    };
   },
 };
 </script>
@@ -120,8 +125,8 @@ export default {
       class="modal-product"
       :message="message"
       :isOpen="showModal"
-      @handleNo="closeModal"
-      @handleYes="deleteProduct"
+      @handle-no="closeModal"
+      @handle-yes="deleteProduct"
     ></Modal>
   </div>
 </template>

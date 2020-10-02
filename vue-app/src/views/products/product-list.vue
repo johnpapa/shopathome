@@ -20,15 +20,17 @@ export default {
     CardContent,
     ButtonFooter,
   },
-  methods: {
-    deleteProduct(product) {
-      this.$emit('deleted', product);
+  setup(props, context) {
+    const deleteProduct = (product) => {
+      context.emit('deleted', product);
       captains.log(`You tried to delete ${product.name}`);
-    },
-    selectProduct(product) {
+    };
+    const selectProduct = (product) => {
       captains.log(`You tried to select ${product.name}`);
-      this.$emit('selected', product);
-    },
+      context.emit('selected', product);
+    };
+
+    return { deleteProduct, selectProduct };
   },
 };
 </script>

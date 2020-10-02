@@ -15,13 +15,17 @@ export default {
       default: () => true,
     },
   },
-  methods: {
-    handleAdd() {
-      this.$emit('add');
-    },
-    handleRefresh() {
-      this.$emit('refresh');
-    },
+  setup(props, context) {
+    const handleAdd = () => {
+      context.emit('add');
+    };
+    const handleRefresh = () => {
+      context.emit('refresh');
+    };
+    return {
+      handleAdd,
+      handleRefresh,
+    };
   },
 };
 </script>

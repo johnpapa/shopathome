@@ -4,5 +4,6 @@ import router from './router';
 import store from './store';
 
 // Vue.config.productionTip = false;
+const app = createApp(App);
 
-createApp(App).use(router).use(store).mount('#app');
+app.use(router).use(store).mount('#app');

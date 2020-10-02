@@ -1,4 +1,6 @@
 <script>
+import { toRefs } from 'vue';
+
 export default {
   name: 'AuthLogin',
   props: {
@@ -7,13 +9,19 @@ export default {
       default: () => '',
     },
   },
-  methods: {
-    goAuth() {
+  setup(props) {
+    const { provider } = toRefs(props);
+
+    const goAuth = () => {
       const { pathname } = window.location;
       const redirect = `post_login_redirect_uri=${pathname}`;
-      const url = `/.auth/login/${this.provider}?${redirect}`;
+      const url = `/.auth/login/${provider.value}?${redirect}`;
       window.location.href = url;
-    },
+    };
+
+    return {
+      goAuth,
+    };
   },
 };
 </script>

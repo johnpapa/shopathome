@@ -4,9 +4,6 @@ import NavBar from '@/components/nav-bar.vue';
 
 export default {
   name: 'App',
-  data() {
-    return {};
-  },
   components: {
     HeaderBar,
     NavBar,

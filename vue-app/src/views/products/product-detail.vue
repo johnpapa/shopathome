@@ -1,4 +1,5 @@
 <script>
+import { reactive, toRefs, watch } from 'vue';
 import ButtonFooter from '@/components/button-footer.vue';
 
 export default {
@@ -10,31 +11,33 @@ export default {
     },
   },
   components: { ButtonFooter },
-  data() {
-    return {
+  setup(props, context) {
+    const { product } = toRefs(props);
+    const state = reactive({
       addMode: false,
-      editingProduct: { ...this.product },
-    };
-  },
-  watch: {
-    product() {
-      if (this.product && this.product.id) {
-        this.editingProduct = { ...this.product };
-        this.addMode = false;
+      editingProduct: { ...product.value },
+    });
+
+    watch(product, (/* newValue, oldValue */) => {
+      if (product && product.id) {
+        state.editingProduct = { ...product };
+        state.addMode = false;
       } else {
-        this.editingProduct = { id: undefined, name: '', description: '' };
-        this.addMode = true;
+        state.editingProduct = { id: undefined, name: '', description: '' };
+        state.addMode = true;
       }
-    },
-  },
-  methods: {
-    clear() {
-      this.$emit('unselect');
-    },
-    saveProduct() {
-      this.$emit('save', this.editingProduct);
-      this.clear();
-    },
+    });
+
+    const clear = () => {
+      context.emit('unselect');
+    };
+
+    const saveProduct = () => {
+      context.emit('save', state.editingProduct);
+      clear();
+    };
+
+    return { ...toRefs(state), clear, saveProduct };
   },
 };
 </script>

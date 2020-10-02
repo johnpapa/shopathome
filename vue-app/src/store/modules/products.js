@@ -47,7 +47,7 @@ export default {
     },
     async deleteProductAction({ commit }, product) {
       try {
-        const response = await axios.delete(`${API}/products/${product.id}`);
+        const response = await axios.delete(`${API}/x/products/${product.id}`);
         parseItem(response, 200);
         commit(DELETE_PRODUCT, product);
         return null;
@@ -59,7 +59,7 @@ export default {
     async updateProductAction({ commit }, product) {
       try {
         const response = await axios.put(
-          `${API}/products/${product.id}`,
+          `${API}/x/products/${product.id}`,
           product,
         );
         const updatedproduct = parseItem(response, 200);
@@ -72,7 +72,7 @@ export default {
     },
     async addProductAction({ commit }, product) {
       try {
-        const response = await axios.post(`${API}/products`, product);
+        const response = await axios.post(`${API}/x/products`, product);
         const addedProduct = parseItem(response, 201);
         commit(ADD_PRODUCT, addedProduct);
         return addedProduct;

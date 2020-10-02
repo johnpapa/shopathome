@@ -1,4 +1,6 @@
 <script>
+import { toRefs } from 'vue';
+
 export default {
   name: 'ButtonFooter',
   props: {
@@ -26,10 +28,13 @@ export default {
       default: () => '',
     },
   },
-  methods: {
-    handleClick() {
-      this.$emit('clicked', this.item);
-    },
+  setup(props, context) {
+    const { item } = toRefs(props);
+
+    const handleClick = () => {
+      context.emit('clicked', item);
+    };
+    return { handleClick };
   },
 };
 </script>

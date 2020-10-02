@@ -30,8 +30,12 @@ const routes = [
   },
   { path: '/:pathMatch(.*)*', name: 'not-found', component: PageNotFound },
 ];
+
 const base = process.env.BASE_URL;
-export default createRouter({
+
+const router = createRouter({
   history: createWebHistory(base),
   routes,
 });
+
+export default router;

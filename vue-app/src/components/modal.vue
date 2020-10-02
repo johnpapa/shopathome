@@ -11,13 +11,17 @@ export default {
       default: () => false,
     },
   },
-  methods: {
-    onNo() {
-      this.$emit('handle-no');
-    },
-    onYes() {
-      this.$emit('handle-yes');
-    },
+  setup(props, context) {
+    const onNo = () => {
+      context.emit('handle-no');
+    };
+    const onYes = () => {
+      context.emit('handle-yes');
+    };
+    return {
+      onNo,
+      onYes,
+    };
   },
 };
 </script>

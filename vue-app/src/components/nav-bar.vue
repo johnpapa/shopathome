@@ -1,6 +1,19 @@
 <script>
+import { onMounted, ref } from 'vue';
 import AuthLogin from '@/components/auth-login.vue';
 import AuthLogout from '@/components/auth-logout.vue';
+
+const getUserInfo = async () => {
+  try {
+    const response = await fetch('/.auth/me');
+    const payload = await response.json();
+    const { clientPrincipal } = payload;
+    return clientPrincipal;
+  } catch (error) {
+    console.error('No profile could be found');
+    return undefined;
+  }
+};
 
 export default {
   name: 'NavBar',
@@ -8,30 +21,19 @@ export default {
     AuthLogin,
     AuthLogout,
   },
-  data() {
+  setup() {
+    const userInfo = ref({});
+    const providers = ref(['twitter', 'github', 'aad', 'google', 'facebook']);
+
+    onMounted(async () => {
+      userInfo.value = await getUserInfo();
+    });
+
     return {
-      userInfo: {
-        type: Object,
-        default() {},
-      },
-      providers: ['twitter', 'github', 'aad', 'google', 'facebook'],
+      getUserInfo,
+      providers,
+      userInfo,
     };
-  },
-  async created() {
-    this.userInfo = await this.getUserInfo();
-  },
-  methods: {
-    async getUserInfo() {
-      try {
-        const response = await fetch('/.auth/me');
-        const payload = await response.json();
-        const { clientPrincipal } = payload;
-        return clientPrincipal;
-      } catch (error) {
-        console.error('No profile could be found');
-        return undefined;
-      }
-    },
   },
 };
 </script>
