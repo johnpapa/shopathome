@@ -35,19 +35,5 @@
     "prettier": "^2.1.2",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.12"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
   }
 }
