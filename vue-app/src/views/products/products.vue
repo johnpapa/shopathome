@@ -1,5 +1,5 @@
 <script>
-import { computed, onMounted, reactive, ref, toRefs } from 'vue';
+import { computed, onMounted, reactive, toRefs } from 'vue';
 import ListHeader from '@/components/list-header.vue';
 import Modal from '@/components/modal.vue';
 import ProductDetail from '@/views/products/product-detail.vue';
@@ -40,7 +40,7 @@ export default {
     }
     function clear() {
       state.productToDelete = null; // ref(null); // should clear wait?
-      state.selected = ref(null);
+      state.selected = null; // ref(null);
       state.message = '';
     }
     function closeModal() {
@@ -57,7 +57,7 @@ export default {
       clear();
     }
     function enableAddMode() {
-      state.selected = ref({});
+      state.selected = {}; // ref({});
     }
     async function getProducts() {
       state.errorMessage = '';
@@ -77,7 +77,7 @@ export default {
       }
     }
     function select(p) {
-      state.selected = ref(p);
+      state.selected = p; // ref(p);
     }
 
     onMounted(async () => getProducts());
