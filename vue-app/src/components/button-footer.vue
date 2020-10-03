@@ -31,9 +31,10 @@ export default {
   setup(props, context) {
     const { item } = toRefs(props);
 
-    const handleClick = () => {
+    function handleClick() {
       context.emit('clicked', item);
-    };
+    }
+
     return { handleClick };
   },
 };

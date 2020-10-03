@@ -1,7 +1,7 @@
 <script>
 import { computed, onMounted, reactive, toRefs } from 'vue';
 import ListHeader from '@/components/list-header.vue';
-import store from '../store';
+import store from '@/store';
 
 export default {
   name: 'Discounts',
@@ -11,7 +11,8 @@ export default {
       errorMessage: '',
       discounts: computed(() => store.getters['discounts/discounts']),
     });
-    const getDiscounts = async () => {
+
+    async function getDiscounts() {
       state.errorMessage = undefined;
       try {
         store.dispatch('discounts/getDiscountsAction');
@@ -19,7 +20,7 @@ export default {
         console.error(error);
         state.errorMessage = 'Unauthorized';
       }
-    };
+    }
 
     onMounted(getDiscounts);
 

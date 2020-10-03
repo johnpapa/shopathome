@@ -2,9 +2,9 @@
 import { computed, onMounted, reactive, ref, toRefs } from 'vue';
 import ListHeader from '@/components/list-header.vue';
 import Modal from '@/components/modal.vue';
-import ProductDetail from './product-detail.vue';
-import ProductList from './product-list.vue';
-import store from '../../store';
+import ProductDetail from '@/views/products/product-detail.vue';
+import ProductList from '@/views/products/product-list.vue';
+import store from '@/store';
 
 const captains = console;
 
@@ -30,21 +30,23 @@ export default {
       products: computed(() => store.getters['products/products']),
     });
 
-    const askToDelete = (product) => {
-      state.productToDelete = product;
+    function askToDelete(p) {
+      state.productToDelete = p; // ref(product);
       state.showModal = true;
       if (state.productToDelete.name) {
         state.message = `Would you like to delete ${state.productToDelete.name}?`;
         captains.log(state.message);
       }
-    };
-    const clear = () => {
+    }
+    function clear() {
+      state.productToDelete = null; // ref(null); // should clear wait?
       state.selected = ref(null);
-    };
-    const closeModal = () => {
+      state.message = '';
+    }
+    function closeModal() {
       state.showModal = false;
-    };
-    const deleteProduct = () => {
+    }
+    function deleteProduct() {
       closeModal();
       if (state.productToDelete) {
         captains.log(
@@ -53,30 +55,30 @@ export default {
         store.dispatch('products/deleteProductAction', state.productToDelete);
       }
       clear();
-    };
-    const enableAddMode = () => {
+    }
+    function enableAddMode() {
       state.selected = ref({});
-    };
-    const getProducts = async () => {
-      state.errorMessage = undefined;
+    }
+    async function getProducts() {
+      state.errorMessage = '';
       try {
         store.dispatch('products/getProductsAction');
       } catch (error) {
         state.errorMessage = 'Unauthorized';
       }
       clear();
-    };
-    const save = (product) => {
-      captains.log('product changed', product);
-      if (product.id) {
-        store.dispatch('products/updateProductAction', product);
+    }
+    function save(p) {
+      captains.log('product changed', p);
+      if (p.id) {
+        store.dispatch('products/updateProductAction', p);
       } else {
-        store.dispatch('products/addProductAction', product);
+        store.dispatch('products/addProductAction', p);
       }
-    };
-    const select = (p) => {
+    }
+    function select(p) {
       state.selected = ref(p);
-    };
+    }
 
     onMounted(async () => getProducts());
 

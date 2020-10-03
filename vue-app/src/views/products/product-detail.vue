@@ -28,14 +28,14 @@ export default {
       }
     });
 
-    const clear = () => {
+    function clear() {
       context.emit('unselect');
-    };
+    }
 
-    const saveProduct = () => {
+    function saveProduct() {
       context.emit('save', state.editingProduct);
       clear();
-    };
+    }
 
     return { ...toRefs(state), clear, saveProduct };
   },

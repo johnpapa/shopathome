@@ -16,12 +16,14 @@ export default {
     },
   },
   setup(props, context) {
-    const handleAdd = () => {
+    function handleAdd() {
       context.emit('add');
-    };
-    const handleRefresh = () => {
+    }
+
+    function handleRefresh() {
       context.emit('refresh');
-    };
+    }
+
     return {
       handleAdd,
       handleRefresh,

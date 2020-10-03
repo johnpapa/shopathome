@@ -21,14 +21,14 @@ export default {
     ButtonFooter,
   },
   setup(props, context) {
-    const deleteProduct = (product) => {
-      context.emit('deleted', product);
-      captains.log(`You tried to delete ${product.name}`);
-    };
-    const selectProduct = (product) => {
-      captains.log(`You tried to select ${product.name}`);
-      context.emit('selected', product);
-    };
+    function deleteProduct(p) {
+      context.emit('deleted', p);
+      captains.log(`You tried to delete ${p.name}`);
+    }
+    function selectProduct(p) {
+      captains.log(`You tried to select ${p.name}`);
+      context.emit('selected', p);
+    }
 
     return { deleteProduct, selectProduct };
   },

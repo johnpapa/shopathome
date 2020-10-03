@@ -12,12 +12,14 @@ export default {
     },
   },
   setup(props, context) {
-    const onNo = () => {
+    function onNo() {
       context.emit('handle-no');
-    };
-    const onYes = () => {
+    }
+
+    function onYes() {
       context.emit('handle-yes');
-    };
+    }
+
     return {
       onNo,
       onYes,

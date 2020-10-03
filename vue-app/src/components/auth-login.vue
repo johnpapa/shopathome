@@ -12,12 +12,12 @@ export default {
   setup(props) {
     const { provider } = toRefs(props);
 
-    const goAuth = () => {
+    function goAuth() {
       const { pathname } = window.location;
       const redirect = `post_login_redirect_uri=${pathname}`;
       const url = `/.auth/login/${provider.value}?${redirect}`;
       window.location.href = url;
-    };
+    }
 
     return {
       goAuth,
