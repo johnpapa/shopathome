@@ -1,5 +1,5 @@
 <script>
-import { onMounted, ref } from 'vue';
+import { onMounted, reactive, toRefs } from 'vue';
 import AuthLogin from '@/components/auth-login.vue';
 import AuthLogout from '@/components/auth-logout.vue';
 
@@ -22,17 +22,18 @@ export default {
     AuthLogout,
   },
   setup() {
-    const userInfo = ref({});
-    const providers = ref(['twitter', 'github', 'aad', 'google', 'facebook']);
+    const state = reactive({
+      userInfo: {},
+      providers: ['twitter', 'github', 'aad', 'google', 'facebook'],
+    });
 
     onMounted(async () => {
-      userInfo.value = await getUserInfo();
+      state.userInfo = await getUserInfo();
     });
 
     return {
       getUserInfo,
-      providers,
-      userInfo,
+      ...toRefs(state),
     };
   },
 };

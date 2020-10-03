@@ -54,7 +54,7 @@ export default {
             <ButtonFooter
               class="delete-item"
               iconClasses="fas fa-trash"
-              @clicked="deleteProduct"
+              @clicked="deleteProduct(product)"
               label="Delete"
               :dataIndex="index"
               :dataId="product.id"
@@ -63,7 +63,7 @@ export default {
             <ButtonFooter
               class="edit-item"
               iconClasses="fas fa-edit"
-              @clicked="selectProduct"
+              @clicked="selectProduct(product)"
               label="Edit"
               :dataIndex="index"
               :dataId="product.id"
