@@ -15,7 +15,7 @@ export default {
     async function getDiscounts() {
       state.errorMessage = undefined;
       try {
-        store.dispatch('discounts/getDiscountsAction');
+        await store.dispatch('discounts/getDiscountsAction');
       } catch (error) {
         console.error(error);
         state.errorMessage = 'Unauthorized';

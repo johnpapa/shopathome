@@ -46,13 +46,16 @@ export default {
     function closeModal() {
       state.showModal = false;
     }
-    function deleteProduct() {
+    async function deleteProduct() {
       closeModal();
       if (state.productToDelete) {
         captains.log(
           `You said you want to delete ${state.productToDelete.name}`,
         );
-        store.dispatch('products/deleteProductAction', state.productToDelete);
+        await store.dispatch(
+          'products/deleteProductAction',
+          state.productToDelete,
+        );
       }
       clear();
     }
@@ -62,18 +65,18 @@ export default {
     async function getProducts() {
       state.errorMessage = '';
       try {
-        store.dispatch('products/getProductsAction');
+        await store.dispatch('products/getProductsAction');
       } catch (error) {
         state.errorMessage = 'Unauthorized';
       }
       clear();
     }
-    function save(p) {
+    async function save(p) {
       captains.log('product changed', p);
       if (p.id) {
-        store.dispatch('products/updateProductAction', p);
+        await store.dispatch('products/updateProductAction', p);
       } else {
-        store.dispatch('products/addProductAction', p);
+        await store.dispatch('products/addProductAction', p);
       }
     }
     function select(p) {
