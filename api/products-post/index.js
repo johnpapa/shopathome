@@ -5,6 +5,7 @@ module.exports = async function (context, req) {
     id: undefined,
     name: req.body.name,
     description: req.body.description,
+    quantity: parseInt(req.body.quantity, 10),
   };
 
   try {
