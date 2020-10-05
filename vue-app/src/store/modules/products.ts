@@ -15,7 +15,7 @@ const captains = console;
 
 export default {
   strict: process.env.NODE_ENV !== 'production',
-  namespaced: true,
+  // namespaced: true,
   state: {
     products: [],
   },

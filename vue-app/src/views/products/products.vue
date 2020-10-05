@@ -40,7 +40,7 @@ export default defineComponent({
       showModal: false,
       title: 'My List',
       count: 0,
-      products: computed(() => store.getters['products/products'] as Product[]),
+      products: computed(() => store.getters.products as Product[]),
     });
 
     function askToDelete(p: Product) {
@@ -65,10 +65,7 @@ export default defineComponent({
         captains.log(
           `You said you want to delete ${state.productToDelete.name}`,
         );
-        await store.dispatch(
-          'products/deleteProductAction',
-          state.productToDelete,
-        );
+        await store.dispatch('deleteProductAction', state.productToDelete);
       }
       clear();
     }
@@ -78,7 +75,7 @@ export default defineComponent({
     async function getProducts() {
       state.errorMessage = '';
       try {
-        await store.dispatch('products/getProductsAction');
+        await store.dispatch('getProductsAction');
       } catch (error) {
         state.errorMessage = 'Unauthorized';
       }
@@ -87,9 +84,9 @@ export default defineComponent({
     async function save(p: Product) {
       captains.log('product changed', p);
       if (p.id) {
-        await store.dispatch('products/updateProductAction', p);
+        await store.dispatch('updateProductAction', p);
       } else {
-        await store.dispatch('products/addProductAction', p);
+        await store.dispatch('addProductAction', p);
       }
     }
     function select(p: Product) {

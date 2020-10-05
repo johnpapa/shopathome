@@ -15,13 +15,13 @@ export default defineComponent({
   setup(/* props, context */) {
     const state: ComponentState = reactive({
       errorMessage: '',
-      discounts: computed(() => store.getters['discounts/discounts']),
+      discounts: computed(() => store.getters.discounts),
     });
 
     async function getDiscounts() {
       state.errorMessage = '';
       try {
-        await store.dispatch('discounts/getDiscountsAction');
+        await store.dispatch('getDiscountsAction');
       } catch (error) {
         console.error(error);
         state.errorMessage = 'Unauthorized';
