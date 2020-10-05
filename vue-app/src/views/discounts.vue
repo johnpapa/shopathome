@@ -1,19 +1,25 @@
-<script>
-import { computed, onMounted, reactive, toRefs } from 'vue';
+<script lang="ts">
+import { computed, defineComponent, onMounted, reactive, toRefs } from 'vue';
 import ListHeader from '@/components/list-header.vue';
-import store from '@/store';
+import store from '../store';
+import type { Discount } from '../store/modules/models';
 
-export default {
+interface ComponentState {
+  errorMessage: string;
+  discounts: Discount[];
+}
+
+export default defineComponent({
   name: 'Discounts',
   components: { ListHeader },
   setup(/* props, context */) {
-    const state = reactive({
+    const state: ComponentState = reactive({
       errorMessage: '',
       discounts: computed(() => store.getters['discounts/discounts']),
     });
 
     async function getDiscounts() {
-      state.errorMessage = undefined;
+      state.errorMessage = '';
       try {
         await store.dispatch('discounts/getDiscountsAction');
       } catch (error) {
@@ -29,7 +35,7 @@ export default {
       getDiscounts,
     };
   },
-};
+});
 </script>
 
 <template>

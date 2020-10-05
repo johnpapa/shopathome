@@ -5,7 +5,7 @@ module.exports = async function (context, req) {
     id: parseInt(req.params.id, 10),
     name: req.body.name,
     description: req.body.description,
-    quantity: req.body.quantity,
+    quantity: parseInt(req.body.quantity, 10),
   };
 
   try {

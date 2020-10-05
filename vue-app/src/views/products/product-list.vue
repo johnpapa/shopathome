@@ -1,15 +1,16 @@
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import ButtonFooter from '@/components/button-footer.vue';
 import CardContent from '@/components/card-content.vue';
+import type { Product } from '../../store/modules/models';
 
 const captains = console;
 
-export default {
+export default defineComponent({
   name: 'ProductList',
   props: {
     products: {
-      type: Array,
-      default: () => [],
+      type: Array as () => Array<Product>,
     },
     errorMessage: {
       type: String,
@@ -21,18 +22,18 @@ export default {
     ButtonFooter,
   },
   setup(props, context) {
-    function deleteProduct(p) {
+    function deleteProduct(p: Product) {
       context.emit('deleted', p);
       captains.log(`You tried to delete ${p.name}`);
     }
-    function selectProduct(p) {
+    function selectProduct(p: Product) {
       captains.log(`You tried to select ${p.name}`);
       context.emit('selected', p);
     }
 
     return { deleteProduct, selectProduct };
   },
-};
+});
 </script>
 
 <template>

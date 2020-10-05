@@ -1,29 +1,47 @@
-<script>
-import { reactive, toRefs, watch } from 'vue';
+<script lang="ts">
+import { defineComponent, reactive, toRefs, watch } from 'vue';
+import type { SetupContext } from 'vue';
 import ButtonFooter from '@/components/button-footer.vue';
+import { Product } from '../../store/modules/models';
 
-export default {
+interface Props {
+  product: Product;
+}
+
+interface ComponentState {
+  addMode: boolean;
+  editingProduct: Product;
+}
+
+export default defineComponent({
   name: 'ProductDetail',
   props: {
     product: {
-      type: Object,
-      default() {},
+      type: Product,
+      default() {
+        return new Product(0);
+      },
     },
   },
   components: { ButtonFooter },
-  setup(props, context) {
+  setup(props: Props, context: SetupContext) {
     const { product } = toRefs(props);
-    const state = reactive({
+    const state: ComponentState = reactive({
       addMode: false,
       editingProduct: { ...product.value },
     });
 
     watch(product, (/* newValue, oldValue */) => {
-      if (product && product.id) {
-        state.editingProduct = { ...product };
+      if (product.value && product.value.id) {
+        state.editingProduct = { ...product.value };
         state.addMode = false;
       } else {
-        state.editingProduct = { id: undefined, name: '', description: '' };
+        state.editingProduct = {
+          id: 0,
+          name: '',
+          description: '',
+          quantity: 0,
+        };
         state.addMode = true;
       }
     });
@@ -39,7 +57,7 @@ export default {
 
     return { ...toRefs(state), clear, saveProduct };
   },
-};
+});
 </script>
 
 <template>

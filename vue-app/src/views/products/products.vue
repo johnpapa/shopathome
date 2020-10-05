@@ -1,14 +1,27 @@
-<script>
-import { computed, onMounted, reactive, toRefs } from 'vue';
+<script lang="ts">
+import { computed, defineComponent, onMounted, reactive, toRefs } from 'vue';
 import ListHeader from '@/components/list-header.vue';
 import Modal from '@/components/modal.vue';
 import ProductDetail from '@/views/products/product-detail.vue';
 import ProductList from '@/views/products/product-list.vue';
-import store from '@/store';
+import store from '../../store';
+import { Product } from '../../store/modules/models';
 
 const captains = console;
 
-export default {
+interface ComponentState {
+  errorMessage: string;
+  message: string;
+  productToDelete: Product | null;
+  routePath: string;
+  selected: Product | null;
+  showModal: boolean;
+  title: string;
+  count: number;
+  products: Product[];
+}
+
+export default defineComponent({
   name: 'Products',
   components: {
     ListHeader,
@@ -18,7 +31,7 @@ export default {
   },
 
   setup() {
-    const state = reactive({
+    const state: ComponentState = reactive({
       errorMessage: '',
       message: '',
       productToDelete: null,
@@ -27,11 +40,11 @@ export default {
       showModal: false,
       title: 'My List',
       count: 0,
-      products: computed(() => store.getters['products/products']),
+      products: computed(() => store.getters['products/products'] as Product[]),
     });
 
-    function askToDelete(p) {
-      state.productToDelete = p; // ref(product);
+    function askToDelete(p: Product) {
+      state.productToDelete = p;
       state.showModal = true;
       if (state.productToDelete.name) {
         state.message = `Would you like to delete ${state.productToDelete.name}?`;
@@ -39,8 +52,8 @@ export default {
       }
     }
     function clear() {
-      state.productToDelete = null; // ref(null); // should clear wait?
-      state.selected = null; // ref(null);
+      state.productToDelete = null;
+      state.selected = null;
       state.message = '';
     }
     function closeModal() {
@@ -60,7 +73,7 @@ export default {
       clear();
     }
     function enableAddMode() {
-      state.selected = {}; // ref({});
+      state.selected = new Product(0);
     }
     async function getProducts() {
       state.errorMessage = '';
@@ -71,7 +84,7 @@ export default {
       }
       clear();
     }
-    async function save(p) {
+    async function save(p: Product) {
       captains.log('product changed', p);
       if (p.id) {
         await store.dispatch('products/updateProductAction', p);
@@ -79,8 +92,8 @@ export default {
         await store.dispatch('products/addProductAction', p);
       }
     }
-    function select(p) {
-      state.selected = p; // ref(p);
+    function select(p: Product) {
+      state.selected = p;
     }
 
     onMounted(async () => getProducts());
@@ -97,7 +110,7 @@ export default {
       select,
     };
   },
-};
+});
 </script>
 
 <template>

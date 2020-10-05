@@ -1,8 +1,9 @@
 import { createStore } from 'vuex';
 import discountsModule from './modules/discounts';
 import productsModule from './modules/products';
+import type { RootState } from './modules/types';
 
-export * from './modules/mutation-types';
+export * from './modules/types';
 
 const store = createStore({
   strict: process.env.NODE_ENV !== 'production',
@@ -11,9 +12,9 @@ const store = createStore({
     discounts: discountsModule,
   },
   actions: {},
-  mutiations: {},
+  mutations: {},
   state() {
-    return {};
+    return {} as RootState;
   },
 });
 
