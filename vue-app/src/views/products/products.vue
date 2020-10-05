@@ -27,11 +27,11 @@ export default {
       showModal: false,
       title: 'My List',
       count: 0,
-      products: computed(() => store.getters['products/products']),
+      products: computed(() => store.getters.products),
     });
 
     function askToDelete(p) {
-      state.productToDelete = p; // ref(product);
+      state.productToDelete = p;
       state.showModal = true;
       if (state.productToDelete.name) {
         state.message = `Would you like to delete ${state.productToDelete.name}?`;
@@ -39,8 +39,8 @@ export default {
       }
     }
     function clear() {
-      state.productToDelete = null; // ref(null); // should clear wait?
-      state.selected = null; // ref(null);
+      state.productToDelete = null;
+      state.selected = null;
       state.message = '';
     }
     function closeModal() {
@@ -52,20 +52,17 @@ export default {
         captains.log(
           `You said you want to delete ${state.productToDelete.name}`,
         );
-        await store.dispatch(
-          'products/deleteProductAction',
-          state.productToDelete,
-        );
+        await store.dispatch('deleteProductAction', state.productToDelete);
       }
       clear();
     }
     function enableAddMode() {
-      state.selected = {}; // ref({});
+      state.selected = {};
     }
     async function getProducts() {
       state.errorMessage = '';
       try {
-        await store.dispatch('products/getProductsAction');
+        await store.dispatch('getProductsAction');
       } catch (error) {
         state.errorMessage = 'Unauthorized';
       }
@@ -74,13 +71,13 @@ export default {
     async function save(p) {
       captains.log('product changed', p);
       if (p.id) {
-        await store.dispatch('products/updateProductAction', p);
+        await store.dispatch('updateProductAction', p);
       } else {
-        await store.dispatch('products/addProductAction', p);
+        await store.dispatch('addProductAction', p);
       }
     }
     function select(p) {
-      state.selected = p; // ref(p);
+      state.selected = p;
     }
 
     onMounted(async () => getProducts());

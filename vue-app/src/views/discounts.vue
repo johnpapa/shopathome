@@ -9,13 +9,13 @@ export default {
   setup(/* props, context */) {
     const state = reactive({
       errorMessage: '',
-      discounts: computed(() => store.getters['discounts/discounts']),
+      discounts: computed(() => store.getters.discounts),
     });
 
     async function getDiscounts() {
       state.errorMessage = undefined;
       try {
-        await store.dispatch('discounts/getDiscountsAction');
+        await store.dispatch('getDiscountsAction');
       } catch (error) {
         console.error(error);
         state.errorMessage = 'Unauthorized';
