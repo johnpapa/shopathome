@@ -44,7 +44,6 @@
     showModal = false;
   }
 
-  // testing lint-staged
   async function deleteProduct() {
     closeModal();
     if (productToDelete) {
