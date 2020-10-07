@@ -9,7 +9,7 @@
   function onNo() {
     dispatch('handleNo');
   }
-  
+
   function onYes() {
     dispatch('handleYes');
   }
