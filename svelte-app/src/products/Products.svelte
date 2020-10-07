@@ -44,6 +44,8 @@
     showModal = false;
   }
 
+
+// testing
 async function deleteProduct() {
     closeModal();
     if (productToDelete) {
@@ -62,7 +64,7 @@ async function deleteProduct() {
     }
   }
 
-async function save({ detail: product }) {
+  async function save({ detail: product }) {
     console.log('product changed', product);
     if (product.id) {
       await updateProductAction(product);
