@@ -5,8 +5,7 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public --cors --single",
-    "validate": "svelte-check",
-    "pretty": "npx prettier src/. --write"
+    "validate": "svelte-check"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",
@@ -37,7 +36,10 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run pretty"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
   }
 }
