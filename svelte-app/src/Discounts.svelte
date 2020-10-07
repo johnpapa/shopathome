@@ -1,23 +1,23 @@
-<script>
+<script lang="ts">
   import { ListHeader } from './components';
 
   import { onMount } from 'svelte';
   import { state, getDiscountsAction } from './store';
 
-  let errorMessage = undefined;
+  let errorMessage: string = '';
   let { discounts } = state;
 
   onMount(async () => await getDiscounts());
 
   async function getDiscounts() {
-    errorMessage = undefined;
+    errorMessage = '';
     try {
       await getDiscountsAction();
     } catch (error) {
       errorMessage = 'Unauthorized';
     }
   }
-  let showAdd = false;
+  let showAdd: boolean = false;
 </script>
 
 <div class="content-container">
@@ -30,16 +30,16 @@
       <div>Loading data ...</div>
     {/if}
     <ul class="list">
-      {#each $discounts as { id, store, percentage, code }, i (id)}
+      {#each $discounts as { id, store, percentage, code }, _i (id)}
         <li role="presentation">
           <div class="card">
             <div class="card-content">
               <div class="content discount-grid">
-                <label>Store:</label>
+                <span class="label">Store:</span>
                 <span>{store}</span>
-                <label>Discount:</label>
+                <span class="label">Discount:</span>
                 <span>{percentage}%</span>
-                <label>Code:</label>
+                <span class="label">Code:</span>
                 <span>{code}</span>
               </div>
             </div>

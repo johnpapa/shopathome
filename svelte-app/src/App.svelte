@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
   import './styles.scss';
-  import { Router, Link, Route } from 'svelte-routing';
+  import { Router, Route } from 'svelte-routing';
   import Home from './Home.svelte';
   import Products from './products/Products.svelte';
   import Discounts from './Discounts.svelte';

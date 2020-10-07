@@ -97,7 +97,8 @@ $light-gray: #777;
   grid-gap: 10px;
   grid-template-columns: 100px 200px;
 
-  label {
+  label,
+  .label {
     font-weight: bold;
     padding-right: 8px;
   }

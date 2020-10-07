@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   function goAuth() {
     const { pathname } = window.location;
     const redirect = `post_logout_redirect_uri=${pathname}`;

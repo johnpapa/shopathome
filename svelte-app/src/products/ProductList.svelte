@@ -1,16 +1,17 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher } from 'svelte';
   import { ButtonFooter, CardContent } from '../components';
+  import { Product } from '../models';
 
   const dispatch = createEventDispatcher();
-  export let products = [];
-  export let errorMessage = undefined;
+  export let products: Product[] = [];
+  export let errorMessage = '';
 
-  function deleteProduct(product) {
+  function deleteProduct(product: Product) {
     dispatch('deleted', product);
   }
 
-  function selectProduct(product) {
+  function selectProduct(product: Product) {
     dispatch('selected', product);
   }
 
@@ -45,13 +46,13 @@
               dataId={id}
               dataIndex={i}
               item={products[i]}
-              on:clicked={deleteProduct(products[i])} />
+              on:clicked={() => deleteProduct(products[i])} />
             <ButtonFooter
               {...editOptions}
               dataId={id}
               dataIndex={i}
               item={products[i]}
-              on:clicked={selectProduct(products[i])} />
+              on:clicked={() => selectProduct(products[i])} />
           </footer>
         </div>
       </li>
