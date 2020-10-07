@@ -44,9 +44,8 @@
     showModal = false;
   }
 
-
-// testing
-async function deleteProduct() {
+  // testing lint-staged
+  async function deleteProduct() {
     closeModal();
     if (productToDelete) {
       console.log(`You said you want to delete ${productToDelete.name}`);
