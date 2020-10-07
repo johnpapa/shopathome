@@ -26,6 +26,7 @@ export default defineComponent({
       context.emit('deleted', p);
       captains.log(`You tried to delete ${p.name}`);
     }
+
     function selectProduct(p: Product) {
       captains.log(`You tried to select ${p.name}`);
       context.emit('selected', p);

@@ -1,5 +1,6 @@
-<script>
-import { onMounted, reactive, toRefs } from 'vue';
+<script lang="ts">
+import { defineComponent, onMounted, ref } from 'vue';
+import type { Ref } from 'vue';
 import AuthLogin from '@/components/auth-login.vue';
 import AuthLogout from '@/components/auth-logout.vue';
 
@@ -15,17 +16,22 @@ const getUserInfo = async () => {
   }
 };
 
-export default {
+interface ComponentState {
+  userInfo: Ref<string>;
+  providers: Ref<Array<string>>;
+}
+
+export default defineComponent({
   name: 'NavBar',
   components: {
     AuthLogin,
     AuthLogout,
   },
   setup() {
-    const state = reactive({
-      userInfo: {},
-      providers: ['twitter', 'github', 'aad', 'google', 'facebook'],
-    });
+    const state = {
+      userInfo: ref({}),
+      providers: ref(['twitter', 'github', 'aad', 'google', 'facebook']),
+    };
 
     onMounted(async () => {
       state.userInfo = await getUserInfo();
@@ -33,10 +39,10 @@ export default {
 
     return {
       getUserInfo,
-      ...toRefs(state),
+      ...state,
     };
   },
-};
+});
 </script>
 <template>
   <div class="column is-2">

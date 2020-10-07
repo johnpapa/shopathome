@@ -1,12 +1,23 @@
-<script>
-import { toRefs } from 'vue';
+<script lang="ts">
+import { defineComponent, PropType, SetupContext, toRefs } from 'vue';
 
-export default {
+interface Props {
+  item: Object;
+  className: String;
+  label: String;
+  dataIndex: Number;
+  dataId?: Number;
+  iconClasses: String;
+}
+
+export default defineComponent({
   name: 'ButtonFooter',
   props: {
     item: {
-      type: Object,
-      default() {},
+      type: Object as PropType<{}>,
+      default: () => {
+        return {};
+      },
     },
     className: {
       type: String,
@@ -28,16 +39,18 @@ export default {
       default: () => '',
     },
   },
-  setup(props, context) {
+  setup(props: Props, context: SetupContext) {
     const { item } = toRefs(props);
 
     function handleClick() {
-      context.emit('clicked', item);
+      context.emit('clicked', item.value);
     }
 
-    return { handleClick };
+    return {
+      handleClick,
+    };
   },
-};
+});
 </script>
 
 <template>

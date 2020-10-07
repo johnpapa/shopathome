@@ -1,37 +1,38 @@
 <script lang="ts">
-import { computed, defineComponent, onMounted, reactive, toRefs } from 'vue';
+import { computed, defineComponent, onMounted, ref } from 'vue';
+import type { Ref } from 'vue';
 import ListHeader from '@/components/list-header.vue';
 import store from '../store';
 import type { Discount } from '../store/modules/models';
 
 interface ComponentState {
-  errorMessage: string;
-  discounts: Discount[];
+  errorMessage: Ref<string>;
+  discounts: Ref<Discount[]>;
 }
 
 export default defineComponent({
   name: 'Discounts',
   components: { ListHeader },
-  setup(/* props, context */) {
-    const state: ComponentState = reactive({
-      errorMessage: '',
+  setup() {
+    const state: ComponentState = {
+      errorMessage: ref(''),
       discounts: computed(() => store.getters.discounts),
-    });
+    };
 
     async function getDiscounts() {
-      state.errorMessage = '';
+      state.errorMessage.value = '';
       try {
         await store.dispatch('getDiscountsAction');
       } catch (error) {
         console.error(error);
-        state.errorMessage = 'Unauthorized';
+        state.errorMessage.value = 'Unauthorized';
       }
     }
 
     onMounted(getDiscounts);
 
     return {
-      ...toRefs(state),
+      ...state,
       getDiscounts,
     };
   },

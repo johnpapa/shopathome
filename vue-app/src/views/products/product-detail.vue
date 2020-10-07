@@ -1,6 +1,6 @@
 <script lang="ts">
-import { defineComponent, reactive, toRefs, watch } from 'vue';
-import type { SetupContext } from 'vue';
+import { defineComponent, ref, toRefs, watch } from 'vue';
+import type { PropType, Ref, SetupContext } from 'vue';
 import ButtonFooter from '@/components/button-footer.vue';
 import { Product } from '../../store/modules/models';
 
@@ -9,40 +9,38 @@ interface Props {
 }
 
 interface ComponentState {
-  addMode: boolean;
-  editingProduct: Product;
+  addMode: Ref<boolean>;
+  editingProduct: Ref<Product>;
 }
 
 export default defineComponent({
   name: 'ProductDetail',
   props: {
     product: {
-      type: Product,
-      default() {
-        return new Product(0);
-      },
+      type: Object as PropType<Product>,
+      default: () => new Product(0),
     },
   },
   components: { ButtonFooter },
   setup(props: Props, context: SetupContext) {
     const { product } = toRefs(props);
-    const state: ComponentState = reactive({
-      addMode: false,
-      editingProduct: { ...product.value },
-    });
+    const state: ComponentState = {
+      addMode: ref(false),
+      editingProduct: ref({ ...product.value }),
+    };
 
     watch(product, (/* newValue, oldValue */) => {
       if (product.value && product.value.id) {
-        state.editingProduct = { ...product.value };
-        state.addMode = false;
+        state.editingProduct.value = { ...product.value };
+        state.addMode.value = false;
       } else {
-        state.editingProduct = {
+        state.editingProduct.value = {
           id: 0,
           name: '',
           description: '',
           quantity: 0,
         };
-        state.addMode = true;
+        state.addMode.value = true;
       }
     });
 
@@ -51,11 +49,11 @@ export default defineComponent({
     }
 
     function saveProduct() {
-      context.emit('save', state.editingProduct);
+      context.emit('save', state.editingProduct.value);
       clear();
     }
 
-    return { ...toRefs(state), clear, saveProduct };
+    return { ...state, clear, saveProduct };
   },
 });
 </script>

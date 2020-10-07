@@ -1,5 +1,7 @@
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: 'AuthLogout',
   setup() {
     const goAuth = () => {
@@ -10,7 +12,7 @@ export default {
     };
     return { goAuth };
   },
-};
+});
 </script>
 
 <template>

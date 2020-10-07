@@ -1,7 +1,7 @@
-<script>
-import { toRefs } from 'vue';
+<script lang="ts">
+import { defineComponent, toRefs } from 'vue';
 
-export default {
+export default defineComponent({
   name: 'AuthLogin',
   props: {
     provider: {
@@ -19,11 +19,9 @@ export default {
       window.location.href = url;
     }
 
-    return {
-      goAuth,
-    };
+    return { goAuth };
   },
-};
+});
 </script>
 
 <template>
