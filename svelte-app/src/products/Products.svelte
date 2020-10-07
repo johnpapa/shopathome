@@ -44,7 +44,7 @@
     showModal = false;
   }
 
-  async function deleteProduct() {
+async function deleteProduct() {
     closeModal();
     if (productToDelete) {
       console.log(`You said you want to delete ${productToDelete.name}`);
