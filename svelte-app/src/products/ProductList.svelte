@@ -5,7 +5,7 @@
 
   const dispatch = createEventDispatcher();
   export let products: Product[] = [];
-  export let errorMessage = undefined;
+  export let errorMessage = '';
 
   function deleteProduct(product: Product) {
     dispatch('deleted', product);

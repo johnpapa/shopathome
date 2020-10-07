@@ -4,13 +4,13 @@
   import { onMount } from 'svelte';
   import { state, getDiscountsAction } from './store';
 
-  let errorMessage: string = undefined;
+  let errorMessage: string = '';
   let { discounts } = state;
 
   onMount(async () => await getDiscounts());
 
   async function getDiscounts() {
-    errorMessage = undefined;
+    errorMessage = '';
     try {
       await getDiscountsAction();
     } catch (error) {

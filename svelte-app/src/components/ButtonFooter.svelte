@@ -3,7 +3,7 @@
 
   const dispatch = createEventDispatcher();
 
-  export let item = undefined;
+  export let item: object = undefined;
   export let className = '';
   export let label = '';
   export let dataIndex = 0;
