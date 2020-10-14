@@ -4,7 +4,3 @@ export class Product {
   description: string;
   quantity?: number;
 }
-
-export class foo {
-  id: number;
-}
