@@ -1,31 +1,38 @@
-import { writable } from 'svelte/store';
+import { Writable, writable } from 'svelte/store';
+import { Discount, Product } from '../models';
 
-const state = {
+interface AppState {
+  discounts: Writable<Discount[]>;
+  products: Writable<Product[]>;
+}
+const state: AppState = {
   discounts: writable([]),
   products: writable([]),
 };
 
-const getDiscounts = (discounts) => {
-  state.discounts.update((old) => discounts);
+const getDiscounts = (discounts: Discount[]) => {
+  state.discounts.update((old: Discount[]) => discounts);
 };
-const getProducts = (products) => {
-  state.products.update((old) => products);
+const getProducts = (products: Product[]) => {
+  state.products.update((old: Product[]) => products);
 };
 
-const addProduct = (product) => {
-  state.products.update((old) => {
+const addProduct = (product: Product) => {
+  state.products.update((old: Product[]) => {
     old.unshift(product);
     return old;
   });
 };
 
-const deleteProduct = (product) => {
-  state.products.update((old) => [...old.filter((v) => v.id !== product.id)]);
+const deleteProduct = (product: Product) => {
+  state.products.update((old: Product[]) => [
+    ...old.filter((p) => p.id !== product.id),
+  ]);
 };
 
-const updateProduct = (product) => {
-  state.products.update((old) => {
-    const index = old.findIndex((v) => v.id === product.id);
+const updateProduct = (product: Product) => {
+  state.products.update((old: Product[]) => {
+    const index = old.findIndex((p) => p.id === product.id);
     old.splice(index, 1, product);
     return [...old];
   });

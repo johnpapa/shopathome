@@ -11,8 +11,12 @@
     updateProductAction,
   } from '../store';
   import { Product } from '../models';
+  import { logRouteLocation } from '../config';
 
   const { products } = state;
+
+  export let location: Object = {};
+  logRouteLocation(location);
 
   let selectedProduct: Product = undefined;
   let routePath = '/products';

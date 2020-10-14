@@ -50,7 +50,7 @@ export default {
       // 2 level deep object should be stringify
       process: JSON.stringify({
         env: {
-          isProd: production,
+          DEV: !production,
           SVELTE_APP_API: API,
         },
       }),

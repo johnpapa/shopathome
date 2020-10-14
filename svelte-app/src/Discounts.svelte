@@ -4,6 +4,8 @@
   import { onMount } from 'svelte';
   import { state, getDiscountsAction } from './store';
 
+  export const location: Object = {};
+
   let errorMessage: string = '';
   let { discounts } = state;
 

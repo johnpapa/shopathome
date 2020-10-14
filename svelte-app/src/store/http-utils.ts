@@ -1,19 +1,17 @@
-export const parseList = async (response) => {
-  if (response.status !== 200)
-    throw Error(response.message || `Error, status ${response.status}`);
-  let list = await response.json();
+export const parseList = async <T>(response: Response) => {
+  if (response.status !== 200) throw Error(`Error, status ${response.status}`);
+  let list: T[] = await response.json();
   if (typeof list !== 'object') {
     list = [];
   }
   return list;
 };
 
-export const parseItem = async (response, code) => {
-  if (response.status !== code)
-    throw Error(response.message || `Error, status ${response.status}`);
+export const parseItem = async <T>(response: Response, code: number) => {
+  if (response.status !== code) throw Error(`Error, status ${response.status}`);
   let item = await response.json();
   if (typeof item !== 'object') {
     item = undefined;
   }
-  return item;
+  return item as T;
 };
