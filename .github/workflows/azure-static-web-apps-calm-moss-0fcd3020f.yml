@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+    paths:
+      - svelte-app/**
+      - api/**
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
