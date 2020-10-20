@@ -7,7 +7,7 @@
 
   import { HeaderBar, NavBar, PageNotFound, Redirect } from './components';
 
-  export let url = '';
+  export let url: string = '';
 </script>
 
 <HeaderBar />
