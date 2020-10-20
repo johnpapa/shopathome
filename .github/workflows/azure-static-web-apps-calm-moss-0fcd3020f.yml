@@ -3,14 +3,14 @@ name: Azure Static Web Apps CI/CD
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - svelte-app/**
       - api/**
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
-      - master
+      - main
     paths:
       - svelte-app/**
       - api/**
