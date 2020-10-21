@@ -15,5 +15,5 @@ export {
   Modal,
   NavBar,
   PageNotFound,
-  Redirect
+  Redirect,
 };

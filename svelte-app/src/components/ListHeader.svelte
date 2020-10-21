@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
   import { Link } from 'svelte-routing';
   import { createEventDispatcher } from 'svelte';
 
   const dispatch = createEventDispatcher();
   export let title = '';
   export let routePath = '';
-  export let showAdd = true;
+  export let showAdd: boolean = true;
 
   function add() {
     dispatch('add');

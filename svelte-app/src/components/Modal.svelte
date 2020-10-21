@@ -1,14 +1,15 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher } from 'svelte';
 
   const dispatch = createEventDispatcher();
 
   export let message = '';
-  export let isOpen = false;
+  export let isOpen: boolean = false;
 
   function onNo() {
     dispatch('handleNo');
   }
+
   function onYes() {
     dispatch('handleYes');
   }

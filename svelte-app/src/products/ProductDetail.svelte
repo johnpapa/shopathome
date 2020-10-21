@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
   import { onMount, createEventDispatcher } from 'svelte';
   import { ButtonFooter } from '../components';
+  import { Product } from '../models';
 
   const dispatch = createEventDispatcher();
-  export let product = {};
-  let addMode = false;
+  export let product: Product;
   let editingProduct = { ...product };
 
   onMount(() => watchProduct());
@@ -21,23 +21,21 @@
   function watchProduct() {
     if (product && product.id) {
       editingProduct = { ...product };
-      addMode = false;
     } else {
       editingProduct = { id: undefined, name: '', description: '' };
-      addMode = true;
     }
   }
 
   const cancelOptions = {
     className: 'card-footer-item cancel-button',
     label: 'Cancel',
-    iconClasses: 'fas fa-undo'
+    iconClasses: 'fas fa-undo',
   };
 
   const saveOptions = {
     className: 'card-footer-item save-button',
     label: 'Save',
-    iconClasses: 'fas fa-save'
+    iconClasses: 'fas fa-save',
   };
 </script>
 

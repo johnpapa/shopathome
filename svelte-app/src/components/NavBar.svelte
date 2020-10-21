@@ -1,13 +1,18 @@
-<script>
-  import { getContext, onMount } from 'svelte';
-  import { Router, Link, Route } from 'svelte-routing';
-  import { ROUTER } from 'svelte-routing/src/contexts';
+<script lang="ts">
+  import { onMount } from 'svelte';
+  import { Link } from 'svelte-routing';
   import AuthLogin from './AuthLogin.svelte';
   import AuthLogout from './AuthLogout.svelte';
 
-  const { activeRoute } = getContext(ROUTER);
+  // const { activeRoute } = getContext(ROUTER);
   let userInfo = undefined;
-  const providers = ['twitter', 'github', 'aad', 'google', 'facebook'];
+  const providers: string[] = [
+    'twitter',
+    'github',
+    'aad',
+    'google',
+    'facebook',
+  ];
 
   onMount(async () => (userInfo = await getUserInfo()));
 
@@ -18,12 +23,13 @@
       const { clientPrincipal } = payload;
       return clientPrincipal;
     } catch (error) {
-      console.error('No profile could be found');
+      console.error('NavBar.svelte: No profile could be found');
       return undefined;
     }
   }
 
-  function getProps({ location, href, isPartiallyCurrent, isCurrent }) {
+  // function getProps({ location, href, isPartiallyCurrent, isCurrent }) {
+  function getProps({ href, isPartiallyCurrent, isCurrent }) {
     const isActive = href === '/' ? isCurrent : isPartiallyCurrent || isCurrent;
 
     // The object returned here is spread on the anchor element's attributes

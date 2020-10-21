@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import { ListHeader, Modal } from '../components';
   import ProductList from './ProductList.svelte';
@@ -10,21 +10,26 @@
     addProductAction,
     updateProductAction,
   } from '../store';
+  import { Product } from '../models';
+  import { logRouteLocation } from '../config';
 
   const { products } = state;
 
-  let selected = undefined;
+  export let location: Object = {};
+  logRouteLocation(location);
+
+  let selectedProduct: Product = undefined;
   let routePath = '/products';
   let title = 'My List';
-  let productToDelete = null;
+  let productToDelete: Product = null;
   let message = '';
   let showModal = false;
-  let errorMessage = undefined;
+  let errorMessage = '';
 
   onMount(async () => await getProducts());
 
   function enableAddMode() {
-    selected = {};
+    selectedProduct = null;
   }
 
   function askToDelete({ detail: product }) {
@@ -36,7 +41,7 @@
   }
 
   function clear() {
-    selected = null;
+    selectedProduct = null;
   }
 
   function closeModal() {
@@ -70,8 +75,8 @@
     }
   }
 
-  function select({ detail: product }) {
-    selected = product;
+  function selectProduct({ detail: product }) {
+    selectedProduct = product;
     console.log(`selected ${product.name}`);
   }
 </script>
@@ -85,15 +90,15 @@
   <div class="columns is-multiline is-variable">
     {#if products}
       <div class="column is-8">
-        {#if !selected}
+        {#if !selectedProduct}
           <ProductList
             {errorMessage}
             products={$products}
             on:deleted={askToDelete}
-            on:selected={select} />
+            on:selected={selectProduct} />
         {:else}
           <ProductDetail
-            product={selected}
+            product={selectedProduct}
             on:unselect={clear}
             on:save={save} />
         {/if}

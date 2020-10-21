@@ -1,13 +1,14 @@
 import * as store from './store';
 import { parseItem, parseList } from './http-utils';
-import API from './config';
+import { API } from '../config';
+import { Product } from '../models';
 
 export async function getProductsAction() {
   try {
     const response = await fetch(`${API}/products`, {
       method: 'GET',
     });
-    const products = await parseList(response);
+    const products: Product[] = await parseList<Product>(response);
     store.getProducts(products);
     return products;
   } catch (err) {
@@ -16,19 +17,19 @@ export async function getProductsAction() {
   }
 }
 
-export async function deleteProductAction(product) {
+export async function deleteProductAction(product: Product) {
   try {
     const response = await fetch(`${API}/x/products/${product.id}`, {
       method: 'DELETE',
     });
-    await parseItem(response, 200);
+    await parseItem<Product>(response, 200);
     store.deleteProduct(product);
     return null;
   } catch (error) {
     console.error(error);
   }
 }
-export async function updateProductAction(product) {
+export async function updateProductAction(product: Product) {
   try {
     const response = await fetch(`${API}/x/products/${product.id}`, {
       method: 'PUT',
@@ -37,14 +38,14 @@ export async function updateProductAction(product) {
       },
       body: JSON.stringify(product),
     });
-    const updatedProduct = await parseItem(response, 200);
+    const updatedProduct: Product = await parseItem<Product>(response, 200);
     store.updateProduct(updatedProduct);
     return updatedProduct;
   } catch (error) {
     console.error(error);
   }
 }
-export async function addProductAction(product) {
+export async function addProductAction(product: Product) {
   try {
     const response = await fetch(`${API}/x/products`, {
       method: 'POST',
@@ -53,7 +54,7 @@ export async function addProductAction(product) {
       },
       body: JSON.stringify(product),
     });
-    const addedProduct = await parseItem(response, 201);
+    const addedProduct: Product = await parseItem<Product>(response, 201);
     store.addProduct(addedProduct);
     return addedProduct;
   } catch (error) {
