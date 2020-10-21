@@ -26,5 +26,8 @@
     "titleBar.inactiveBackground": "#7c649f99",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "#7c649f"
+  "peacock.color": "#7c649f",
+  "staticWebApps.appSubpath": "svelte-app",
+  "staticWebApps.apiSubpath": "api",
+  "staticWebApps.appArtifactSubpath": "public"
 }
