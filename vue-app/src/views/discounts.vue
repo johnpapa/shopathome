@@ -41,9 +41,7 @@ export default {
         :showAdd="false"
       ></ListHeader>
       <div v-if="errorMessage">{{ errorMessage }}</div>
-      <div v-if="!discounts.length && !errorMessage">
-        Loading data ...
-      </div>
+      <div v-if="!discounts.length && !errorMessage">Loading data ...</div>
       <ul class="list">
         <li
           role="presentation"

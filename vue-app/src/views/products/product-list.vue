@@ -36,9 +36,7 @@ export default {
 <template>
   <div>
     <div v-if="errorMessage">{{ errorMessage }}</div>
-    <div v-if="!products.length && !errorMessage">
-      Loading data ...
-    </div>
+    <div v-if="!products.length && !errorMessage">Loading data ...</div>
     <ul class="list">
       <li
         v-for="(product, index) in products"
