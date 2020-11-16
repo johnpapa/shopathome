@@ -33,13 +33,5 @@
     "@fortawesome/free-solid-svg-icons": "^5.6.1",
     "bulma": "^0.8.0",
     "sirv-cli": "^1.0.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,ts,css,md,svelte}": "prettier --write"
   }
 }
