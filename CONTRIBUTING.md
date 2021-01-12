@@ -17,12 +17,12 @@ Help us keep this project open and inclusive.Please read and follow our [Code of
 ## <a name="issue" > </a> Found an Issue?
 
 If you find a bug in the source code or a mistake in the documentation, you can help us by
-[submitting an issue](#submit-issue) to our [GitHub Repository](https://github.com/johnpapa/hello-worlds). Even better, you can
+[submitting an issue](#submit-issue) to our [GitHub Repository](https://github.com/johnpapa/shopathomefix). Even better, you can
 [submit a Pull Request](#submit-pr) with a fix.
 
 ## <a name="feature" > </a> Want a Feature?
 
-You can _request_ a new feature by [submitting an issue](#submit-issue) to our [GitHub Repository](https://github.com/johnpapa/hello-worlds).If you would like to _implement_ a new feature, please submit an issue with
+You can _request_ a new feature by [submitting an issue](#submit-issue) to our [GitHub Repository](https://github.com/johnpapa/shopathomefix).If you would like to _implement_ a new feature, please submit an issue with
 a proposal for your work first, to be sure that we can use it.
 
 - **Small Features** can be crafted and directly [submitted as a Pull Request](#submit-pr).
@@ -47,13 +47,13 @@ chances of your issue being dealt with quickly:
 - **Suggest a Fix** - if you can't fix the bug yourself, perhaps you can point to what might be
   causing the problem (line of code or commit)
 
-You can file new issues by providing the above information [here](https://github.com/johnpapa/hello-worlds/issues/new).
+You can file new issues by providing the above information [here](https://github.com/johnpapa/shopathomefix/issues/new).
 
 ### <a name="submit-pr" > </a> Submitting a Pull Request (PR)
 
 Before you submit your Pull Request (PR) consider the following guidelines:
 
-- Search [GitHub](https://github.com/johnpapa/hello-worlds/pulls) for an open or closed PR
+- Search [GitHub](https://github.com/johnpapa/shopathomefix/pulls) for an open or closed PR
   that relates to your submission.You don't want to duplicate effort.
 
   - Make your changes in a new git fork:
