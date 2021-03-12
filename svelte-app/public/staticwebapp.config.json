@@ -30,7 +30,7 @@
   ],
   "navigationFallback": {
     "rewrite": "index.html",
-    "exclude": ["/*.{css,js,png,scss}"]
+    "exclude": ["/*.{css,scs,js,png,gif,ico,jpg}"]
   },
   "responseOverrides": {
     "404": {
