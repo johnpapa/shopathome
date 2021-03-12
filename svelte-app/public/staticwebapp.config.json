@@ -38,6 +38,7 @@
     }
   },
   "mimeTypes": {
-    ".json": "text/json"
+    ".json": "text/json",
+    ".scss": "text/html"
   }
 }
