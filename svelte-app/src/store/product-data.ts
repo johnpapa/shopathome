@@ -19,7 +19,7 @@ export async function getProductsAction() {
 
 export async function deleteProductAction(product: Product) {
   try {
-    const response = await fetch(`${API}/x/products/${product.id}`, {
+    const response = await fetch(`${API}/products/${product.id}`, {
       method: 'DELETE',
     });
     await parseItem<Product>(response, 200);
@@ -31,7 +31,7 @@ export async function deleteProductAction(product: Product) {
 }
 export async function updateProductAction(product: Product) {
   try {
-    const response = await fetch(`${API}/x/products/${product.id}`, {
+    const response = await fetch(`${API}/products/${product.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ export async function updateProductAction(product: Product) {
 }
 export async function addProductAction(product: Product) {
   try {
-    const response = await fetch(`${API}/x/products`, {
+    const response = await fetch(`${API}/products`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

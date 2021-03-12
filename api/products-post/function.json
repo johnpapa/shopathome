@@ -6,7 +6,7 @@
       "direction": "in",
       "name": "req",
       "methods": ["post"],
-      "route": "x/products"
+      "route": "products"
     },
     {
       "type": "http",
