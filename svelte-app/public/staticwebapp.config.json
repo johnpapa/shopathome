@@ -7,12 +7,7 @@
     },
     {
       "route": "/api/*",
-      "methods": ["GET"],
-      "allowedRoles": ["authenticated"]
-    },
-    {
-      "route": "/api/*",
-      "methods": ["PUT", "POST", "DELETE"],
+      "methods": ["GET", "PUT", "POST", "DELETE"],
       "allowedRoles": ["preferred"]
     },
     {
