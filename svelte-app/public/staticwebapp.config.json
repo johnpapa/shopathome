@@ -1,18 +1,18 @@
 {
   "routes": [
     {
-      "route": "/api/*",
-      "methods": ["GET"],
-      "allowedRoles": ["authenticated"]
-    },
-    {
       "route": "/api/products/*",
       "methods": ["GET", "PUT", "POST", "DELETE"],
-      "allowedRoles": ["preferred"]
+      "allowedRoles": ["authenticated"]
     },
     {
       "route": "/api/discounts/*",
       "allowedRoles": ["preferred"]
+    },
+    {
+      "route": "/api/*",
+      "methods": ["GET"],
+      "allowedRoles": ["authenticated"]
     },
     {
       "route": "/.auth/login/facebook",
