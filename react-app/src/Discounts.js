@@ -28,17 +28,17 @@ function Discounts() {
         )}
         <ul className="list">
           {discounts &&
-            discounts.map((discount, index) => (
+            discounts.map((discount /*, index */) => (
               <li key={discount.id} role="presentation">
                 <div className="card">
                   <div className="card-content">
                     <div className="content discount-grid">
-                      <label>Store:</label>
-                      <span>{discount.store}</span>
-                      <label>Discount:</label>
-                      <span>{discount.percentage}%</span>
-                      <label>Code:</label>
-                      <span>{discount.code}</span>
+                      <label htmlFor="store">Store:</label>
+                      <span id="store">{discount.store}</span>
+                      <label htmlFor="discount">Discount:</label>
+                      <span id="discount">{discount.percentage}%</span>
+                      <label htmlFor="code">Code:</label>
+                      <span id="code">{discount.code}</span>
                     </div>
                   </div>
                 </div>

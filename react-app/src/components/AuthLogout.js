@@ -9,7 +9,7 @@ export function AuthLogout() {
   }
 
   return (
-    <div className="auth-link" onClick={goAuth}>
+    <div className="auth-link" onClick={goAuth} role="button" tabIndex="0">
       Logout
     </div>
   );
