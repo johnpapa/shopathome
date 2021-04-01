@@ -6,8 +6,12 @@
       "allowedRoles": ["authenticated"]
     },
     {
-      "route": "/api/*",
-      "methods": ["GET", "PUT", "POST", "DELETE"],
+      "route": "/api/products/*",
+      "methods": ["PUT", "POST", "DELETE"],
+      "allowedRoles": ["preferred"]
+    },
+    {
+      "route": "/api/discounts/*",
       "allowedRoles": ["preferred"]
     },
     {
