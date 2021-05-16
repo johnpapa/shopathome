@@ -14,7 +14,7 @@ export default {
         type: Object,
         default() {},
       },
-      providers: ['twitter', 'github', 'aad', 'google', 'facebook'],
+      providers: ['twitter', 'github', 'aad'],
     };
   },
   async created() {

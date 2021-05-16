@@ -9,9 +9,7 @@
   const providers: string[] = [
     'twitter',
     'github',
-    'aad',
-    'google',
-    'facebook',
+    'aad'
   ];
 
   onMount(async () => (userInfo = await getUserInfo()));
