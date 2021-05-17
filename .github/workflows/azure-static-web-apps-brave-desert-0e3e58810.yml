@@ -4,10 +4,16 @@ on:
   push:
     branches:
       - main
+    paths:
+      - react-app/**
+      - api/**
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
+    paths:
+      - react-app/**
+      - api/**
 
 jobs:
   build_and_deploy_job:
