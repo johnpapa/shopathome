@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { AuthLogin } from './AuthLogin';
 import { AuthLogout } from './AuthLogout';
 
+const captains = console;
+
 function NavBar(props) {
   const providers = ['twitter', 'github', 'aad'];
   const [userInfo, setUserInfo] = useState();
@@ -20,7 +22,7 @@ function NavBar(props) {
       const { clientPrincipal } = payload;
       return clientPrincipal;
     } catch (error) {
-      console.error('No profile could be found');
+      captains.error('No profile could be found');
       return undefined;
     }
   }
