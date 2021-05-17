@@ -24,7 +24,7 @@
     "statusBar.debuggingForeground": "#15202b"
   },
   "peacock.color": "#7c649f",
-  "staticWebApps.appSubpath": "/react-app",
+  "staticWebApps.appSubpath": "/angular-app",
   "staticWebApps.apiSubpath": "api",
-  "staticWebApps.outputSubpath": "build"
+  "staticWebApps.outputSubpath": "dist/angular-app"
 }
