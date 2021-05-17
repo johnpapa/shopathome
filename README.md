@@ -16,11 +16,11 @@ The apps written in the following JavaScript frameworks/libraries:
 
 | Folder          | Description                                                                          | Live Demo                                                |
 | --------------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------- |
-| **angular-app** | [Sample Angular app](https://github.com/johnpapa/shopathome/blob/master/angular-app) | [https://angular.shopathome.dev](angular.shopathome.dev) |
+| **angular-app** | [Sample Angular app](https://github.com/johnpapa/shopathome/blob/master/angular-app) | [angular.shopathome.dev](https://angular.shopathome.dev) |
 | **api**         | [Sample Azure Functions app](https://github.com/johnpapa/shopathome/blob/master/api) | protected                                                |
-| **react-app**   | [Sample React app](https://github.com/johnpapa/shopathome/blob/master/react-app)     | [https://react.shopathome.dev](react.shopathome.dev)     |
-| **svelte-app**  | [Sample Svelte app](https://github.com/johnpapa/shopathome/blob/master/svelte-app)   | [https://svelte.shopathome.dev](svelte.shopathome.dev)   |
-| **vue-app**     | [Sample Vue app](https://github.com/johnpapa/shopathome/blob/master/vue-app)         | [https://vue.shopathome.dev](vue.shopathome.dev)         |
+| **react-app**   | [Sample React app](https://github.com/johnpapa/shopathome/blob/master/react-app)     | [react.shopathome.dev](https://react.shopathome.dev)     |
+| **svelte-app**  | [Sample Svelte app](https://github.com/johnpapa/shopathome/blob/master/svelte-app)   | [svelte.shopathome.dev](https://svelte.shopathome.dev)   |
+| **vue-app**     | [Sample Vue app](https://github.com/johnpapa/shopathome/blob/master/vue-app)         | [vue.shopathome.dev](https://vue.shopathome.dev)         |
 
 ## Prerequisites
 
