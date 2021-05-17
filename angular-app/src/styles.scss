@@ -12,6 +12,7 @@ $link: $primary; // #00b3e6; // #ff4081;
 $info: $primary;
 $shade-light: #fafafa;
 $light-gray: #777;
+$hover-gray: #eee;
 
 @import '~bulma/bulma.sass';
 
@@ -29,7 +30,7 @@ $light-gray: #777;
       width: 170px;
       border: 1px solid $light-gray;
       &:hover {
-        background-color: #eee;
+        background-color: $hover-gray;
         a {
           color: $primary;
         }
