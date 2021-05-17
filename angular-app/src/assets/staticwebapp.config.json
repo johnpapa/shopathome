@@ -19,7 +19,7 @@
     },
     {
       "route": "/deals",
-      "redirect": "/this-isnt-helping.html",
+      "redirect": "/some-legacy-discounts-page.html",
       "statusCode": 301
     },
     {
@@ -29,7 +29,7 @@
   ],
   "navigationFallback": {
     "rewrite": "index.html",
-    "exclude": ["/*.{css,scss,js,png,gif,ico,jpg}"]
+    "exclude": ["/*.{css,scss,js,png,gif,ico,jpg}", "/images/*"]
   },
   "responseOverrides": {
     "404": {

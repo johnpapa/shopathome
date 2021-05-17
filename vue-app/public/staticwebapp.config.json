@@ -19,7 +19,7 @@
     },
     {
       "route": "/deals",
-      "redirect": "/this-isnt-helping.html",
+      "redirect": "/some-legacy-discounts-page.html",
       "statusCode": 301
     },
     {
