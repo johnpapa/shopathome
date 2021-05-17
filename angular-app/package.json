@@ -6,7 +6,8 @@
     "start": "ng serve --proxy-config proxy.conf.json --open",
     "build": "ng build --prod",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "local": "swa start ./dist/angular-app --api http://localhost:7071"
   },
   "private": true,
   "dependencies": {
