@@ -23,5 +23,8 @@
     "statusBar.debuggingBackground": "#879f64",
     "statusBar.debuggingForeground": "#15202b"
   },
-  "peacock.color": "#7c649f"
+  "peacock.color": "#7c649f",
+  "staticWebApps.appSubpath": "/react-app",
+  "staticWebApps.apiSubpath": "api",
+  "staticWebApps.outputSubpath": "build"
 }
