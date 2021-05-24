@@ -3,4 +3,5 @@
   import { navigate } from 'svelte-routing';
   export let path: string;
   onMount(() => navigate(path));
+
 </script>

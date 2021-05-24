@@ -20,6 +20,7 @@
     }
   }
   let showAdd: boolean = false;
+
 </script>
 
 <div class="content-container">

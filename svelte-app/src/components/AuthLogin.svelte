@@ -7,6 +7,7 @@
     const url = `/.auth/login/${provider}?${redirect}`;
     window.location.href = url;
   }
+
 </script>
 
 <div class="auth-link" on:click={goAuth}>{provider}</div>

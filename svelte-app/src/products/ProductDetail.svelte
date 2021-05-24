@@ -37,6 +37,7 @@
     label: 'Save',
     iconClasses: 'fas fa-save',
   };
+
 </script>
 
 <div class="card edit-detail">
@@ -54,7 +55,8 @@
             placeholder="99999"
             readonly
             type="text"
-            bind:value={editingProduct.id} />
+            bind:value={editingProduct.id}
+          />
         </div>
       {/if}
       <div class="field">
@@ -64,7 +66,8 @@
           name="name"
           placeholder="Oranges"
           type="text"
-          bind:value={editingProduct.name} />
+          bind:value={editingProduct.name}
+        />
       </div>
       <div class="field">
         <label class="label" for="description">description</label>
@@ -73,7 +76,8 @@
           name="description"
           placeholder="box"
           type="text"
-          bind:value={editingProduct.description} />
+          bind:value={editingProduct.description}
+        />
       </div>
       <div class="field">
         <label class="label" for="quantity">quantity</label>
@@ -84,7 +88,8 @@
           type="number"
           min="1"
           max="100"
-          bind:value={editingProduct.quantity} />
+          bind:value={editingProduct.quantity}
+        />
       </div>
     </div>
   </div>
@@ -94,6 +99,7 @@
     <ButtonFooter
       {...saveOptions}
       item={editingProduct}
-      on:clicked={saveProduct} />
+      on:clicked={saveProduct}
+    />
   </footer>
 </div>

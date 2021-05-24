@@ -1,6 +1,7 @@
 <script lang="ts">
   export let name = '';
   export let description = '';
+
 </script>
 
 <div class="card-content">

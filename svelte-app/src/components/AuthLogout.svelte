@@ -5,6 +5,7 @@
     const url = `/.auth/logout?${redirect}`;
     window.location.href = url;
   }
+
 </script>
 
 <div class="auth-link" on:click={goAuth}>Logout</div>

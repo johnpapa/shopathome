@@ -6,11 +6,7 @@
 
   // const { activeRoute } = getContext(ROUTER);
   let userInfo = undefined;
-  const providers: string[] = [
-    'twitter',
-    'github',
-    'aad'
-  ];
+  const providers: string[] = ['twitter', 'github', 'aad'];
 
   onMount(async () => (userInfo = await getUserInfo()));
 
@@ -36,6 +32,7 @@
     }
     return {};
   }
+
 </script>
 
 <div class="column is-2">

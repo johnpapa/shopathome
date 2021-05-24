@@ -26,6 +26,7 @@
     label: 'Edit',
     iconClasses: 'fas fa-edit',
   };
+
 </script>
 
 <div>
@@ -46,13 +47,15 @@
               dataId={id}
               dataIndex={i}
               item={products[i]}
-              on:clicked={() => deleteProduct(products[i])} />
+              on:clicked={() => deleteProduct(products[i])}
+            />
             <ButtonFooter
               {...editOptions}
               dataId={id}
               dataIndex={i}
               item={products[i]}
-              on:clicked={() => selectProduct(products[i])} />
+              on:clicked={() => selectProduct(products[i])}
+            />
           </footer>
         </div>
       </li>

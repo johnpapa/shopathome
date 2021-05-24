@@ -13,6 +13,7 @@
   function onYes() {
     dispatch('handleYes');
   }
+
 </script>
 
 <div id="modal" class="modal" class:is-active={isOpen}>

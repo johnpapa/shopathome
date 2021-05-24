@@ -3,7 +3,8 @@
     class="navbar-item"
     href="https://svelte.dev/"
     target="_blank"
-    rel="noopener noreferrer">
+    rel="noopener noreferrer"
+  >
     <img src="./svelte-icon.png" alt="Svelte" />
   </a>
   <router-link to="/" class="navbar-item nav-home">
