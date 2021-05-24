@@ -6,7 +6,7 @@
     "dev": "rollup -c -w",
     "start": "sirv public --cors --single",
     "validate": "svelte-check",
-    "local": "swa start ./public --api http://localhost:7071"
+    "local": "npx @azure/static-web-apps-cli start ./public --api http://localhost:7071"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^19.0.0",
