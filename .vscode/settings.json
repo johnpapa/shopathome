@@ -10,21 +10,22 @@
   "staticWebApps.apiSubpath": "api",
   "staticWebApps.outputSubpath": "dist/angular-app",
   "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#832561",
-    "activityBar.activeBorder": "#121907",
-    "activityBar.background": "#832561",
+    "activityBar.activeBackground": "#1857a4",
+    "activityBar.activeBorder": "#530c2c",
+    "activityBar.background": "#1857a4",
     "activityBar.foreground": "#e7e7e7",
     "activityBar.inactiveForeground": "#e7e7e799",
-    "activityBarBadge.background": "#121907",
+    "activityBarBadge.background": "#530c2c",
     "activityBarBadge.foreground": "#e7e7e7",
-    "statusBar.background": "#832561",
-    "statusBar.debuggingBackground": "#258347",
+    "statusBar.background": "#1857a4",
+    "statusBar.debuggingBackground": "#a46518",
     "statusBar.debuggingForeground": "#e7e7e7",
     "statusBar.foreground": "#e7e7e7",
-    "statusBarItem.hoverBackground": "#ab307e",
-    "titleBar.activeBackground": "#832561",
+    "statusBarItem.hoverBackground": "#1f6fd0",
+    "titleBar.activeBackground": "#1857a4",
     "titleBar.activeForeground": "#e7e7e7",
-    "titleBar.inactiveBackground": "#83256199",
+    "titleBar.inactiveBackground": "#1857a499",
     "titleBar.inactiveForeground": "#e7e7e799"
-  }
+  },
+  "peacock.remoteColor": "#1857a4"
 }
