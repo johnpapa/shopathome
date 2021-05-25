@@ -20,7 +20,8 @@
 		"dbaeumer.vscode-eslint",
 		"ms-azuretools.vscode-azurestaticwebapps",
 		"esbenp.prettier-vscode",
-		"svelte.svelte-vscode"
+		"svelte.svelte-vscode",
+		"github.vscode-pull-request-github"
 	],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
