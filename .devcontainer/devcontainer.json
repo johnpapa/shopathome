@@ -1,0 +1,33 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.179.0/containers/azure-functions-node
+{
+  "name": "Azure Functions & Node.js",
+  "build": {
+    "dockerfile": "Dockerfile",
+    // Update 'VARIANT' to pick a Node.js version: 10, 12
+    "args": { "VARIANT": "12" }
+  },
+  "forwardPorts": [7071],
+
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    "ms-azuretools.vscode-azurefunctions",
+    "dbaeumer.vscode-eslint",
+    "svelte.svelte-vscode",
+    "esbenp.prettier-vscode",
+    "github.vscode-pull-request-github",
+    "ms-azuretools.vscode-azurestaticwebapps"
+  ],
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "(cd svelte-app && npm install) ; (cd api && npm install)",
+  "postStartCommand": "(cd svelte-app && npm run build) ; (cd api && func start) ; (cd svelte-app && npm run local)",
+
+  // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "node"
+}
