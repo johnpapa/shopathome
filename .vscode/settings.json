@@ -6,9 +6,9 @@
   "debug.internalConsoleOptions": "neverOpen",
   "azureFunctions.preDeployTask": "npm prune",
   "peacock.color": "#832561",
-  "staticWebApps.appSubpath": "/angular-app",
+  "staticWebApps.appSubpath": "/svelte-app",
   "staticWebApps.apiSubpath": "api",
-  "staticWebApps.outputSubpath": "dist/angular-app",
+  "staticWebApps.outputSubpath": "public",
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#832561",
     "activityBar.activeBorder": "#121907",
