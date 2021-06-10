@@ -6,7 +6,7 @@
     "dev": "rollup -c -w",
     "start": "sirv public --cors --single",
     "validate": "svelte-check",
-    "local2": "npx @azure/static-web-apps-cli start ./public --api http://localhost:7071",
+    "local-public": "npx @azure/static-web-apps-cli start ./public --api http://localhost:7071",
     "local": "swa start  http://localhost:5000 --api http://localhost:7071"
   },
   "devDependencies": {
