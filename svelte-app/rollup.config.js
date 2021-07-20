@@ -9,8 +9,11 @@ import typescript from '@rollup/plugin-typescript';
 import replace from '@rollup/plugin-replace';
 
 const production = !process.env.ROLLUP_WATCH;
-const api = 'http://localhost:7071/api';
-const API = process.env.API || production ? '/api' : api;
+// If I want to run this locally without SWA proxying, do this
+// const api = 'http://localhost:7071/api';
+// If I want to run this locally with SWA proxying, do this
+const api = '/api';
+const API = process.env.API || production ? 'pro/api' : api;
 
 function serve() {
   let server;
