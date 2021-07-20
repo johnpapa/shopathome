@@ -25,16 +25,16 @@ Learn how to [Publish an Angular, React, Svelte, or Vue JavaScript app and API w
    npm install
    ```
 
-1. Build the app
-
-   ```bash
-   npm run build
-   ```
-
 1. Run the app
 
    ```bash
-   npm run quick
+   npm run dev
+   ```
+
+1. Run the SWA CLI (proxies the app to the API with Auth)
+
+   ```bash
+   npm run local
    ```
 
 ## Resources
