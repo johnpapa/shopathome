@@ -9,7 +9,7 @@
       Manage your shopping list! Become a preferred customer and gain access to
       discount codes, too.
     </p>
-    <p>Log in to start enjoying your benefits.</p>
+    <p>Log in to start enjoying your benefits</p>
     <br />
     <div class="button-group">
       <button class="button" aria-label="My List" tabindex="0">
