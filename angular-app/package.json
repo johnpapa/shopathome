@@ -7,7 +7,7 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "local": "swa start ./dist/angular-app --api http://localhost:7071"
+    "local": "swa start ./dist/angular-app --api-location http://localhost:7071"
   },
   "private": true,
   "dependencies": {
