@@ -27,7 +27,7 @@ The apps written in the following JavaScript frameworks/libraries:
 - A GitHub account
 - [Node.js and Git](https://nodejs.org/)
 - [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=javascript-0000-jopapa) installed
-- The [Azure Functions extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions%3FWT.mc_id%3Dshopathome-github-jopapa&WT.mc_id=javascript-0000-jopapa) installed
+- The [Azure Functions extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions&WT.mc_id=shopathome-github-jopapa&WT.mc_id=javascript-0000-jopapa) installed
 - The [Azure Functions Core Tools](https://docs.microsoft.com/azure/azure-functions/functions-run-local?WT.mc_id=javascript-0000-jopapa) installed
 
 ## Problems or Suggestions
