@@ -31,6 +31,12 @@ Learn how to [Publish an Angular, React, Svelte, or Vue JavaScript app and API w
    npm start
    ```
 
+1. Run the SWA CLI (proxies the app to the API with Auth)
+
+   ```bash
+   npm run local
+   ```
+
 ## Resources
 
 ### Azure Static Web Apps

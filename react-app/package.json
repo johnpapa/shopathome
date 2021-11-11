@@ -9,7 +9,9 @@
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
-    "local": "swa start ./build --api-location http://localhost:7071"
+    "local-public": "npx @azure/static-web-apps-cli start ./build --api-location http://localhost:7071",
+    "local-x": "npx @azure/static-web-apps-cli start http://localhost:3000 --api-location http://localhost:7071 --verbose=silly",
+    "local": "swa start http://localhost:3000 --api-location ../api "
   },
   "eslintConfig": {
     "extends": "react-app"
