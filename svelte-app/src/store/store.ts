@@ -11,10 +11,10 @@ const state: AppState = {
 };
 
 const getDiscounts = (discounts: Discount[]) => {
-  state.discounts.update((old: Discount[]) => discounts);
+  state.discounts.update((/* old: Discount[] */) => discounts);
 };
 const getProducts = (products: Product[]) => {
-  state.products.update((old: Product[]) => products);
+  state.products.update((/* old: Product[] */) => products);
 };
 
 const addProduct = (product: Product) => {
