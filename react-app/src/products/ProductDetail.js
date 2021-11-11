@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { withRouter } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
 import { ButtonFooter, InputDetail } from '../components';
 
@@ -7,15 +7,15 @@ function ProductDetail({
   product: initProduct,
   handleCancelProduct,
   handleSaveProduct,
-  history,
 }) {
   const [product, setProduct] = useState(Object.assign({}, initProduct));
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!product) {
-      history.push('/products'); // no product, bail out of Details
+      navigate('/products', { state: {} }); // no product, bail out of Details
     }
-  }, [product, history]);
+  }, [product]);
 
   function handleSave() {
     const chgProduct = { ...product, id: product.id || null };
@@ -94,4 +94,4 @@ function ProductDetail({
   );
 }
 
-export default withRouter(ProductDetail);
+export default ProductDetail;

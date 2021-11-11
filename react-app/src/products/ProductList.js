@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
 import { ButtonFooter, CardContent } from '../components';
 
@@ -7,13 +7,14 @@ function ProductList({
   handleDeleteProduct,
   handleSelectProduct,
   products,
-  history,
   errorMessage,
 }) {
+  const navigate = useNavigate();
+
   function selectProduct(e) {
     const product = getSelectedProduct(e);
     handleSelectProduct(product);
-    history.push(`/products/${product.id}`);
+    navigate(`/products/${product.id}`, { state: {} });
   }
 
   function deleteProduct(e) {
@@ -66,4 +67,4 @@ function ProductList({
   );
 }
 
-export default withRouter(ProductList);
+export default ProductList;

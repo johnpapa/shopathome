@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { withRouter } from 'react-router';
 import useDiscounts from './useDiscounts';
 import { ListHeader } from './components';
 
@@ -50,4 +49,4 @@ function Discounts() {
   );
 }
 
-export default withRouter(Discounts);
+export default Discounts;

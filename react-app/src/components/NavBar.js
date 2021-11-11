@@ -32,13 +32,28 @@ function NavBar(props) {
       <nav className="menu">
         <p className="menu-label">Menu</p>
         <ul className="menu-list">
-          <NavLink to="/home" activeClassName="active-link">
+          <NavLink
+            to="/home"
+            className={({ isActive }) =>
+              'nav-link' + (isActive ? ' active-link' : '')
+            }
+          >
             Home
           </NavLink>
-          <NavLink to="/products" activeClassName="active-link">
+          <NavLink
+            to="/products"
+            className={({ isActive }) =>
+              'nav-link' + (isActive ? ' active-link' : '')
+            }
+          >
             My List
           </NavLink>
-          <NavLink to="/discounts" activeClassName="active-link">
+          <NavLink
+            to="/discounts"
+            className={({ isActive }) =>
+              'nav-link' + (isActive ? ' active-link' : '')
+            }
+          >
             My Discounts
           </NavLink>
         </ul>
