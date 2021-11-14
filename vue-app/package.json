@@ -9,7 +9,7 @@
     "lint": "vue-cli-service lint",
     "local-public": "npx @azure/static-web-apps-cli start ./dist --api-location http://localhost:7071",
     "local-x": "npx @azure/static-web-apps-cli start http://localhost:8080 --api-location http://localhost:7071 --verbose=silly",
-    "local": "swa start http://localhost:8080 --api-location ../api "
+    "local": "npx @azure/static-web-apps-cli start http://localhost:8080 --api-location ../api "
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
