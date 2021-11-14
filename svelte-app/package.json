@@ -17,7 +17,7 @@
     "@rollup/plugin-replace": "^2.4.2",
     "@rollup/plugin-typescript": "^8.2.1",
     "@tsconfig/svelte": "^1.0.0",
-    "node-sass": "^6.0.0",
+    "sass": "^1.43.4",
     "postcss": "^8.2.15",
     "prettier": "^2.2.1",
     "rollup": "^2.44.0",
