@@ -9,6 +9,8 @@
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+    "local-public": "npx @azure/static-web-apps-cli start ./build --api-location http://localhost:7071",
+    "local-x": "npx @azure/static-web-apps-cli start http://localhost:3000 --api-location http://localhost:7071 --verbose=silly",
     "local": "npx @azure/static-web-apps-cli start http://localhost:3000 --api-location ../api "
   },
   "eslintConfig": {
@@ -23,13 +25,14 @@
   "proxy": "http://localhost:7071/",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
-    "axios": "^0.21.1",
+    "axios": "^0.24.0",
     "bulma": "^0.9.2",
+    "history": "^5.1.0",
     "sass": "^1.43.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.3",
-    "react-router-dom": "^5.2.0",
+    "react-router-dom": "^6.0.0",
     "react-scripts": "^4.0.3",
     "redux": "^4.0.4",
     "redux-saga": "^1.0.5",

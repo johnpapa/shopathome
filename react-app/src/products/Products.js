@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import { ListHeader, ModalYesNo } from '../components';
 import ProductDetail from './ProductDetail';
@@ -8,7 +8,7 @@ import useProducts from './useProducts';
 
 const captains = console;
 
-function Products({ history }) {
+function Products() {
   const [productToDelete, setProductToDelete] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const {
@@ -21,6 +21,7 @@ function Products({ history }) {
     updateProduct,
     error: errorMessage,
   } = useProducts();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getProducts();
@@ -28,11 +29,11 @@ function Products({ history }) {
 
   function addNewProduct() {
     selectProduct({});
-    history.push('/products/0');
+    navigate('/products/0', { state: {} });
   }
 
   function handleCancelProduct() {
-    history.push('/products');
+    navigate('/products', { state: {} });
     selectProduct(null);
     setProductToDelete(null);
   }
@@ -83,11 +84,10 @@ function Products({ history }) {
       />
       <div className="columns is-multiline is-variable">
         <div className="column is-8">
-          <Switch>
+          <Routes>
             <Route
-              exact
-              path="/products"
-              component={() => (
+              path="/"
+              element={
                 <ProductList
                   errorMessage={errorMessage}
                   products={products}
@@ -95,22 +95,19 @@ function Products({ history }) {
                   handleSelectProduct={handleSelectProduct}
                   handleDeleteProduct={handleDeleteProduct}
                 />
-              )}
+              }
             />
             <Route
-              exact
-              path="/products/:id"
-              component={() => {
-                return (
-                  <ProductDetail
-                    product={selectedProduct}
-                    handleCancelProduct={handleCancelProduct}
-                    handleSaveProduct={handleSaveProduct}
-                  />
-                );
-              }}
+              path=":id"
+              element={
+                <ProductDetail
+                  product={selectedProduct}
+                  handleCancelProduct={handleCancelProduct}
+                  handleSaveProduct={handleSaveProduct}
+                />
+              }
             />
-          </Switch>
+          </Routes>
         </div>
       </div>
 
