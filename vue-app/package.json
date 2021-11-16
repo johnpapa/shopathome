@@ -9,7 +9,7 @@
     "lint": "vue-cli-service lint",
     "local-public": "npx @azure/static-web-apps-cli start ./dist --api-location http://localhost:7071",
     "local-x": "npx @azure/static-web-apps-cli start http://localhost:8080 --api-location http://localhost:7071 --verbose=silly",
-    "local": "swa start http://localhost:8080 --api-location ../api "
+    "local": "npx @azure/static-web-apps-cli start http://localhost:8080 --api-location ../api "
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
@@ -30,14 +30,14 @@
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-airbnb": "^5.3.0",
     "@vue/eslint-config-prettier": "^6.0.0",
-    "babel-eslint": "^10.0.3",
+    "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.0.0",
-    "node-sass": "^4.12.0",
-    "prettier": "^2.2.1",
+    "sass": "^1.43.4",
     "sass-loader": "^8.0.2",
+    "prettier": "^2.2.1",
     "vue-template-compiler": "^2.6.12"
   }
 }
