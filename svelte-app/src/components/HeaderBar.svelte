@@ -5,7 +5,6 @@
 <header>
   <nav
     class="navbar has-background-dark is-dark"
-    role="navigation"
     aria-label="main navigation">
     <HeaderBarBrand />
   </nav>
