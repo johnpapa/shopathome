@@ -6,8 +6,8 @@
   <div class="content-title-group">
     <h2 class="title">Shop at Home</h2>
     <p>
-      Manage your shopping list! Become a preferred customer and gain access to
-      discount codes, too.
+      Hello USF! Manage your shopping list! Become a preferred customer and gain
+      access to discount codes, too.
     </p>
     <p>Log in to start enjoying your benefits</p>
     <br />
