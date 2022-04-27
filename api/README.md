@@ -19,7 +19,7 @@ Learn how to [Publish an Angular, React, Svelte, or Vue JavaScript app and API w
    cd mslearn-staticwebapp/api
    ```
 
-1. Create the file `api/local.setting.json` and modify its contents as follows:
+1. Create the file `api/local.settings.json` and modify its contents as follows:
 
 ```json
 {
