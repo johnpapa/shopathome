@@ -14,9 +14,7 @@ import { DiscountService } from './discount.service';
           [showAdd]="showAdd"
         ></app-list-header>
         <div *ngIf="errorMessage">{{ errorMessage }}</div>
-        <div *ngIf="!discounts?.length && !errorMessage">
-          Loading data ...
-        </div>
+        <div *ngIf="!discounts?.length && !errorMessage">Loading data ...</div>
         <ul class="list">
           <li
             role="presentation"
@@ -61,7 +59,8 @@ export class DiscountComponent {
       (_) => {
         /*.. do nothing for success.. */
       },
-      (error: any) => (this.errorMessage = error.error.statusText),
+      // (error: any) => (this.errorMessage = error.error.message),
+      (error: any) => (this.errorMessage = 'Unauthorized'),
     );
   }
 
