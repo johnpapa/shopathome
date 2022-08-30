@@ -37,6 +37,8 @@ Learn how to [Publish an Angular, React, Svelte, or Vue JavaScript app and API w
    npm run local
    ```
 
+1. Browse to your app at <https://localhost:4280>
+
 ## Resources
 
 ### Azure Static Web Apps
