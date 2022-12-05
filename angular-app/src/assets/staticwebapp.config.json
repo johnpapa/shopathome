@@ -1,4 +1,5 @@
 {
+  "platform": { "apiRuntime": "node:16" },
   "routes": [
     {
       "route": "/api/products/*",
