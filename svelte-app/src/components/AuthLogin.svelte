@@ -9,4 +9,4 @@
   }
 </script>
 
-<div class="auth-link" on:click={goAuth}>{provider}</div>
+<div class="auth-link" on:click={goAuth} on:keypress={goAuth}>{provider}</div>

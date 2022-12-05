@@ -24,7 +24,7 @@
     },
     {
       "route": "/.auth/login/aad",
-      "statusCode": "404"
+      "statusCode": 404
     }
   ],
   "navigationFallback": {
