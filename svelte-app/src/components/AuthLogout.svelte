@@ -7,4 +7,4 @@
   }
 </script>
 
-<div class="auth-link" on:click={goAuth}>Logout</div>
+<div class="auth-link" on:click={goAuth} on:keypress={goAuth}>Logout</div>
