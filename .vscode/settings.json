@@ -27,7 +27,10 @@
     "titleBar.activeForeground": "#e7e7e7",
     "titleBar.inactiveBackground": "#83256199",
     "titleBar.inactiveForeground": "#e7e7e799",
-    "commandCenter.border": "#e7e7e799"
+    "commandCenter.border": "#e7e7e799",
+    "editorError.foreground": "#000000ff",
+    "editorInfo.foreground": "#000000ff",
+    "editorWarning.foreground": "#000000ff"
   },
   "peacock.remoteColor": "832561"
 }
