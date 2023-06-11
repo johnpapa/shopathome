@@ -17,6 +17,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes, {}),
+    main
     SharedModule,
     externalModules,
   ],
