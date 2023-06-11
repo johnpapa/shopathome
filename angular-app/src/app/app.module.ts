@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { routes } from './router';
 import { AppComponent } from './app.component';
-import { AppStoreModule } from './store/store.module';
 import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
 import { externalModules } from './build-specific';
@@ -18,7 +17,6 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes, {}),
-    AppStoreModule,
     SharedModule,
     externalModules,
   ],

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, map } from 'rxjs';
 import { Product } from '../core';
 import { ProductService } from './product.service';
 
@@ -12,31 +12,37 @@ import { ProductService } from './product.service';
         (add)="enableAddMode()"
         (refresh)="getProducts()"
       ></app-list-header>
-      <div class="columns is-multiline is-variable">
-        <div class="column is-8" *ngIf="products$ | async as products">
-          <app-product-list
-            *ngIf="!selected"
-            [products]="products"
-            [errorMessage]="errorMessage"
-            (selected)="select($event)"
-            (deleted)="askToDelete($event)"
-          ></app-product-list>
-          <app-product-detail
-            *ngIf="selected"
-            [product]="selected"
-            (unselect)="clear()"
-            (save)="save($event)"
-          ></app-product-detail>
-        </div>
+      <div *ngIf="errorMessage">
+        {{ errorMessage }}
       </div>
+      <div *ngIf="products$ | async as products">
+        <div *ngIf="!products?.length && !errorMessage">Loading data ...</div>
 
-      <app-modal
-        class="modal-product"
-        [message]="message"
-        [isOpen]="showModal"
-        (handleNo)="closeModal()"
-        (handleYes)="deleteProduct()"
-      ></app-modal>
+        <div class="columns is-multiline is-variable">
+          <div class="column is-8" *ngIf="products$ | async as products">
+            <app-product-list
+              *ngIf="!selected"
+              [products]="products"
+              (selected)="select($event)"
+              (deleted)="askToDelete($event)"
+            ></app-product-list>
+            <app-product-detail
+              *ngIf="selected"
+              [product]="selected"
+              (unselect)="clear()"
+              (save)="save($event)"
+            ></app-product-detail>
+          </div>
+        </div>
+
+        <app-modal
+          class="modal-product"
+          [message]="message"
+          [isOpen]="showModal"
+          (handleNo)="closeModal()"
+          (handleYes)="deleteProduct()"
+        ></app-modal>
+      </div>
     </div>
   `,
 })
@@ -48,16 +54,17 @@ export class ProductsComponent implements OnInit {
   productToDelete: Product;
   showModal = false;
 
-  constructor(private productService: ProductService) {
-    this.products$ = productService.entities$;
-  }
+  constructor(private productService: ProductService) {}
 
   ngOnInit() {
     this.getProducts();
   }
 
   add(product: Product) {
-    this.productService.add(product);
+    this.productService.addProduct(product).subscribe(() => {
+      this.clear();
+      this.getProducts();
+    });
   }
 
   askToDelete(product: Product) {
@@ -79,27 +86,26 @@ export class ProductsComponent implements OnInit {
   deleteProduct() {
     this.closeModal();
     if (this.productToDelete) {
-      this.productService
-        .delete(this.productToDelete.id)
-        .subscribe(() => (this.productToDelete = null));
+      this.productService.deleteProduct(this.productToDelete).subscribe(() => {
+        this.productToDelete = null;
+        this.clear();
+        this.getProducts();
+      });
     }
-    this.clear();
   }
-
   enableAddMode() {
     this.selected = <any>{};
   }
 
-  async getProducts() {
+  getProducts() {
     this.errorMessage = undefined;
-    this.productService.getAll().subscribe(
-      (_) => {
-        /*.. do nothing for success.. */
-      },
-      // (error: any) => (this.errorMessage = error.error.message),
-      (error: any) => (this.errorMessage = 'Unauthorized'),
+    this.products$ = this.productService.getProducts().pipe(
+      map((p) => this.sortProducts(p)),
+      catchError((error: any) => {
+        this.errorMessage = 'Unauthorized';
+        return [];
+      }),
     );
-    this.clear();
   }
 
   save(product: Product) {
@@ -114,7 +120,22 @@ export class ProductsComponent implements OnInit {
     this.selected = product;
   }
 
+  sortProducts(products: Product[]) {
+    return products.sort((a: Product, b: Product) => {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+
   update(product: Product) {
-    this.productService.update(product);
+    this.productService.updateProduct(product).subscribe(() => {
+      this.clear();
+      this.getProducts();
+    });
   }
 }
