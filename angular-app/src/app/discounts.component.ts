@@ -7,35 +7,39 @@ import { DiscountService } from './discount.service';
   selector: 'app-discount',
   template: `
     <div class="container columns">
-      <div *ngIf="errorMessage">{{ errorMessage }}</div>
-      <div *ngIf="discounts$ | async as discounts" class="column is-8">
+      <div class="column is-8">
         <app-list-header
           title="My Discounts"
           (refresh)="getDiscounts()"
           [showAdd]="showAdd"
         ></app-list-header>
-        <div *ngIf="!discounts?.length && !errorMessage">Loading data ...</div>
-        <ul class="list">
-          <li
-            role="presentation"
-            *ngFor="
-              let discount of discounts;
-              trackBy: trackByDiscount;
-              let i = index
-            "
-          >
-            <div class="card">
-              <div class="card-content">
-                <div class="content discount-grid">
-                  <label>Store:</label><span>{{ discount.store }}</span>
-                  <label>Discount:</label
-                  ><span>{{ discount.percentage }}%</span> <label>Code:</label
-                  ><span>{{ discount.code }}</span>
+        <div *ngIf="errorMessage">{{ errorMessage }}</div>
+        <div *ngIf="discounts$ | async as discounts">
+          <div *ngIf="!discounts?.length && !errorMessage">
+            Loading data ...
+          </div>
+          <ul class="list">
+            <li
+              role="presentation"
+              *ngFor="
+                let discount of discounts;
+                trackBy: trackByDiscount;
+                let i = index
+              "
+            >
+              <div class="card">
+                <div class="card-content">
+                  <div class="content discount-grid">
+                    <label>Store:</label><span>{{ discount.store }}</span>
+                    <label>Discount:</label
+                    ><span>{{ discount.percentage }}%</span> <label>Code:</label
+                    ><span>{{ discount.code }}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   `,

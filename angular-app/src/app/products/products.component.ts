@@ -12,31 +12,37 @@ import { ProductService } from './product.service';
         (add)="enableAddMode()"
         (refresh)="getProducts()"
       ></app-list-header>
-      <div class="columns is-multiline is-variable">
-        <div class="column is-8" *ngIf="products$ | async as products">
-          <app-product-list
-            *ngIf="!selected"
-            [products]="products"
-            [errorMessage]="errorMessage"
-            (selected)="select($event)"
-            (deleted)="askToDelete($event)"
-          ></app-product-list>
-          <app-product-detail
-            *ngIf="selected"
-            [product]="selected"
-            (unselect)="clear()"
-            (save)="save($event)"
-          ></app-product-detail>
-        </div>
+      <div *ngIf="errorMessage">
+        {{ errorMessage }}
       </div>
+      <div *ngIf="products$ | async as products">
+        <div *ngIf="!products?.length && !errorMessage">Loading data ...</div>
 
-      <app-modal
-        class="modal-product"
-        [message]="message"
-        [isOpen]="showModal"
-        (handleNo)="closeModal()"
-        (handleYes)="deleteProduct()"
-      ></app-modal>
+        <div class="columns is-multiline is-variable">
+          <div class="column is-8" *ngIf="products$ | async as products">
+            <app-product-list
+              *ngIf="!selected"
+              [products]="products"
+              (selected)="select($event)"
+              (deleted)="askToDelete($event)"
+            ></app-product-list>
+            <app-product-detail
+              *ngIf="selected"
+              [product]="selected"
+              (unselect)="clear()"
+              (save)="save($event)"
+            ></app-product-detail>
+          </div>
+        </div>
+
+        <app-modal
+          class="modal-product"
+          [message]="message"
+          [isOpen]="showModal"
+          (handleNo)="closeModal()"
+          (handleYes)="deleteProduct()"
+        ></app-modal>
+      </div>
     </div>
   `,
 })
@@ -83,7 +89,7 @@ export class ProductsComponent implements OnInit {
       this.productService.deleteProduct(this.productToDelete).subscribe(() => {
         this.productToDelete = null;
         this.clear();
-      this.getProducts();
+        this.getProducts();
       });
     }
   }
