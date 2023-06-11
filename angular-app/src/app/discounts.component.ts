@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 import { Discount } from './core';
-import { Observable } from 'rxjs';
+import { Observable, catchError } from 'rxjs';
 import { DiscountService } from './discount.service';
 
 @Component({
   selector: 'app-discount',
   template: `
     <div class="container columns">
+      <div *ngIf="errorMessage">{{ errorMessage }}</div>
       <div *ngIf="discounts$ | async as discounts" class="column is-8">
         <app-list-header
           title="My Discounts"
           (refresh)="getDiscounts()"
           [showAdd]="showAdd"
         ></app-list-header>
-        <div *ngIf="errorMessage">{{ errorMessage }}</div>
         <div *ngIf="!discounts?.length && !errorMessage">Loading data ...</div>
         <ul class="list">
           <li
@@ -45,9 +45,7 @@ export class DiscountComponent {
   showAdd = false;
   discounts$: Observable<Discount[]>;
 
-  constructor(private discountService: DiscountService) {
-    this.discounts$ = discountService.entities$;
-  }
+  constructor(private discountService: DiscountService) {}
 
   ngOnInit() {
     this.getDiscounts();
@@ -55,12 +53,11 @@ export class DiscountComponent {
 
   getDiscounts() {
     this.errorMessage = undefined;
-    this.discountService.getAll().subscribe(
-      (_) => {
-        /*.. do nothing for success.. */
-      },
-      // (error: any) => (this.errorMessage = error.error.message),
-      (error: any) => (this.errorMessage = 'Unauthorized'),
+    this.discounts$ = this.discountService.getDiscounts().pipe(
+      catchError((error: any) => {
+        this.errorMessage = 'Unauthorized';
+        return [];
+      }),
     );
   }
 

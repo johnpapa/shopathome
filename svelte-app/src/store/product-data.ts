@@ -1,7 +1,7 @@
 import * as store from './store';
 import { parseItem, parseList } from './http-utils';
 import { API } from '../config';
-import { Product } from '../models';
+import type { Product } from '../models';
 
 export async function getProductsAction() {
   try {
