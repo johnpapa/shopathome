@@ -1,11 +1,12 @@
 import type { Writable } from 'svelte/store';
 import { writable } from 'svelte/store';
-import { Discount, Product } from '../models';
+import type { Discount, Product } from '../models';
 
 interface AppState {
   discounts: Writable<Discount[]>;
   products: Writable<Product[]>;
 }
+
 const state: AppState = {
   discounts: writable([]),
   products: writable([]),
