@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { routes } from './router';
 import { AppComponent } from './app.component';
-import { AppStoreModule } from './store/store.module';
 import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
 import { externalModules } from './build-specific';
@@ -17,8 +16,7 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
-    AppStoreModule,
+    RouterModule.forRoot(routes, {}),
     SharedModule,
     externalModules,
   ],
