@@ -14,7 +14,7 @@ export default {
         type: Object,
         default() {},
       },
-      providers: ['twitter', 'github', 'aad'],
+      providers: ['github', 'Microsoft Entra ID'],
     };
   },
   async created() {

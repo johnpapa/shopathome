@@ -5,11 +5,10 @@
   import AuthLogout from './AuthLogout.svelte';
 
   // const { activeRoute } = getContext(ROUTER);
-  let userInfo = undefined;
+  let userInfo: any = undefined;
   const providers: string[] = [
-    'twitter',
     'github',
-    'aad'
+    'Microsoft Entra ID'
   ];
 
   onMount(async () => (userInfo = await getUserInfo()));
@@ -27,7 +26,7 @@
   }
 
   // function getProps({ location, href, isPartiallyCurrent, isCurrent }) {
-  function getProps({ href, isPartiallyCurrent, isCurrent }) {
+  function getProps({ href, isPartiallyCurrent, isCurrent }: { href: string, isPartiallyCurrent: boolean, isCurrent: boolean }) {
     const isActive = href === '/' ? isCurrent : isPartiallyCurrent || isCurrent;
 
     // The object returned here is spread on the anchor element's attributes

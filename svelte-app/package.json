@@ -14,19 +14,19 @@
     "local": "npx @azure/static-web-apps-cli@latest start http://localhost:5001 --api-location ../api "
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.1.0",
-    "@tsconfig/svelte": "^3.0.0",
-    "autoprefixer": "^10.4.13",
-    "prettier": "^2.2.1",
-    "query-string": "^7.0.0",
+    "@sveltejs/vite-plugin-svelte": "^2.5.2",
+    "@tsconfig/svelte": "^5.0.2",
+    "autoprefixer": "^10.4.16",
+    "prettier": "^3.1.0",
+    "query-string": "^8.1.0",
     "sass": "^1.53.0",
-    "svelte": "^3.52.0",
-    "svelte-check": "^2.9.2",
-    "svelte-preprocess": "^4.10.7",
-    "svelte-routing": "^1.5.0",
-    "tslib": "^2.4.0",
-    "typescript": "^4.6.4",
-    "vite": "^3.2.3"
+    "svelte": "^4.2.3",
+    "svelte-check": "^3.6.0",
+    "svelte-preprocess": "^5.1.0",
+    "svelte-routing": "^2.6.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",

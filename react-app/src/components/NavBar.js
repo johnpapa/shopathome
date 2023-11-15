@@ -6,7 +6,7 @@ import { AuthLogout } from './AuthLogout';
 const captains = console;
 
 function NavBar(props) {
-  const providers = ['twitter', 'github', 'aad'];
+  const providers = ['github', 'Microsoft Entra ID'];
   const [userInfo, setUserInfo] = useState();
 
   useEffect(() => {
