@@ -7,4 +7,12 @@
   }
 </script>
 
-<div class="auth-link" on:click={goAuth} on:keypress={goAuth}>Logout</div>
+<div
+  class="auth-link"
+  role="button"
+  tabindex="0"
+  on:click={goAuth}
+  on:keypress={goAuth}
+>
+  Logout
+</div>
