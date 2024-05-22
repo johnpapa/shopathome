@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "vue-cli-service serve --openssl-legacy-provider",
+    "build": "vue-cli-service build --openssl-legacy-provider",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
     "local-public": "npx @azure/static-web-apps-cli start ./dist --api-location http://localhost:7071",
@@ -35,9 +35,9 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.0.0",
+    "prettier": "^2.2.1",
     "sass": "^1.43.4",
     "sass-loader": "^8.0.2",
-    "prettier": "^2.2.1",
     "vue-template-compiler": "^2.6.12"
   }
 }
