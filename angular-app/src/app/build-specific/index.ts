@@ -7,5 +7,5 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 export const externalModules = [
   StoreDevtoolsModule.instrument({
     maxAge: 25
-  })
+  , connectInZone: true})
 ];
