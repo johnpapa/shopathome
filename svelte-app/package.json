@@ -11,7 +11,7 @@
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "local-public": "npx @azure/static-web-apps-cli@latest start ./public --api-location http://localhost:7071",
     "local-x": "npx @azure/static-web-apps-cli@latest start ./public --api-location ../api",
-    "local": "npx @azure/static-web-apps-cli@latest start http://localhost:5001 --api-location ../api "
+    "local": "npx @azure/static-web-apps-cli@latest start http://localhost:5001 --api-location ../api --verbose"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.5.2",
