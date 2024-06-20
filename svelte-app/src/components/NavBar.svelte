@@ -13,7 +13,6 @@
   onMount(async () => (userInfo = await getUserInfo()));
 
   async function getUserInfo() {
-    console.log('freeTrial', freeTrial);
     if (!freeTrial) {
       try {
         const response = await fetch('/.auth/me');
