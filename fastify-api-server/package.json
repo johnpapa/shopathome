@@ -5,8 +5,10 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "start-svelte": "concurrently \"npm start\" \"VITE_FASTIFY=true VITE_API=http://0.0.0.0:3000/api npm --prefix ../svelte-app run dev\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "svelte-dev": "VITE_FASTIFY=true VITE_API=http://0.0.0.0:3000/api npm --prefix ../svelte-app run dev",
+    "svelte-prod": "VITE_FASTIFY=true VITE_API=http://0.0.0.0:3000/api npm --prefix ../svelte-app run build && npm --prefix ../svelte-app start",
+    "start-svelte-dev": "concurrently \"npm start\" \"npm run svelte-dev\"",
+    "start-svelte-prod": "concurrently \"npm start\" \" npm run svelte-prod \""
   },
   "keywords": [
     "fastify",
