@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "startx": "sirv public --cors --single --no-clear --port 5001",
+    "start": "sirv dist --cors --single --no-clear --port 5001",
     "validate": "svelte-check",
     "dev": "vite --port 5001",
     "build": "vite build",
