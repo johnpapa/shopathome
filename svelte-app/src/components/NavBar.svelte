@@ -7,7 +7,9 @@
 
   // const { activeRoute } = getContext(ROUTER);
   let userInfo: any = undefined;
-  let freeTrial: boolean = FASTIFY;
+  // TODO: remove this flg if i can get SWA CLI to work with Fastify in dev mode for auth
+  let freeTrial: boolean = false; //FASTIFY;
+  console.log('NavBar.svelte: freeTrial', freeTrial);
   const providers: string[] = ['github', 'Microsoft Entra ID'];
 
   onMount(async () => (userInfo = await getUserInfo()));
