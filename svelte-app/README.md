@@ -6,7 +6,7 @@ This project was created to help represent a fundamental app written with Svelte
 
 Learn how to [Publish an Angular, React, Svelte, or Vue JavaScript app and API with Azure Static Web Apps](https://docs.microsoft.com/en-us/learn/modules/publish-app-service-static-web-app-api/?WT.mc_id=shopathome-github-jopapa)
 
-## Getting Started
+## Install and Setup
 
 1. Create a repository from this template repository <https://github.com/johnpapa/shopathome/generate>
 
@@ -24,6 +24,8 @@ Learn how to [Publish an Angular, React, Svelte, or Vue JavaScript app and API w
    ```bash
    npm install
    ```
+
+## Getting Started - Running with Static Web Apps and Serverless Functions
 
 1. Run the app
 
