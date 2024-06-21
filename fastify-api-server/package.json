@@ -13,6 +13,9 @@
     "api",
     "server"
   ],
+  "engines": {
+    "node": "20"
+  },
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {
