@@ -11,7 +11,10 @@
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "local-public": "npx @azure/static-web-apps-cli@latest start ./public --api-location http://localhost:7071",
     "local-x": "npx @azure/static-web-apps-cli@latest start ./public --api-location ../api",
-    "local": "npx @azure/static-web-apps-cli@latest start http://localhost:5001 --api-location ../api --verbose"
+    "local": "npx @azure/static-web-apps-cli@latest start http://localhost:5001 --api-location ../api --verbose=silly",
+    "fastify-dev": "npm --prefix ../fastify-api-server start",
+    "start-fastify-dev": "concurrently \"npm run fastify-dev\" \"VITE_API=http://0.0.0.0:3000/api npm run dev\"",
+    "start-fastify-dev-swa": "concurrently \"npm run fastify-dev\" \"VITE_API=/api npm run dev -- --host 0.0.0.0\" \"npx @azure/static-web-apps-cli@latest start http://0.0.0.0:5001 --api-devserver-url http://0.0.0.0:3000 --host=0.0.0.0 --verbose\""
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.5.2",
