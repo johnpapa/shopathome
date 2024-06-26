@@ -3,28 +3,22 @@
   import { Link } from 'svelte-routing';
   import AuthLogin from './AuthLogin.svelte';
   import AuthLogout from './AuthLogout.svelte';
-  import { FASTIFY } from '../config';
 
   // const { activeRoute } = getContext(ROUTER);
   let userInfo: any = undefined;
-  // TODO: remove this flg if i can get SWA CLI to work with Fastify in dev mode for auth
-  let freeTrial: boolean = false; //FASTIFY;
-  console.log('NavBar.svelte: freeTrial', freeTrial);
   const providers: string[] = ['github', 'Microsoft Entra ID'];
 
   onMount(async () => (userInfo = await getUserInfo()));
 
   async function getUserInfo() {
-    if (!freeTrial) {
-      try {
-        const response = await fetch('/.auth/me');
-        const payload = await response.json();
-        const { clientPrincipal } = payload;
-        return clientPrincipal;
-      } catch (error) {
-        console.error('NavBar.svelte: No profile could be found');
-        return undefined;
-      }
+    try {
+      const response = await fetch('/.auth/me');
+      const payload = await response.json();
+      const { clientPrincipal } = payload;
+      return clientPrincipal;
+    } catch (error) {
+      console.error('NavBar.svelte: No profile could be found');
+      return undefined;
     }
   }
 
@@ -57,26 +51,24 @@
       <Link to="/discounts" {getProps}>My Discounts</Link>
     </ul>
   </nav>
-  {#if !freeTrial}
-    <nav class="menu auth">
-      <p class="menu-label">Auth</p>
-      <div class="menu-list auth">
-        {#if !userInfo}
-          {#each providers as provider (provider)}
-            <AuthLogin {provider} />
-          {/each}
-        {/if}
-        {#if userInfo}
-          <AuthLogout />
-        {/if}
-      </div>
-    </nav>
-    {#if userInfo}
-      <div class="user">
-        <p>Welcome</p>
-        <p>{userInfo && userInfo.userDetails}</p>
-        <p>{userInfo && userInfo.identityProvider}</p>
-      </div>
-    {/if}
+  <nav class="menu auth">
+    <p class="menu-label">Auth</p>
+    <div class="menu-list auth">
+      {#if !userInfo}
+        {#each providers as provider (provider)}
+          <AuthLogin {provider} />
+        {/each}
+      {/if}
+      {#if userInfo}
+        <AuthLogout />
+      {/if}
+    </div>
+  </nav>
+  {#if userInfo}
+    <div class="user">
+      <p>Welcome</p>
+      <p>{userInfo && userInfo.userDetails}</p>
+      <p>{userInfo && userInfo.identityProvider}</p>
+    </div>
   {/if}
 </div>
