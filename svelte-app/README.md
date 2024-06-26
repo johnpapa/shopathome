@@ -25,18 +25,20 @@ Learn how to [Publish an Angular, React, Svelte, or Vue JavaScript app and API w
    npm install
    ```
 
-## Getting Started - Running with Static Web Apps and Serverless Functions
+## Getting Started - Running with Static Web Apps and Serverless Functions API
 
 1. Run the app
 
    ```bash
-   npm run dev
+   npm run start-svelte-func-swa
    ```
 
-1. Run the SWA CLI (proxies the app to the API with Auth)
+## Getting Started - Running with Static Web Apps and Fastify API
+
+1. Run the app
 
    ```bash
-   npm run local
+   npm run start-svelte-fastify-swa
    ```
 
 ## Resources
