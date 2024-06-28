@@ -39,6 +39,16 @@ Learn how to [Publish an Angular, React, Svelte, or Vue JavaScript app and API w
 
 1. Browse to your app at <https://localhost:4280>
 
+## Authentication / Authorization
+
+The app does not require authentication to launch or see the default page. However to view the products or discounts, the user must be authenticated using one of the options. These options are defined in the `/public/staticwebapp.config.json` file.
+
+| Endpoint          | Roles                                         |
+| ----------------- | --------------------------------------------- |
+| /api/\*           | no auth                                       |
+| /api/products/\*  | authenticated users                           |
+| /api/discounts/\* | authenticated users with the _preferred_ role |
+
 ## Resources
 
 ### Azure Static Web Apps
