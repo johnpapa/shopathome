@@ -12,6 +12,9 @@
     "local": "npx @azure/static-web-apps-cli start http://localhost:4200 --api-location ../api "
   },
   "private": true,
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "dependencies": {
     "@angular/animations": "^17.3.9",
     "@angular/common": "^17.3.9",

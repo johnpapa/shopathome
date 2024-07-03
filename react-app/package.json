@@ -23,6 +23,9 @@
     "not op_mini all"
   ],
   "proxy": "http://localhost:7071/",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
     "axios": "^1.7.2",

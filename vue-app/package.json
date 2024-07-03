@@ -11,6 +11,9 @@
     "local-x": "npx @azure/static-web-apps-cli start http://localhost:8080 --api-location http://localhost:7071 --verbose=silly",
     "local": "npx @azure/static-web-apps-cli start http://localhost:8080 --api-location ../api "
   },
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
