@@ -6,7 +6,7 @@ This project was created to help represent a fundamental app written with Vue. T
 
 Learn how to [Publish an Angular, React, Svelte, or Vue JavaScript app and API with Azure Static Web Apps](https://docs.microsoft.com/en-us/learn/modules/publish-app-service-static-web-app-api/?WT.mc_id=shopathome-github-jopapa)
 
-## Getting Started
+## Install and Setup
 
 1. Create a repository from this template repository <https://github.com/johnpapa/shopathome/generate>
 
@@ -25,17 +25,31 @@ Learn how to [Publish an Angular, React, Svelte, or Vue JavaScript app and API w
    npm install
    ```
 
+## Getting Started - Running with Static Web Apps and Serverless Functions API
+
 1. Run the app
 
    ```bash
-   npm run serve
+   npm run start-vue-func-swa
    ```
 
-1. Run the SWA CLI (proxies the app to the API with Auth)
+## Getting Started - Running with Static Web Apps and Fastify API
+
+1. Run the app
 
    ```bash
-   npm run local
+   npm run start-vue-fastify-swa
    ```
+
+## Authentication / Authorization
+
+The app does not require authentication to launch or see the default page. However to view the products or discounts, the user must be authenticated using one of the options. These options are defined in the `/public/staticwebapp.config.json` file.
+
+| Endpoint          | Roles                                         |
+| ----------------- | --------------------------------------------- |
+| /api/\*           | no auth                                       |
+| /api/products/\*  | authenticated users                           |
+| /api/discounts/\* | authenticated users with the _preferred_ role |
 
 ## Resources
 

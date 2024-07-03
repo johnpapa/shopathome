@@ -1,0 +1,29 @@
+{
+  "name": "fastify-api-server",
+  "version": "1.0.0",
+  "description": "Fastify API server",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fastify",
+    "api",
+    "server"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@fastify/cors": "^9.0.1",
+    "@fastify/helmet": "^11.1.1",
+    "fastify": "^4.28.0",
+    "helmet": "^7.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

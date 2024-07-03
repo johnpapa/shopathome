@@ -1,6 +1,17 @@
 {
   "version": "0.2.0",
   "configurations": [
+    // Existing configurations...
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Fastify API Server",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run-script", "start"],
+      "port": 9229,
+      "cwd": "${workspaceFolder}/fastify-api-server",
+      "skipFiles": ["<node_internals>/**"]
+    },
     {
       "name": "Attach to Node Functions",
       "type": "node",

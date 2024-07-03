@@ -4,8 +4,6 @@ import sveltePreprocess from 'svelte-preprocess';
 // import autoprefixer from 'autoprefixer';
 
 const production = process.env.NODE_ENV === 'production';
-const api = 'http://localhost:7071/api';
-const API = process.env.API || production ? '/api' : api;
 
 // https://vitejs.dev/config/
 export default defineConfig({

@@ -3,15 +3,19 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "startx": "sirv public --cors --single --no-clear --port 5001",
+    "start": "sirv dist --cors --single --no-clear --port 5001",
     "validate": "svelte-check",
     "dev": "vite --port 5001",
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "local-public": "npx @azure/static-web-apps-cli@latest start ./public --api-location http://localhost:7071",
-    "local-x": "npx @azure/static-web-apps-cli@latest start ./public --api-location ../api",
-    "local": "npx @azure/static-web-apps-cli@latest start http://localhost:5001 --api-location ../api --verbose"
+    "fastify-dev": "npm --prefix ../fastify-api-server start",
+    "start-svelte-fastify": "concurrently \"npm run fastify-dev\" \"VITE_API=http://0.0.0.0:3000/api npm run dev\"",
+    "start-svelte-func-swa": "npx @azure/static-web-apps-cli@latest start http://localhost:5001 --api-location ../api --run \"npm run dev\"",
+    "start-svelte-fastify-swa": "concurrently \"npm run fastify-dev\" \"npx @azure/static-web-apps-cli@latest start http://0.0.0.0:5001 --api-devserver-url http://0.0.0.0:3000 --host=0.0.0.0\" --run \"VITE_API=/api npm run dev -- --host 0.0.0.0\""
+  },
+  "engines": {
+    "node": ">=20.0.0"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.5.2",

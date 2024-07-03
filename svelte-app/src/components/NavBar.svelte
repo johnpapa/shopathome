@@ -6,10 +6,7 @@
 
   // const { activeRoute } = getContext(ROUTER);
   let userInfo: any = undefined;
-  const providers: string[] = [
-    'github',
-    'Microsoft Entra ID'
-  ];
+  const providers: string[] = ['github', 'Microsoft Entra ID'];
 
   onMount(async () => (userInfo = await getUserInfo()));
 
@@ -26,7 +23,15 @@
   }
 
   // function getProps({ location, href, isPartiallyCurrent, isCurrent }) {
-  function getProps({ href, isPartiallyCurrent, isCurrent }: { href: string, isPartiallyCurrent: boolean, isCurrent: boolean }) {
+  function getProps({
+    href,
+    isPartiallyCurrent,
+    isCurrent,
+  }: {
+    href: string;
+    isPartiallyCurrent: boolean;
+    isCurrent: boolean;
+  }) {
     const isActive = href === '/' ? isCurrent : isPartiallyCurrent || isCurrent;
 
     // The object returned here is spread on the anchor element's attributes

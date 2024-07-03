@@ -1,5 +1,5 @@
 {
-  "platform": { "apiRuntime": "node:16" },
+  "platform": { "apiRuntime": "node:18" },
   "routes": [
     {
       "route": "/api/products/*",

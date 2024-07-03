@@ -7,9 +7,13 @@
     "build": "vue-cli-service build --openssl-legacy-provider",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
-    "local-public": "npx @azure/static-web-apps-cli start ./dist --api-location http://localhost:7071",
-    "local-x": "npx @azure/static-web-apps-cli start http://localhost:8080 --api-location http://localhost:7071 --verbose=silly",
-    "local": "npx @azure/static-web-apps-cli start http://localhost:8080 --api-location ../api "
+    "fastify-dev": "npm --prefix ../fastify-api-server start",
+    "start-vue-fastify": "concurrently \"npm run fastify-dev\" \"VITE_API=http://0.0.0.0:3000/api npm run serve\"",
+    "start-vue-func-swa": "npx @azure/static-web-apps-cli@latest start http://localhost:8080 --api-location ../api --run \"npm run serve\"",
+    "start-vue-fastify-swa": "concurrently \"npm run fastify-dev\" \"npx @azure/static-web-apps-cli@latest start http://0.0.0.0:8080 --api-devserver-url http://0.0.0.0:3000 --host=0.0.0.0\" --run \"VITE_API=/api npm run dev -- --host 0.0.0.0\""
+  },
+  "engines": {
+    "node": ">=20.0.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
@@ -23,21 +27,22 @@
     "vuex": "^3.6.2"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-babel": "~5.0.8",
+    "@vue/cli-plugin-eslint": "~5.0.8",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
-    "@vue/eslint-config-airbnb": "^5.3.0",
-    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-airbnb": "^8.0.0",
+    "@vue/eslint-config-prettier": "^8.0.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-vue": "^7.0.0",
-    "prettier": "^2.2.1",
+    "eslint": "^8.6.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-vue": "^9.27.0",
+    "prettier": "^3.3.2",
     "sass": "^1.43.4",
     "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.12"
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^4.47.0"
   }
 }

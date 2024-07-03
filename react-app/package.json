@@ -9,9 +9,10 @@
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
-    "local-public": "npx @azure/static-web-apps-cli start ./build --api-location http://localhost:7071",
-    "local-x": "npx @azure/static-web-apps-cli start http://localhost:3000 --api-location http://localhost:7071 --verbose=silly",
-    "local": "npx @azure/static-web-apps-cli start http://localhost:3000 --api-location ../api "
+    "fastify-dev": "npm --prefix ../fastify-api-server start",
+    "start-react-fastify": "concurrently \"npm run fastify-dev\" \"VITE_API=http://0.0.0.0:3000/api npm run dev\"",
+    "start-react-func-swa": "npx @azure/static-web-apps-cli@latest start http://localhost:3000 --api-location ../api --run \"npm run start\"",
+    "start-react-fastify-swa": "concurrently \"npm run fastify-dev\" \"npx @azure/static-web-apps-cli@latest start http://0.0.0.0:3000 --api-devserver-url http://0.0.0.0:3000 --host=0.0.0.0\" --run \"VITE_API=/api npm run start -- --host 0.0.0.0\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -23,6 +24,9 @@
     "not op_mini all"
   ],
   "proxy": "http://localhost:7071/",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
     "axios": "^1.7.2",
