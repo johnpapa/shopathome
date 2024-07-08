@@ -9,19 +9,19 @@
       <p>Log in to start enjoying your benefits</p>
       <br />
       <div class="button-group">
-        <button class="button" aria-label="My List" tabindex="0">
+        <button class="button" type="button" aria-label="My List" tabindex="0">
           <a href="/products">
             <i class="fas fa-clipboard-list"></i>
             My List
           </a>
         </button>
-        <button class="button" aria-label="My Discounts">
+        <button class="button" type="button" aria-label="My Discounts">
           <a href="/discounts">
             <i class="fas fa-money-bill-alt"></i>
             My Discounts
           </a>
         </button>
-        <button class="button" aria-label="My Discounts">
+        <button class="button" type="button" aria-label="My Discounts">
           <a
             href="https://github.com/johnpapa/shopathome"
             target="_blank"

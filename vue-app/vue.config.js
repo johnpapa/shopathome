@@ -3,6 +3,9 @@ module.exports = {
     devtool: 'source-map',
   },
   devServer: {
+    server: {
+      type: "https"
+    },
     proxy: {
       '/api': {
         target: 'http://localhost:7071',

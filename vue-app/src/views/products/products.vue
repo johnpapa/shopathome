@@ -1,7 +1,7 @@
 <script>
 import { mapActions, mapGetters } from 'vuex';
-import ListHeader from '@/components/list-header.vue';
-import Modal from '@/components/modal.vue';
+import ListHeader from '../../components/list-header.vue';
+import Modal from '../../components/modal.vue';
 import ProductDetail from './product-detail.vue';
 import ProductList from './product-list.vue';
 
