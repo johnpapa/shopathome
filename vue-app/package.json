@@ -3,14 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --port 8080",
     "build": "vue-cli-service build",
-    "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint",
     "fastify-dev": "npm --prefix ../fastify-api-server start",
     "start-vue-fastify": "concurrently \"npm run fastify-dev\" \"VITE_API=http://0.0.0.0:3000/api npm run serve\"",
     "start-vue-func-swa": "npx @azure/static-web-apps-cli@latest start http://localhost:8080 --api-location ../api --run \"npm run serve\"",
-    "start-vue-fastify-swa": "concurrently \"npm run fastify-dev\" \"npx @azure/static-web-apps-cli@latest start http://0.0.0.0:8080 --api-devserver-url http://0.0.0.0:3000 --host=0.0.0.0\" --run \"VITE_API=/api npm run dev -- --host 0.0.0.0\""
+    "start-vue-fastify-swa": "concurrently \"npm run fastify-dev\" \"npx @azure/static-web-apps-cli@latest start http://0.0.0.0:8080 --api-devserver-url http://0.0.0.0:3000 --host=0.0.0.0 --run 'VITE_API=/api npm run serve -- --host 0.0.0.0'\""
   },
   "engines": {
     "node": ">=20.0.0"
