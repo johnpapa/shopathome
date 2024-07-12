@@ -1,6 +1,6 @@
 <script>
-import AuthLogin from '@/components/auth-login.vue';
-import AuthLogout from '@/components/auth-logout.vue';
+import AuthLogin from './auth-login.vue';
+import AuthLogout from './auth-logout.vue';
 
 export default {
   name: 'NavBar',
@@ -49,9 +49,11 @@ export default {
       <p class="menu-label">Auth</p>
       <div class="menu-list auth">
         <template v-if="!userInfo">
-          <template v-for="provider in providers">
-            <AuthLogin :key="provider" :provider="provider" />
-          </template>
+          <AuthLogin
+            :provider="provider"
+            v-for="provider in providers"
+            :key="provider"
+          />
         </template>
         <AuthLogout v-if="userInfo" />
       </div>

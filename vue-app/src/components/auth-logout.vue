@@ -8,10 +8,15 @@ export default {
       const url = `/.auth/logout?${redirect}`;
       window.location.href = url;
     },
+    handleKeyDown() {
+      this.goAuth();
+    },
   },
 };
 </script>
 
 <template>
-  <div class="auth-link" @click="goAuth">Logout</div>
+  <div class="auth-link" @click="goAuth" @keydown.enter="handleKeyDown">
+    Logout
+  </div>
 </template>

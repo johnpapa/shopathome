@@ -20,6 +20,7 @@ export default {
     },
     dataId: {
       type: Number,
+      default: -1,
     },
     iconClasses: {
       type: String,
@@ -43,6 +44,7 @@ export default {
     @click="handleClick"
     :data-index="dataIndex"
     :data-id="dataId"
+    type="button"
   >
     <i :class="iconClasses"></i>
     <span>{{ label }}</span>

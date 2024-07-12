@@ -12,7 +12,7 @@
     "fastify-dev": "npm --prefix ../fastify-api-server start",
     "start-react-fastify": "concurrently \"npm run fastify-dev\" \"VITE_API=http://0.0.0.0:3000/api npm run dev\"",
     "start-react-func-swa": "npx @azure/static-web-apps-cli@latest start http://localhost:3000 --api-location ../api --run \"npm run start\"",
-    "start-react-fastify-swa": "concurrently \"npm run fastify-dev\" \"npx @azure/static-web-apps-cli@latest start http://0.0.0.0:3000 --api-devserver-url http://0.0.0.0:3000 --host=0.0.0.0\" --run \"VITE_API=/api npm run start -- --host 0.0.0.0\""
+    "start-react-fastify-swa": "concurrently \"npm run fastify-dev\" \"npx @azure/static-web-apps-cli@latest start http://0.0.0.0:3000 --api-devserver-url http://0.0.0.0:3000 --host=0.0.0.0 --run 'VITE_API=/api npm run start -- --host 0.0.0.0'\""
   },
   "eslintConfig": {
     "extends": "react-app"

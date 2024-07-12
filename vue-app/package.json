@@ -3,14 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --openssl-legacy-provider",
-    "build": "vue-cli-service build --openssl-legacy-provider",
-    "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint",
+    "serve": "vue-cli-service serve --port 8080",
+    "build": "vue-cli-service build",
     "fastify-dev": "npm --prefix ../fastify-api-server start",
     "start-vue-fastify": "concurrently \"npm run fastify-dev\" \"VITE_API=http://0.0.0.0:3000/api npm run serve\"",
     "start-vue-func-swa": "npx @azure/static-web-apps-cli@latest start http://localhost:8080 --api-location ../api --run \"npm run serve\"",
-    "start-vue-fastify-swa": "concurrently \"npm run fastify-dev\" \"npx @azure/static-web-apps-cli@latest start http://0.0.0.0:8080 --api-devserver-url http://0.0.0.0:3000 --host=0.0.0.0\" --run \"VITE_API=/api npm run dev -- --host 0.0.0.0\""
+    "start-vue-fastify-swa": "concurrently \"npm run fastify-dev\" \"npx @azure/static-web-apps-cli@latest start http://0.0.0.0:8080 --api-devserver-url http://0.0.0.0:3000 --host=0.0.0.0 --run 'VITE_API=/api npm run serve -- --host 0.0.0.0'\""
   },
   "engines": {
     "node": ">=20.0.0"
@@ -18,23 +16,28 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@fortawesome/vue-fontawesome": "^2.0.6",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
     "axios": "^0.24.0",
     "bulma": "^0.9.2",
     "core-js": "^3.10.0",
-    "vue": "^2.6.12",
-    "vue-router": "^3.5.1",
-    "vuex": "^3.6.2"
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0",
+    "vuex": "^4.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/eslint-parser": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "@vue/babel-preset-app": "^5.0.8",
     "@vue/cli-plugin-babel": "~5.0.8",
     "@vue/cli-plugin-eslint": "~5.0.8",
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
+    "@vue/cli-plugin-router": "~5.0.8",
+    "@vue/cli-service": "^5.0.0",
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-airbnb": "^8.0.0",
     "@vue/eslint-config-prettier": "^8.0.0",
     "babel-eslint": "^10.1.0",
+    "concurrently": "^8.2.2",
     "eslint": "^8.6.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.1.3",
@@ -43,6 +46,6 @@
     "sass": "^1.43.4",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.12",
-    "webpack": "^4.47.0"
+    "webpack": "^5.92.1"
   }
 }
