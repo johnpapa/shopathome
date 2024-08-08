@@ -14,15 +14,15 @@ The [Shop at Home app](https://www.shopathome.dev) allows customers to securely 
 - The [SWA CLI](https://www.npmjs.com/package/@azure/static-web-apps-cli) installed
 - The [Azure Functions Core Tools](https://docs.microsoft.com/azure/azure-functions/functions-run-local?WT.mc_id=academic-0000-jopapa) installed
 
-See instructions to install, setup and run the frontend apps locally in the **README.md** file located at the root of the respective folders.
+See instructions to install, setup and run the application locally in the **README.md** file located at the root of the respective folders.
 
 | Folder          | Description                                                                          | Live Demo                                                |
 | --------------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------- |
-| **angular-app** | [Sample Angular app](https://github.com/azure-template-resources/shopathome/blob/master/angular-app) | [angular.shopathome.dev](https://angular.shopathome.dev) |
-| **api**         | [Fastify API](https://github.com/azure-template-resources/shopathome/blob/master/api) | protected                                                |
-| **react-app**   | [Sample React app](https://github.com/azure-template-resources/shopathome/blob/master/react-app)     | [react.shopathome.dev](https://react.shopathome.dev)     |
-| **svelte-app**  | [Sample Svelte app](https://github.com/azure-template-resources/shopathome/blob/master/svelte-app)   | [svelte.shopathome.dev](https://svelte.shopathome.dev)   |
-| **vue-app**     | [Sample Vue app](https://github.com/azure-template-resources/shopathome/blob/master/vue-app)         | [vue.shopathome.dev](https://vue.shopathome.dev)         |
+| **angular-app** | [Sample Angular app](https://github.com/johnpapa/shopathome/blob/master/angular-app) | [angular.shopathome.dev](https://angular.shopathome.dev) |
+| **api**         | [Fastify API](https://github.com/johnpapa/shopathome/blob/master/api) | protected                                                |
+| **react-app**   | [Sample React app](https://github.com/johnpapa/shopathome/blob/master/react-app)     | [react.shopathome.dev](https://react.shopathome.dev)     |
+| **svelte-app**  | [Sample Svelte app](https://github.com/johnpapa/shopathome/blob/master/svelte-app)   | [svelte.shopathome.dev](https://svelte.shopathome.dev)   |
+| **vue-app**     | [Sample Vue app](https://github.com/johnpapa/shopathome/blob/master/vue-app)         | [vue.shopathome.dev](https://vue.shopathome.dev)         |
 
 ## Run Shop at Home on Azure 
 > [!NOTE]
@@ -44,9 +44,9 @@ See instructions to install, setup and run the frontend apps locally in the **RE
   
 1. Click **Deploy**
 
-Once your App Space is provisioned successfully, open to view your frontend deployed on Azure Static Web Apps with a link to **Open app in browser**.
+Once your App Space is provisioned successfully, open it to see your frontend component, and click on the link **Open app in browser** to view the frontend app on Azure Static Web Apps.
 
-See [the full tutorial](https://review.learn.microsoft.com/en-us/training/modules/introduction-code-to-cloud/4-exercise-deploy-fullstack-app-from-github?branch=pr-en-us-45512) to deploy your frontend.
+<!--- See [the full tutorial](https://review.learn.microsoft.com/en-us/training/modules/introduction-code-to-cloud/4-exercise-deploy-fullstack-app-from-github?branch=pr-en-us-45512) to deploy your frontend. -->
 
 To add your backend:
 1. Open your App Space, click on **+ Add Component** and select **GitHub Repository**
@@ -60,20 +60,18 @@ To add your backend:
 
 Once your App Component (Backend) is added successfully, refresh your App Space to view your backend deployed on Azure Container Apps with a link to **Open app in browser**.
 
-
-
-See [the full tutorial](https://review.learn.microsoft.com/en-us/training/modules/introduction-code-to-cloud/4-exercise-deploy-fullstack-app-from-github?branch=pr-en-us-45512) to add your backend.
+<!-- See [the full tutorial](https://review.learn.microsoft.com/en-us/training/modules/introduction-code-to-cloud/4-exercise-deploy-fullstack-app-from-github?branch=pr-en-us-45512) to add your backend. -->
 
 ## Problems or Suggestions
 
-[Open an issue here](https://github.com/azure-template-resources/shopathome/issues)
+[Open an issue here](https://github.com/johnpapa/shopathome/issues)
 
 ## Learn More
 
 To learn more about the end-to-end of how this application was built, you can learn more in the [walkthrough](#).
 
 Other references:
-- Complete the [Introduction to App Spaces Learn Module](https://review.learn.microsoft.com/en-us/training/modules/introduction-code-to-cloud/?branch=pr-en-us-45512) to learn how to Deploy an Angular, React, Svelte, or Vue JavaScript app and Fastify API with Azure App Spaces
+<!-- - Complete the [Introduction to App Spaces Learn Module](https://review.learn.microsoft.com/en-us/training/modules/introduction-code-to-cloud/?branch=pr-en-us-45512) to learn how to Deploy an Angular, React, Svelte, or Vue JavaScript app and Fastify API with Azure App Spaces -->
 - [Learn about App Spaces](https://learn.microsoft.com/en-us/azure/app-spaces/overview) - Simplifies the deployment and management of multiple services in the Azure Portal
 - [Learn about Azure Static Web App](https://learn.microsoft.com/en-us/azure/static-web-apps/overview) - A service optimized for hosting static web content.
 - [Learn more about Azure Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/overview) - A service optimized to to simplify the running of containers backed by the power of Kubernetes.
