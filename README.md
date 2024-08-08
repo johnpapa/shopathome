@@ -10,8 +10,8 @@ The Shop at Home theme is used throughout the app. View it live at <https://www.
 
 [![Deploy to Azure button](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#view/Microsoft_Azure_PaasServerless/StarshotHome.ReactView)
 
-- For New Users: Clicking the button above will take you to the template gallery. Select a shopping app solution template based on your preferred framework.
-- For Existing Users: Clicking the button above will direct you to a page displaying your current spaces and a ‘Create App Space’ button. Click ‘Create App Space’ to access the template gallery and choose a shopping app solution template.
+- For New Users: Clicking the button above will take you to the App Sapce template gallery. Select a shopping app solution template based on your preferred framework.
+- For Existing Users: Clicking the button above will direct you to a page displaying your existing app spaces and a ‘Create App Space’ button. Click ‘Create App Space’ to access the template gallery and choose a shopping app solution template.
 - GitHub Login: Log in to your GitHub account and fill in your organization and other required fields on the form.
 - Deployment: Click ‘Deploy’ to view the deployment progress.
 - Post-Deployment: After deployment is complete, you will be redirected to your app space for management.
