@@ -6,9 +6,9 @@ The Shop at Home theme is used throughout the app. View it live at <https://www.
 
 [![Deploy to Azure button](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/?feature.customportal=false&WT.mc_id=academic-0000-jopapa#create/Microsoft.StaticApp)
 
-## Deploy using App Spaces
+## Deploy to Azure using App Spaces
 
-[![Deploy to Azure using App Spaces button](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#view/Microsoft_Azure_PaasServerless/StarshotHome.ReactView)
+[![Deploy to Azure button](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#view/Microsoft_Azure_PaasServerless/StarshotHome.ReactView)
 
 - For New Users: Clicking the button above will take you to the template gallery. Select a shopping app solution template based on your preferred framework.
 - For Existing Users: Clicking the button above will direct you to a page displaying your current spaces and a ‘Create App Space’ button. Click ‘Create App Space’ to access the template gallery and choose a shopping app solution template.
