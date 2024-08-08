@@ -6,6 +6,17 @@ The Shop at Home theme is used throughout the app. View it live at <https://www.
 
 [![Deploy to Azure button](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/?feature.customportal=false&WT.mc_id=academic-0000-jopapa#create/Microsoft.StaticApp)
 
+## Deploy to Azure using App Spaces
+
+[![Deploy to Azure button](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#view/Microsoft_Azure_PaasServerless/StarshotHome.ReactView)
+
+- For New Users: Clicking the button above will take you to the App Sapce template gallery. Select a shopping app solution template based on your preferred framework.
+- For Existing Users: Clicking the button above will direct you to a page displaying your existing app spaces and a ‘Create App Space’ button. Click ‘Create App Space’ to access the template gallery and choose a shopping app solution template.
+- GitHub Login: Log in to your GitHub account and fill in your organization and other required fields on the form.
+- Deployment: Click ‘Deploy’ to view the deployment progress.
+- Post-Deployment: After deployment is complete, you will be redirected to your app space for management.
+
+
 ## Learn how
 
 Learn how to [Publish an Angular, React, Svelte, or Vue JavaScript app and API with Azure Static Web Apps](https://docs.microsoft.com/learn/modules/publish-app-service-static-web-app-api/?WT.mc_id=academic-0000-jopapa)
@@ -48,3 +59,4 @@ The apps written in the following JavaScript frameworks/libraries:
 - [Routes](https://docs.microsoft.com/azure/static-web-apps/routes?WT.mc_id=academic-0000-jopapa)
 - [Review pre-production environments](https://docs.microsoft.com/azure/static-web-apps/review-publish-pull-requests?WT.mc_id=academic-0000-jopapa)
 - [Azure Free Trial](https://azure.microsoft.com/free/?WT.mc_id=academic-0000-jopapa)
+- [Learn about App Spaces](https://learn.microsoft.com/en-us/azure/app-spaces/overview) - Simplifies the deployment and management of multiple services in the Azure Portal
