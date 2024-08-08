@@ -1,5 +1,5 @@
 <script>
-import HeaderBarBrand from '@/components/header-bar-brand.vue';
+import HeaderBarBrand from './header-bar-brand.vue';
 
 export default {
   name: 'HeaderBar',

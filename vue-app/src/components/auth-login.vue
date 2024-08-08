@@ -14,10 +14,15 @@ export default {
       const url = `/.auth/login/${this.provider}?${redirect}`;
       window.location.href = url;
     },
+    handleKeyDown() {
+      this.goAuth();
+    },
   },
 };
 </script>
 
 <template>
-  <div class="auth-link" @click="goAuth">{{ provider }}</div>
+  <div class="auth-link" @click="goAuth" @keydown.enter="handleKeyDown">
+    {{ provider }}
+  </div>
 </template>

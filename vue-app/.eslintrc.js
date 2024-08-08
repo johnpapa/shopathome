@@ -26,8 +26,11 @@ module.exports = {
         ignoreWhenBindingPresent: true,
       },
     ],
+    'vuejs-accessibility/label-has-for': 'off',
+    'vue/multi-word-component-names':'off',
+    'no-restricted-exports': 'off',
   },
   parserOptions: {
-    parser: 'babel-eslint',
+    parser: '@babel/eslint-parser',
   },
 };

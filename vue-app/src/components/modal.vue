@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'Modal',
+  name: 'App-Modal',
   props: {
     message: {
       type: String,
@@ -31,8 +31,14 @@ export default {
       </header>
       <section class="modal-card-body">{{ message }}</section>
       <footer class="modal-card-foot">
-        <button class="button modal-no" @click="onNo">No</button>
-        <button class="button is-primary modal-yes" @click="onYes">Yes</button>
+        <button class="button modal-no" @click="onNo" type="button">No</button>
+        <button
+          class="button is-primary modal-yes"
+          @click="onYes"
+          type="button"
+        >
+          Yes
+        </button>
       </footer>
     </div>
   </div>

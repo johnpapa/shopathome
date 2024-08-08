@@ -32,6 +32,7 @@ export default {
       <h2 class="title">{{ title }}</h2>
     </router-link>
     <button
+      type="button"
       v-if="showAdd"
       class="button add-button"
       @click="handleAdd"
@@ -40,6 +41,7 @@ export default {
       <i class="fas fa-plus" aria-hidden="true"></i>
     </button>
     <button
+      type="button"
       class="button refresh-button"
       @click="handleRefresh"
       aria-label="refresh"
