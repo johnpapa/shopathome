@@ -45,9 +45,6 @@ See instructions to install, setup and run the application locally in the **READ
 
 Once your App Space is provisioned successfully, open to view your frontend deployed on Azure Static Web Apps with a link to **Open app in browser**.
 
-> [!NOTE]
-> To enable API connection and link the backend component to your Static App, click the connection between your frontend and backend, then **Upgrade + connect**
-
 ## Problems or Suggestions
 
 [Open an issue here](https://github.com/johnpapa/shopathome/issues)
