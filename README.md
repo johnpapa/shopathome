@@ -15,15 +15,15 @@ The [Shop at Home app](https://www.shopathome.dev) allows customers to securely 
 - The [SWA CLI](https://www.npmjs.com/package/@azure/static-web-apps-cli) installed
 - The [Azure Functions Core Tools](https://docs.microsoft.com/azure/azure-functions/functions-run-local?WT.mc_id=academic-0000-jopapa) installed
 
-See instructions to install, setup and run the apps locally in the **README.md** file located at the root of the respective folders.
+See instructions to install, setup and run the application locally in the **README.md** file located at the root of the respective folders.
 
 | Folder          | Description                                                                          | Live Demo                                                |
 | --------------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------- |
-| **angular-app** | [Sample Angular app](https://github.com/azure-template-resources/shopathome/blob/master/angular-app) | [angular.shopathome.dev](https://angular.shopathome.dev) |
-| **api**         | [Fastify API](https://github.com/azure-template-resources/shopathome/blob/master/api) | protected                                                |
-| **react-app**   | [Sample React app](https://github.com/azure-template-resources/shopathome/blob/master/react-app)     | [react.shopathome.dev](https://react.shopathome.dev)     |
-| **svelte-app**  | [Sample Svelte app](https://github.com/azure-template-resources/shopathome/blob/master/svelte-app)   | [svelte.shopathome.dev](https://svelte.shopathome.dev)   |
-| **vue-app**     | [Sample Vue app](https://github.com/azure-template-resources/shopathome/blob/master/vue-app)         | [vue.shopathome.dev](https://vue.shopathome.dev)         |
+| **angular-app** | [Sample Angular app](https://github.com/johnpapa/shopathome/blob/master/angular-app) | [angular.shopathome.dev](https://angular.shopathome.dev) |
+| **api**         | [Fastify API](https://github.com/johnpapa/shopathome/blob/master/api) | protected                                                |
+| **react-app**   | [Sample React app](https://github.com/johnpapa/shopathome/blob/master/react-app)     | [react.shopathome.dev](https://react.shopathome.dev)     |
+| **svelte-app**  | [Sample Svelte app](https://github.com/johnpapa/shopathome/blob/master/svelte-app)   | [svelte.shopathome.dev](https://svelte.shopathome.dev)   |
+| **vue-app**     | [Sample Vue app](https://github.com/johnpapa/shopathome/blob/master/vue-app)         | [vue.shopathome.dev](https://vue.shopathome.dev)         |
 
 ## Deploy to Azure using App Spaces
 
@@ -50,7 +50,7 @@ Once your App Space is provisioned successfully, open to view your frontend depl
 
 ## Problems or Suggestions
 
-[Open an issue here](https://github.com/azure-template-resources/shopathome/issues)
+[Open an issue here](https://github.com/johnpapa/shopathome/issues)
 
 ## Learn More
 

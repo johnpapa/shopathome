@@ -1,5 +1,5 @@
 <script>
-import ButtonFooter from '@/components/button-footer.vue';
+import ButtonFooter from '../../components/button-footer.vue';
 
 export default {
   name: 'ProductDetail',
@@ -49,6 +49,7 @@ export default {
         <div class="field" v-if="editingProduct.id">
           <label class="label" for="id">id</label>
           <input
+            aria-label="product id"
             class="input"
             name="id"
             placeholder="99999"
@@ -60,6 +61,7 @@ export default {
         <div class="field">
           <label class="label" for="name">name</label>
           <input
+            aria-label="product name"
             class="input"
             name="name"
             placeholder="Oranges"
@@ -70,6 +72,7 @@ export default {
         <div class="field">
           <label class="label" for="description">description</label>
           <input
+            aria-label="product description"
             class="input"
             name="description"
             placeholder="box"
@@ -80,6 +83,7 @@ export default {
         <div class="field">
           <label class="label" for="quantity">quantity</label>
           <input
+            aria-label="quantity"
             class="input"
             name="quantity"
             placeholder="1"
