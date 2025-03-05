@@ -32,6 +32,17 @@ See instructions to install, setup and run the application locally in the **READ
 ## Deploy to Azure using Azure Static Web Apps (Azure Functions API)
 [![Deploy to Azure button](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/?feature.customportal=false&WT.mc_id=academic-0000-jopapa#create/Microsoft.StaticApp)
 
+1. Once you are signed in on Azure through the link above, select a subscription and resource group then:
+    - Static Web App details: Provide a name and select a hosting plan
+    - GitHub Login: Set your deployment source as GitHub then log in and fill in the required fields on the form:
+        - *Organization* – Choose your organization.
+        - *Repository* – Select the shop at home repository. 
+        - *Branch* - Select a branch (main) 
+        - *Build Presets* - Azure Static Web Apps uses a detection algorithm to detect the framework used and defaults to Svelte. (You can change to use your framework of choice and issue the App location, Api location - ./api and output location)
+    - Deployment: Click 'Review + Create', then 'Create'
+    - Post-Deployment: After deployment is complete, click on 'Go to Deployment' then 'View app in browser'.
+
+Once your GitHub Action is executed successfully, refresh the live page to view your application.
 ## Deploy to Azure using App Spaces (Fastify API)
 
 [![Deploy to Azure button](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#view/Microsoft_Azure_PaasServerless/StarshotHome.ReactView)
