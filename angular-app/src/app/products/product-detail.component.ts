@@ -11,8 +11,8 @@ import {
 import { Product } from '../core';
 
 @Component({
-  selector: 'app-product-detail',
-  template: `
+    selector: 'app-product-detail',
+    template: `
     <div class="card edit-detail">
       <header class="card-header">
         <p class="card-header-title">
@@ -95,7 +95,8 @@ import { Product } from '../core';
       </footer>
     </div>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ProductDetailComponent implements OnChanges {
   @Input() product: Product;

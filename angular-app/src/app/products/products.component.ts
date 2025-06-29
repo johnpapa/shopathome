@@ -4,8 +4,8 @@ import { Product } from '../core';
 import { ProductService } from './product.service';
 
 @Component({
-  selector: 'app-products',
-  template: `
+    selector: 'app-products',
+    template: `
     <div class="content-container">
       <app-list-header
         title="My List"
@@ -45,6 +45,7 @@ import { ProductService } from './product.service';
       </div>
     </div>
   `,
+    standalone: false
 })
 export class ProductsComponent implements OnInit {
   errorMessage: string;

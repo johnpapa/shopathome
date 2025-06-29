@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UserInfo } from '../model';
 
 @Component({
-  selector: 'app-nav',
-  template: `
+    selector: 'app-nav',
+    template: `
     <nav class="menu">
       <p class="menu-label">Menu</p>
       <ul class="menu-list">
@@ -35,6 +35,7 @@ import { UserInfo } from '../model';
       <p>{{ userInfo?.identityProvider }}</p>
     </div>
   `,
+    standalone: false
 })
 export class NavComponent implements OnInit {
   providers = ['github', 'Microsoft Entra ID'];

@@ -4,8 +4,8 @@ import { Observable, catchError } from 'rxjs';
 import { DiscountService } from './discount.service';
 
 @Component({
-  selector: 'app-discount',
-  template: `
+    selector: 'app-discount',
+    template: `
     <div class="container columns">
       <div class="column is-8">
         <app-list-header
@@ -43,6 +43,7 @@ import { DiscountService } from './discount.service';
       </div>
     </div>
   `,
+    standalone: false
 })
 export class DiscountComponent {
   errorMessage: string;

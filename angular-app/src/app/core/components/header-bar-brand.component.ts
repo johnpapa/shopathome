@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-header-bar-brand',
-  template: `
+    selector: 'app-header-bar-brand',
+    template: `
     <div class="navbar-brand">
       <a
         class="navbar-item"
@@ -19,5 +19,6 @@ import { Component } from '@angular/core';
       </a>
     </div>
   `,
+    standalone: false
 })
 export class HeaderBarBrandComponent {}

@@ -8,8 +8,8 @@ import {
 import { Product } from '../core';
 
 @Component({
-  selector: 'app-product-list',
-  template: `
+    selector: 'app-product-list',
+    template: `
     <ul class="list">
       <li
         role="presentation"
@@ -42,7 +42,8 @@ import { Product } from '../core';
       </li>
     </ul>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ProductListComponent {
   @Input() products: Product[];
