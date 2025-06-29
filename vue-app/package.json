@@ -6,9 +6,9 @@
     "serve": "vue-cli-service serve --port 8080",
     "build": "vue-cli-service build",
     "fastify-dev": "npm --prefix ../fastify-api-server start",
-    "start-vue-fastify": "concurrently \"npm run fastify-dev\" \"VITE_API=http://0.0.0.0:3000/api npm run serve\"",
+    "start-vue-fastify": "concurrently \"npm run fastify-dev\" \"npm run serve\"",
     "start-vue-func-swa": "npx @azure/static-web-apps-cli@latest start http://localhost:8080 --api-location ../api --run \"npm run serve\"",
-    "start-vue-fastify-swa": "concurrently \"npm run fastify-dev\" \"npx @azure/static-web-apps-cli@latest start http://0.0.0.0:8080 --api-devserver-url http://0.0.0.0:3000 --host=0.0.0.0 --run 'VITE_API=/api npm run serve -- --host 0.0.0.0'\""
+    "start-vue-fastify-swa": "concurrently \"npm run fastify-dev\" \"npx @azure/static-web-apps-cli@latest start http://localhost:8080 --api-devserver-url http://localhost:3000 --run 'npm run serve'\""
   },
   "engines": {
     "node": ">=20.0.0"
