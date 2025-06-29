@@ -19,6 +19,6 @@ import { Component } from '@angular/core';
       </a>
     </div>
   `,
-    standalone: false
+    standalone: true
 })
 export class HeaderBarBrandComponent {}

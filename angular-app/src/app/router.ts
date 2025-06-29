@@ -8,8 +8,8 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   {
     path: 'products',
-    loadChildren: () =>
-      import('./products/products.module').then((m) => m.ProductsModule),
+    loadComponent: () =>
+      import('./products/products.component').then((m) => m.ProductsComponent),
   },
   { path: 'discounts', component: DiscountComponent },
   { path: '**', component: NotFoundComponent },

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'app-auth-logout',
     template: ` <div class="auth-link" (click)="goAuth()">Logout</div> `,
-    standalone: false
+    standalone: true
 })
 export class AuthLogoutComponent {
   goAuth() {

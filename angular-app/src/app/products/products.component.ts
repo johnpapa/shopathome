@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Observable, catchError, map } from 'rxjs';
 import { Product } from '../core';
 import { ProductService } from './product.service';
+import { ListHeaderComponent } from '../shared/list-header.component';
+import { ProductListComponent } from './product-list.component';
+import { ProductDetailComponent } from './product-detail.component';
+import { ModalComponent } from '../shared/modal.component';
 
 @Component({
     selector: 'app-products',
@@ -45,7 +50,8 @@ import { ProductService } from './product.service';
       </div>
     </div>
   `,
-    standalone: false
+    standalone: true,
+    imports: [CommonModule, ListHeaderComponent, ProductListComponent, ProductDetailComponent, ModalComponent]
 })
 export class ProductsComponent implements OnInit {
   errorMessage: string;

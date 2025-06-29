@@ -5,7 +5,10 @@ import {
   Output,
   ChangeDetectionStrategy,
 } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Product } from '../core';
+import { CardContentComponent } from '../shared/card-content.component';
+import { ButtonFooterComponent } from '../shared/button-footer.component';
 
 @Component({
     selector: 'app-product-list',
@@ -43,7 +46,8 @@ import { Product } from '../core';
     </ul>
   `,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    standalone: true,
+    imports: [CommonModule, CardContentComponent, ButtonFooterComponent]
 })
 export class ProductListComponent {
   @Input() products: Product[];

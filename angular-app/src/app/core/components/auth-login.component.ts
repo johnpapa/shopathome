@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
     selector: 'app-auth-login',
     template: ` <div class="auth-link" (click)="goAuth()">{{ provider }}</div> `,
-    standalone: false
+    standalone: true
 })
 export class AuthLoginComponent {
   @Input() provider = '';

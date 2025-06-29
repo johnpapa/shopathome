@@ -7,8 +7,11 @@ import {
   SimpleChanges,
   ChangeDetectionStrategy,
 } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { Product } from '../core';
+import { ButtonFooterComponent } from '../shared/button-footer.component';
 
 @Component({
     selector: 'app-product-detail',
@@ -96,7 +99,8 @@ import { Product } from '../core';
     </div>
   `,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    standalone: true,
+    imports: [CommonModule, FormsModule, ButtonFooterComponent]
 })
 export class ProductDetailComponent implements OnChanges {
   @Input() product: Product;

@@ -10,7 +10,7 @@ import { Component, OnInit, Input } from '@angular/core';
       </div>
     </div>
   `,
-    standalone: false
+    standalone: true
 })
 export class CardContentComponent implements OnInit {
   @Input() name;

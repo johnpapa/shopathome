@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { UserInfo } from '../model';
+import { AuthLoginComponent } from './auth-login.component';
+import { AuthLogoutComponent } from './auth-logout.component';
 
 @Component({
     selector: 'app-nav',
@@ -35,7 +39,8 @@ import { UserInfo } from '../model';
       <p>{{ userInfo?.identityProvider }}</p>
     </div>
   `,
-    standalone: false
+    standalone: true,
+    imports: [CommonModule, RouterModule, AuthLoginComponent, AuthLogoutComponent]
 })
 export class NavComponent implements OnInit {
   providers = ['github', 'Microsoft Entra ID'];

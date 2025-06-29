@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Discount } from './core';
 import { Observable, catchError } from 'rxjs';
 import { DiscountService } from './discount.service';
+import { ListHeaderComponent } from './shared/list-header.component';
 
 @Component({
     selector: 'app-discount',
@@ -43,7 +45,8 @@ import { DiscountService } from './discount.service';
       </div>
     </div>
   `,
-    standalone: false
+    standalone: true,
+    imports: [CommonModule, ListHeaderComponent]
 })
 export class DiscountComponent {
   errorMessage: string;

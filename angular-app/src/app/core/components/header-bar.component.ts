@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HeaderBarBrandComponent } from './header-bar-brand.component';
 
 @Component({
     selector: 'app-header-bar',
@@ -13,6 +14,7 @@ import { Component } from '@angular/core';
       </nav>
     </header>
   `,
-    standalone: false
+    standalone: true,
+    imports: [HeaderBarBrandComponent]
 })
 export class HeaderBarComponent {}

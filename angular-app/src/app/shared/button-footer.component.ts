@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-button-footer',
@@ -14,7 +15,8 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
       <i [ngClass]="iconClasses"></i> <span>{{ label }}</span>
     </button>
   `,
-    standalone: false
+    standalone: true,
+    imports: [CommonModule]
 })
 export class ButtonFooterComponent implements OnInit {
   @Input() label;

@@ -10,6 +10,6 @@ import { Component } from '@angular/core';
       </div>
     </div>
   `,
-    standalone: false
+    standalone: true
 })
 export class NotFoundComponent {}

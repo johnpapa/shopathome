@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-modal',
@@ -19,7 +20,8 @@ import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
       </div>
     </div>
   `,
-    standalone: false
+    standalone: true,
+    imports: [CommonModule]
 })
 export class ModalComponent implements OnInit {
   @Input() message;

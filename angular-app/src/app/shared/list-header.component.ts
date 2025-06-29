@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-list-header',
@@ -24,7 +25,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
       </button>
     </div>
   `,
-    standalone: false
+    standalone: true,
+    imports: [CommonModule]
 })
 export class ListHeaderComponent implements OnInit {
   @Input() title: string;

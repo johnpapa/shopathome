@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { HeaderBarComponent } from './core/components/header-bar.component';
+import { NavComponent } from './core/components/nav.component';
+
 @Component({
     selector: 'app-root',
     template: `
@@ -12,6 +16,7 @@ import { Component } from '@angular/core';
       </div>
     </div>
   `,
-    standalone: false
+    standalone: true,
+    imports: [RouterOutlet, HeaderBarComponent, NavComponent]
 })
 export class AppComponent {}
