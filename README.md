@@ -5,7 +5,8 @@ The [Shop at Home app](https://www.shopathome.dev) allows customers to securely 
 This repository contains apps that can be used with as a starting point for some MS Learn Modules. because everyone has their own preference for their JavaScript frameworks/library, you can choose which one best suits your preferences and requirements.
 
 - The Frontend is built using 4 JavaScript frameworks (Angular, React, Svelte, Vue) and is deployed to **Azure Static Web Apps**
-- The sample contains 2 APIs you can choose from: An **Azure Functions App** and a Fastify server project which is deployed to **Azure Container Apps**
+- The sample contains 2 APIs you can choose from: An **Azure Functions App** and a **Fastify server** project which is deployed to **Azure Container Apps**
+- Includes a **GitHub MCP Server** that implements the Model Context Protocol for GitHub API integration
 
 ## Run Shop at Home locally
 
@@ -20,14 +21,15 @@ This repository contains apps that can be used with as a starting point for some
 
 See instructions to install, setup and run the application locally in the **README.md** file located at the root of the respective folders.
 
-| Folder          | Description                                                                          | Live Demo                                                |
-| --------------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------- |
-| **angular-app** | [Sample Angular app](https://github.com/johnpapa/shopathome/blob/master/angular-app) | [angular.shopathome.dev](https://angular.shopathome.dev) |
-| **api**         | [Sample Azure Functions app](https://github.com/johnpapa/shopathome/blob/master/api) | protected                                                |
-| **api**         | [Sample Fastify API](https://github.com/johnpapa/shopathome/blob/master/fastify-api-server) | protected                                                |
-| **react-app**   | [Sample React app](https://github.com/johnpapa/shopathome/blob/master/react-app)     | [react.shopathome.dev](https://react.shopathome.dev)     |
-| **svelte-app**  | [Sample Svelte app](https://github.com/johnpapa/shopathome/blob/master/svelte-app)   | [svelte.shopathome.dev](https://svelte.shopathome.dev)   |
-| **vue-app**     | [Sample Vue app](https://github.com/johnpapa/shopathome/blob/master/vue-app)         | [vue.shopathome.dev](https://vue.shopathome.dev)         |
+| Folder               | Description                                                                          | Live Demo                                                |
+| -------------------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------- |
+| **angular-app**      | [Sample Angular app](https://github.com/johnpapa/shopathome/blob/master/angular-app) | [angular.shopathome.dev](https://angular.shopathome.dev) |
+| **api**              | [Sample Azure Functions app](https://github.com/johnpapa/shopathome/blob/master/api) | protected                                                |
+| **fastify-api-server** | [Sample Fastify API](https://github.com/johnpapa/shopathome/blob/master/fastify-api-server) | protected                                                |
+| **github-mcp-server** | [GitHub MCP Server](https://github.com/johnpapa/shopathome/blob/master/github-mcp-server) | Model Context Protocol server for GitHub API integration |
+| **react-app**       | [Sample React app](https://github.com/johnpapa/shopathome/blob/master/react-app)     | [react.shopathome.dev](https://react.shopathome.dev)     |
+| **svelte-app**      | [Sample Svelte app](https://github.com/johnpapa/shopathome/blob/master/svelte-app)   | [svelte.shopathome.dev](https://svelte.shopathome.dev)   |
+| **vue-app**         | [Sample Vue app](https://github.com/johnpapa/shopathome/blob/master/vue-app)         | [vue.shopathome.dev](https://vue.shopathome.dev)         |
 
 ## Deploy to Azure using Azure Static Web Apps (Azure Functions API)
 [![Deploy to Azure button](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/?feature.customportal=false&WT.mc_id=academic-0000-jopapa#create/Microsoft.StaticApp)
