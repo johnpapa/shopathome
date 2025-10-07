@@ -45,6 +45,7 @@ import { Product } from '../core';
               type="text"
               [(ngModel)]="editingProduct.name"
               placeholder="Oranges"
+              data-testid="product-name-input"
             />
           </div>
           <div class="field">
@@ -57,6 +58,7 @@ import { Product } from '../core';
               type="text"
               [(ngModel)]="editingProduct.description"
               placeholder="box"
+              data-testid="product-description-input"
             />
           </div>
           <div class="field">
@@ -71,6 +73,7 @@ import { Product } from '../core';
               max="100"
               [(ngModel)]="editingProduct.quantity"
               placeholder="1"
+              data-testid="product-quantity-input"
             />
           </div>
         </div>
@@ -83,6 +86,7 @@ import { Product } from '../core';
           (clicked)="clear()"
           label="Cancel"
           [item]="editingProduct"
+          data-testid="cancel-product-btn"
         ></app-button-footer>
         <app-button-footer
           class="card-footer-item"
@@ -91,6 +95,7 @@ import { Product } from '../core';
           (clicked)="saveProduct()"
           label="Save"
           [item]="editingProduct"
+          data-testid="save-product-btn"
         ></app-button-footer>
       </footer>
     </div>

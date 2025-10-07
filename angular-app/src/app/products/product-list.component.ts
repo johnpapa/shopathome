@@ -10,10 +10,11 @@ import { Product } from '../core';
 @Component({
   selector: 'app-product-list',
   template: `
-    <ul class="list">
+    <ul class="list" data-testid="product-list">
       <li
         role="presentation"
         *ngFor="let product of products; trackBy: trackByProduct; let i = index"
+        data-testid="product-item"
       >
         <div class="card">
           <app-card-content
@@ -28,6 +29,7 @@ import { Product } from '../core';
               (clicked)="deleteProduct($event)"
               label="Delete"
               [item]="product"
+              data-testid="delete-product-btn"
             ></app-button-footer>
             <app-button-footer
               class="card-footer-item"
@@ -36,6 +38,7 @@ import { Product } from '../core';
               (clicked)="selectProduct($event)"
               label="Edit"
               [item]="product"
+              data-testid="edit-product-btn"
             ></app-button-footer>
           </footer>
         </div>

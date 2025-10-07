@@ -42,11 +42,12 @@ export default {
       ></ListHeader>
       <div v-if="errorMessage">{{ errorMessage }}</div>
       <div v-if="!discounts.length && !errorMessage">Loading data ...</div>
-      <ul class="list">
+      <ul class="list" data-testid="discount-list">
         <li
           role="presentation"
           v-for="discount in discounts"
           :key="discount.id"
+          data-testid="discount-item"
         >
           <div class="card">
             <div class="card-content">

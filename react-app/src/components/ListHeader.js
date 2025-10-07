@@ -18,6 +18,7 @@ const ListHeader = ({
           className="button add-button"
           onClick={handleAdd}
           aria-label="add"
+          data-testid="add-product-btn"
         >
           <i className="fas fa-plus" aria-hidden="true" />
         </button>
@@ -26,6 +27,7 @@ const ListHeader = ({
         className="button refresh-button"
         onClick={handleRefresh}
         aria-label="refresh"
+        data-testid="refresh-btn"
       >
         <i className="fas fa-sync" aria-hidden="true" />
       </button>

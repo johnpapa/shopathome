@@ -18,7 +18,7 @@ import { DiscountService } from './discount.service';
           <div *ngIf="!discounts?.length && !errorMessage">
             Loading data ...
           </div>
-          <ul class="list">
+          <ul class="list" data-testid="discount-list">
             <li
               role="presentation"
               *ngFor="
@@ -26,6 +26,7 @@ import { DiscountService } from './discount.service';
                 trackBy: trackByDiscount;
                 let i = index
               "
+              data-testid="discount-item"
             >
               <div class="card">
                 <div class="card-content">

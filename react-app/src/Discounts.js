@@ -25,10 +25,10 @@ function Discounts() {
         {(!discounts || !discounts.length) && !errorMessage && (
           <div>Loading data ...</div>
         )}
-        <ul className="list">
+        <ul className="list" data-testid="discount-list">
           {discounts &&
             discounts.map((discount /*, index */) => (
-              <li key={discount.id} role="presentation">
+              <li key={discount.id} role="presentation" data-testid="discount-item">
                 <div className="card">
                   <div className="card-content">
                     <div className="content discount-grid">

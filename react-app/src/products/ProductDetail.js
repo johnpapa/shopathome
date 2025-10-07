@@ -82,12 +82,14 @@ function ProductDetail({
           iconClasses="fas fa-undo"
           onClick={handleCancelProduct}
           label="Cancel"
+          data-testid="cancel-product-btn"
         />
         <ButtonFooter
           className="save-button"
           iconClasses="fas fa-save"
           onClick={handleSave}
           label="Save"
+          data-testid="save-product-btn"
         />
       </footer>
     </div>

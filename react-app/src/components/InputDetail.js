@@ -13,6 +13,7 @@ const InputDetail = ({ name, value, placeholder, onChange, readOnly }) => (
       placeholder={placeholder}
       readOnly={!!readOnly}
       onChange={onChange}
+      data-testid={`product-${name}-input`}
     />
   </div>
 );

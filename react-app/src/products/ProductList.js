@@ -33,9 +33,9 @@ function ProductList({
       {(!products || !products.length) && !errorMessage && (
         <div>Loading data ...</div>
       )}
-      <ul className="list">
+      <ul className="list" data-testid="product-list">
         {products.map((product, index) => (
-          <li key={product.id} role="presentation">
+          <li key={product.id} role="presentation" data-testid="product-item">
             <div className="card">
               <CardContent
                 name={product.name}
@@ -49,6 +49,7 @@ function ProductList({
                   label="Delete"
                   dataIndex={index}
                   dataId={product.id}
+                  data-testid="delete-product-btn"
                 />
                 <ButtonFooter
                   className="edit-item"
@@ -57,6 +58,7 @@ function ProductList({
                   label="Edit"
                   dataIndex={index}
                   dataId={product.id}
+                  data-testid="edit-product-btn"
                 />
               </footer>
             </div>

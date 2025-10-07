@@ -37,6 +37,7 @@ export default {
       class="button add-button"
       @click="handleAdd"
       aria-label="add"
+      data-testid="add-product-btn"
     >
       <i class="fas fa-plus" aria-hidden="true"></i>
     </button>
@@ -45,6 +46,7 @@ export default {
       class="button refresh-button"
       @click="handleRefresh"
       aria-label="refresh"
+      data-testid="refresh-btn"
     >
       <i class="fas fa-sync" aria-hidden="true"></i>
     </button>

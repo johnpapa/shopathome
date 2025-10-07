@@ -37,11 +37,12 @@ export default {
   <div>
     <div v-if="errorMessage">{{ errorMessage }}</div>
     <div v-if="!products.length && !errorMessage">Loading data ...</div>
-    <ul class="list">
+    <ul class="list" data-testid="product-list">
       <li
         v-for="(product, index) in products"
         :key="product.id"
         role="presentation"
+        data-testid="product-item"
       >
         <div class="card">
           <CardContent
@@ -57,6 +58,7 @@ export default {
               :dataIndex="index"
               :dataId="product.id"
               :item="product"
+              data-testid="delete-product-btn"
             />
             <ButtonFooter
               class="edit-item"
@@ -66,6 +68,7 @@ export default {
               :dataIndex="index"
               :dataId="product.id"
               :item="product"
+              data-testid="edit-product-btn"
             />
           </footer>
         </div>
