@@ -1,0 +1,22 @@
+{
+  "name": "shopathome-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shop at Home - Multi-framework E2E testing with Playwright",
+  "scripts": {
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:debug": "playwright test --debug",
+    "test:e2e:report": "playwright show-report",
+    "test:setup": "playwright install",
+    "test:setup:deps": "playwright install-deps"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
