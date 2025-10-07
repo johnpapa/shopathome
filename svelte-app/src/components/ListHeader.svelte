@@ -17,14 +17,15 @@
     <h2 class="title">{title}</h2>
   </Link>
   {#if showAdd}
-    <button class="button add-button" on:click={() => add()} aria-label="add">
+    <button class="button add-button" on:click={() => add()} aria-label="add" data-testid="add-product-btn">
       <i class="fas fa-plus" aria-hidden="true" />
     </button>
   {/if}
   <button
     class="button refresh-button"
     on:click={() => dispatch('refresh')}
-    aria-label="refresh">
+    aria-label="refresh"
+    data-testid="refresh-btn">
     <i class="fas fa-sync" aria-hidden="true" />
   </button>
 </div>

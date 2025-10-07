@@ -31,9 +31,9 @@
     {#if !$discounts.length && !errorMessage}
       <div>Loading data ...</div>
     {/if}
-    <ul class="list">
+    <ul class="list" data-testid="discount-list">
       {#each $discounts as { id, store, percentage, code }, _i (id)}
-        <li role="presentation">
+        <li role="presentation" data-testid="discount-item">
           <div class="card">
             <div class="card-content">
               <div class="content discount-grid">

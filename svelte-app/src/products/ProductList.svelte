@@ -35,9 +35,9 @@
   {#if !products.length && !errorMessage}
     <div>Loading data ...</div>
   {/if}
-  <ul class="list">
+  <ul class="list" data-testid="product-list">
     {#each products as { id, name, description }, i (id)}
-      <li role="presentation">
+      <li role="presentation" data-testid="product-item">
         <div class="card">
           <CardContent {name} {description} />
           <footer class="card-footer">
@@ -46,12 +46,14 @@
               dataId={id}
               dataIndex={i}
               item={products[i]}
+              data-testid="delete-product-btn"
               on:clicked={() => deleteProduct(products[i])} />
             <ButtonFooter
               {...editOptions}
               dataId={id}
               dataIndex={i}
               item={products[i]}
+              data-testid="edit-product-btn"
               on:clicked={() => selectProduct(products[i])} />
           </footer>
         </div>
