@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^18.2.6",
-    "@angular/cli": "^18.2.6",
+    "@angular/cli": "^21.1.0",
     "@angular/compiler-cli": "^18.2.6",
     "@angular/language-service": "^18.2.6",
     "@types/jasmine": "~3.10.0",
