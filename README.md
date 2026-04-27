@@ -90,3 +90,27 @@ Learn how to [Publish an Angular, React, Svelte, or Vue JavaScript app and API w
 - [Learn about App Spaces](https://learn.microsoft.com/en-us/azure/app-spaces/overview) 
 - [Learn more about Azure Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/overview) 
 - [Azure Free Trial](https://azure.microsoft.com/free/?WT.mc_id=academic-0000-jopapa)
+
+## Contributing
+
+We welcome contributions! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to submit issues and pull requests.
+
+### Quick Start for Contributors
+
+1. Fork and clone the repo
+2. Install dependencies for the app you want to work on:
+   ```bash
+   cd <app-folder> && npm install
+   ```
+3. Run the app locally (e.g., Svelte + Azure Functions):
+   ```bash
+   cd svelte-app && npm run start-svelte-func-swa
+   ```
+4. Make your changes and run tests where available:
+   ```bash
+   cd angular-app && npm test   # Karma + Jasmine
+   cd react-app && npm test     # Jest
+   ```
+5. Submit a pull request
+
+For the full contributor and AI agent guide, see [AGENTS.md](AGENTS.md).
