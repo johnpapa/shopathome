@@ -1,0 +1,46 @@
+name: Copilot Setup Steps
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Angular app dependencies
+        run: cd angular-app && npm ci
+
+      - name: Install React app dependencies
+        run: cd react-app && npm ci
+
+      - name: Install Svelte app dependencies
+        run: cd svelte-app && npm ci
+
+      - name: Install Vue app dependencies
+        run: cd vue-app && npm ci
+
+      - name: Install Azure Functions API dependencies
+        run: cd api && npm ci
+
+      - name: Install Fastify API dependencies
+        run: cd fastify-api-server && npm ci
+
+      - name: Build Angular app
+        run: cd angular-app && npm run build
+
+      - name: Build React app
+        run: cd react-app && npm run build
+
+      - name: Build Svelte app
+        run: cd svelte-app && npm run build
+
+      - name: Build Vue app
+        run: cd vue-app && npm run build

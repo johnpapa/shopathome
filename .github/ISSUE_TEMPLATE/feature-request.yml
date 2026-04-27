@@ -1,0 +1,58 @@
+name: ✨ Feature Request
+description: Suggest a new feature or enhancement for Shop at Home
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: app
+    attributes:
+      label: Target App
+      description: Which app should this feature be added to?
+      options:
+        - Angular (angular-app)
+        - React (react-app)
+        - Svelte (svelte-app)
+        - Vue (vue-app)
+        - Azure Functions API (api)
+        - Fastify API (fastify-api-server)
+        - All frontend apps
+        - All apps
+        - New app / Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature Description
+      description: A clear and concise description of the feature you'd like.
+      placeholder: Describe the feature...
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why is this feature needed? What problem does it solve?
+      placeholder: Explain why this would be valuable...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: How do you think this should be implemented?
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Any alternative solutions or features you've considered.
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any other context, mockups, or screenshots about the feature request.
