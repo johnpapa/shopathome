@@ -1,15 +1,15 @@
 <script lang="ts">
   import { Link } from 'svelte-routing';
-  import { createEventDispatcher } from 'svelte';
 
-  const dispatch = createEventDispatcher();
-  export let title = '';
-  export let routePath = '';
-  export let showAdd: boolean = true;
-
-  function add() {
-    dispatch('add');
+  interface Props {
+    title?: string;
+    routePath?: string;
+    showAdd?: boolean;
+    onadd?: () => void;
+    onrefresh?: () => void;
   }
+
+  let { title = '', routePath = '', showAdd = true, onadd, onrefresh }: Props = $props();
 </script>
 
 <div class="content-title-group">
@@ -17,14 +17,14 @@
     <h2 class="title">{title}</h2>
   </Link>
   {#if showAdd}
-    <button class="button add-button" on:click={() => add()} aria-label="add">
-      <i class="fas fa-plus" aria-hidden="true" />
+    <button class="button add-button" onclick={() => onadd?.()} aria-label="add">
+      <i class="fas fa-plus" aria-hidden="true"></i>
     </button>
   {/if}
   <button
     class="button refresh-button"
-    on:click={() => dispatch('refresh')}
+    onclick={() => onrefresh?.()}
     aria-label="refresh">
-    <i class="fas fa-sync" aria-hidden="true" />
+    <i class="fas fa-sync" aria-hidden="true"></i>
   </button>
 </div>

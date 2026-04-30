@@ -4,7 +4,7 @@
   import ProductList from './ProductList.svelte';
   import ProductDetail from './ProductDetail.svelte';
   import {
-    state,
+    state as appState,
     getProductsAction,
     deleteProductAction,
     addProductAction,
@@ -12,15 +12,15 @@
   } from '../store';
   import { Product } from '../models';
 
-  const { products } = state;
+  const { products } = appState;
 
-  let selectedProduct: Product = undefined;
+  let selectedProduct: Product | null = $state(null);
   let routePath = '/products';
   let title = 'My List';
-  let productToDelete: Product = null;
-  let message = '';
-  let showModal = false;
-  let errorMessage = '';
+  let productToDelete: Product | null = $state(null);
+  let message = $state('');
+  let showModal = $state(false);
+  let errorMessage: string | undefined = $state('');
 
   onMount(async () => await getProducts());
 
@@ -28,7 +28,7 @@
     selectedProduct = null;
   }
 
-  function askToDelete({ detail: product }) {
+  function askToDelete(product: Product) {
     productToDelete = product;
     showModal = true;
     if (productToDelete.name) {
@@ -62,7 +62,7 @@
     }
   }
 
-  async function save({ detail: product }) {
+  async function save(product: Product) {
     console.log('product changed', product);
     if (product.id) {
       await updateProductAction(product);
@@ -71,7 +71,7 @@
     }
   }
 
-  function selectProduct({ detail: product }) {
+  function selectProduct(product: Product) {
     selectedProduct = product;
     console.log(`selected ${product.name}`);
   }
@@ -81,8 +81,8 @@
   <ListHeader
     {title}
     {routePath}
-    on:add={enableAddMode}
-    on:refresh={getProducts}
+    onadd={enableAddMode}
+    onrefresh={getProducts}
   />
   <div class="columns is-multiline is-variable">
     {#if products}
@@ -91,14 +91,14 @@
           <ProductList
             {errorMessage}
             products={$products}
-            on:deleted={askToDelete}
-            on:selected={selectProduct}
+            ondeleted={askToDelete}
+            onselected={selectProduct}
           />
         {:else}
           <ProductDetail
             product={selectedProduct}
-            on:unselect={clear}
-            on:save={save}
+            onunselect={clear}
+            onsave={save}
           />
         {/if}
       </div>
@@ -108,7 +108,7 @@
   <Modal
     {message}
     isOpen={showModal}
-    on:handleNo={closeModal}
-    on:handleYes={deleteProduct}
+    onno={closeModal}
+    onyes={deleteProduct}
   />
 </div>
