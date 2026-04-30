@@ -1,13 +1,13 @@
-# About the Shop at Home app
+# Shop at Home
 
 [![AI Ready](https://img.shields.io/badge/AI--Ready-yes-brightgreen?style=flat)](https://github.com/johnpapa/ai-ready)
 
 The [Shop at Home app](https://www.shopathome.dev) allows customers to securely add, edit, view, and remove items such as food and household needs from their list.
 
-This repository contains apps that can be used with as a starting point for some MS Learn Modules. because everyone has their own preference for their JavaScript frameworks/library, you can choose which one best suits your preferences and requirements.
+This repository contains apps that can be used as a starting point for some MS Learn Modules. Because everyone has their own preference for JavaScript frameworks, you can choose which one best suits your needs.
 
-- The Frontend is built using 4 JavaScript frameworks (Angular, React, Svelte, Vue) and is deployed to **Azure Static Web Apps**
-- The sample contains 2 APIs you can choose from: An **Azure Functions App** and a Fastify server project which is deployed to **Azure Container Apps**
+- The frontend is built using 4 JavaScript frameworks (**Angular 21**, **React 19**, **Svelte 5**, **Vue 3.5**) and is deployed to **Azure Static Web Apps**
+- The sample contains 2 APIs you can choose from: **Azure Functions** (v4 programming model) and a **Fastify 5** server deployed to **Azure Container Apps**
 
 ## Run Shop at Home locally
 
@@ -24,12 +24,12 @@ See instructions to install, setup and run the application locally in the **READ
 
 | Folder          | Description                                                                          | Live Demo                                                |
 | --------------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------- |
-| **angular-app** | [Sample Angular app](https://github.com/johnpapa/shopathome/blob/master/angular-app) | [angular.shopathome.dev](https://angular.shopathome.dev) |
-| **api**         | [Sample Azure Functions app](https://github.com/johnpapa/shopathome/blob/master/api) | protected                                                |
-| **api**         | [Sample Fastify API](https://github.com/johnpapa/shopathome/blob/master/fastify-api-server) | protected                                                |
-| **react-app**   | [Sample React app](https://github.com/johnpapa/shopathome/blob/master/react-app)     | [react.shopathome.dev](https://react.shopathome.dev)     |
-| **svelte-app**  | [Sample Svelte app](https://github.com/johnpapa/shopathome/blob/master/svelte-app)   | [svelte.shopathome.dev](https://svelte.shopathome.dev)   |
-| **vue-app**     | [Sample Vue app](https://github.com/johnpapa/shopathome/blob/master/vue-app)         | [vue.shopathome.dev](https://vue.shopathome.dev)         |
+| **angular-app** | [Angular 21 app](https://github.com/johnpapa/shopathome/blob/main/angular-app)       | [angular.shopathome.dev](https://angular.shopathome.dev) |
+| **react-app**   | [React 19 app](https://github.com/johnpapa/shopathome/blob/main/react-app)           | [react.shopathome.dev](https://react.shopathome.dev)     |
+| **svelte-app**  | [Svelte 5 app](https://github.com/johnpapa/shopathome/blob/main/svelte-app)          | [svelte.shopathome.dev](https://svelte.shopathome.dev)   |
+| **vue-app**     | [Vue 3.5 app](https://github.com/johnpapa/shopathome/blob/main/vue-app)              | [vue.shopathome.dev](https://vue.shopathome.dev)         |
+| **api**         | [Azure Functions API (v4)](https://github.com/johnpapa/shopathome/blob/main/api)     | protected                                                |
+| **fastify-api-server** | [Fastify 5 API](https://github.com/johnpapa/shopathome/blob/main/fastify-api-server) | protected                                         |
 
 ## Deploy to Azure using Azure Static Web Apps (Azure Functions API)
 [![Deploy to Azure button](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/?feature.customportal=false&WT.mc_id=academic-0000-jopapa#create/Microsoft.StaticApp)
@@ -95,7 +95,7 @@ Learn how to [Publish an Angular, React, Svelte, or Vue JavaScript app and API w
 
 ## Contributing
 
-We welcome contributions! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to submit issues and pull requests.
+We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ### Quick Start for Contributors
 
@@ -104,15 +104,13 @@ We welcome contributions! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for
    ```bash
    cd <app-folder> && npm install
    ```
-3. Run the app locally (e.g., Svelte + Azure Functions):
+3. Build the app:
    ```bash
-   cd svelte-app && npm run start-svelte-func-swa
+   cd angular-app && npx ng build
+   cd react-app && npm run build      # Vite
+   cd svelte-app && npm run build     # Vite
+   cd vue-app && npm run build
    ```
-4. Make your changes and run tests where available:
-   ```bash
-   cd angular-app && npm test   # Karma + Jasmine
-   cd react-app && npm test     # Jest
-   ```
-5. Submit a pull request
+4. Submit a pull request
 
 For the full contributor and AI agent guide, see [AGENTS.md](AGENTS.md).
