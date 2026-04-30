@@ -46,6 +46,6 @@
     "sass": "^1.43.4",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.12",
-    "webpack": "^5.92.1"
+    "webpack": "^5.105.0"
   }
 }
