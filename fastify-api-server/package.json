@@ -24,6 +24,6 @@
     "helmet": "^7.1.0"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^9.2.1"
   }
 }
