@@ -1,4 +1,4 @@
-const fastify = require('fastify')();
+const fastify = require('fastify')({ logger: true });
 const cors = require('@fastify/cors');
 const helmet = require('@fastify/helmet');
 
@@ -12,11 +12,7 @@ fastify.register(cors, {
 });
 
 const routes = require('./routes');
-const options = {
-  prefix: '/api',
-  logger: true,
-};
-fastify.register(routes, options);
+fastify.register(routes, { prefix: '/api' });
 
 const start = async () => {
   try {
