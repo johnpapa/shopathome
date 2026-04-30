@@ -11,8 +11,8 @@ import {
 import { Product } from '../core';
 
 @Component({
-  selector: 'app-product-detail',
-  template: `
+    selector: 'app-product-detail',
+    template: `
     <div class="card edit-detail">
       <header class="card-header">
         <p class="card-header-title">
@@ -22,19 +22,21 @@ import { Product } from '../core';
       </header>
       <div class="card-content">
         <div class="content">
-          <div class="field" *ngIf="editingProduct.id">
-            <label class="label" for="id">
-              id
-            </label>
-            <input
-              name="id"
-              class="input"
-              type="text"
-              [(ngModel)]="editingProduct.id"
-              placeholder="e.g. ProductColleen"
-              readOnly
-            />
-          </div>
+          @if (editingProduct.id) {
+            <div class="field">
+              <label class="label" for="id">
+                id
+              </label>
+              <input
+                name="id"
+                class="input"
+                type="text"
+                [(ngModel)]="editingProduct.id"
+                placeholder="e.g. ProductColleen"
+                readOnly
+                />
+            </div>
+          }
           <div class="field">
             <label class="label" for="name">
               name
@@ -45,7 +47,7 @@ import { Product } from '../core';
               type="text"
               [(ngModel)]="editingProduct.name"
               placeholder="Oranges"
-            />
+              />
           </div>
           <div class="field">
             <label class="label" for="description">
@@ -57,7 +59,7 @@ import { Product } from '../core';
               type="text"
               [(ngModel)]="editingProduct.description"
               placeholder="box"
-            />
+              />
           </div>
           <div class="field">
             <label class="label" for="quantity">
@@ -71,7 +73,7 @@ import { Product } from '../core';
               max="100"
               [(ngModel)]="editingProduct.quantity"
               placeholder="1"
-            />
+              />
           </div>
         </div>
       </div>
@@ -94,8 +96,9 @@ import { Product } from '../core';
         ></app-button-footer>
       </footer>
     </div>
-  `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    `,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ProductDetailComponent implements OnChanges {
   @Input() product: Product;

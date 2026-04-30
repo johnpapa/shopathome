@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-header-bar',
-  template: `
+    selector: 'app-header-bar',
+    template: `
     <header>
       <nav
         class="navbar has-background-dark is-dark"
@@ -13,5 +13,6 @@ import { Component } from '@angular/core';
       </nav>
     </header>
   `,
+    standalone: false
 })
 export class HeaderBarComponent {}

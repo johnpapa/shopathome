@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-button-footer',
-  template: `
+    selector: 'app-button-footer',
+    template: `
     <button
       class="link"
       [ngClass]="className"
@@ -13,7 +13,8 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
     >
       <i [ngClass]="iconClasses"></i> <span>{{ label }}</span>
     </button>
-  `
+  `,
+    standalone: false
 })
 export class ButtonFooterComponent implements OnInit {
   @Input() label;

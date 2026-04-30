@@ -10,17 +10,18 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "module": "es2020",
-    "moduleResolution": "node",
-    "experimentalDecorators": true,
+    "module": "es2022",
+    "moduleResolution": "bundler",
     "target": "ES2022",
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
-      "es2018",
+      "es2022",
       "dom"
     ],
-    "useDefineForClassFields": false
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true
   }
 }

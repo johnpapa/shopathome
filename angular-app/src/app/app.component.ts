@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 @Component({
-  selector: 'app-root',
-  template: `
+    selector: 'app-root',
+    template: `
     <div>
       <app-header-bar></app-header-bar>
       <div class="section columns">
@@ -12,5 +12,6 @@ import { Component } from '@angular/core';
       </div>
     </div>
   `,
+    standalone: false
 })
 export class AppComponent {}

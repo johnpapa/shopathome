@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-not-found',
-  template: `
+    selector: 'app-not-found',
+    template: `
     <div class="content-container">
       <div class="content-title-group not-found">
         <i class="fas fa-exclamation-triangle" aria-hidden="true"></i> &nbsp;
@@ -10,5 +10,6 @@ import { Component } from '@angular/core';
       </div>
     </div>
   `,
+    standalone: false
 })
 export class NotFoundComponent {}
