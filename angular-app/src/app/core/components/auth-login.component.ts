@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-auth-login',
-  template: ` <div class="auth-link" (click)="goAuth()">{{ provider }}</div> `,
+    selector: 'app-auth-login',
+    template: ` <div class="auth-link" (click)="goAuth()">{{ provider }}</div> `,
+    standalone: false
 })
 export class AuthLoginComponent {
   @Input() provider = '';

@@ -4,47 +4,56 @@ import { Product } from '../core';
 import { ProductService } from './product.service';
 
 @Component({
-  selector: 'app-products',
-  template: `
+    selector: 'app-products',
+    template: `
     <div class="content-container">
       <app-list-header
         title="My List"
         (add)="enableAddMode()"
         (refresh)="getProducts()"
       ></app-list-header>
-      <div *ngIf="errorMessage">
-        {{ errorMessage }}
-      </div>
-      <div *ngIf="products$ | async as products">
-        <div *ngIf="!products?.length && !errorMessage">Loading data ...</div>
-
-        <div class="columns is-multiline is-variable">
-          <div class="column is-8" *ngIf="products$ | async as products">
-            <app-product-list
-              *ngIf="!selected"
-              [products]="products"
-              (selected)="select($event)"
-              (deleted)="askToDelete($event)"
-            ></app-product-list>
-            <app-product-detail
-              *ngIf="selected"
-              [product]="selected"
-              (unselect)="clear()"
-              (save)="save($event)"
-            ></app-product-detail>
-          </div>
+      @if (errorMessage) {
+        <div>
+          {{ errorMessage }}
         </div>
-
-        <app-modal
-          class="modal-product"
-          [message]="message"
-          [isOpen]="showModal"
-          (handleNo)="closeModal()"
-          (handleYes)="deleteProduct()"
-        ></app-modal>
-      </div>
+      }
+      @if (products$ | async; as products) {
+        <div>
+          @if (!products?.length && !errorMessage) {
+            <div>Loading data ...</div>
+          }
+          <div class="columns is-multiline is-variable">
+            @if (products$ | async; as products) {
+              <div class="column is-8">
+                @if (!selected) {
+                  <app-product-list
+                    [products]="products"
+                    (selected)="select($event)"
+                    (deleted)="askToDelete($event)"
+                  ></app-product-list>
+                }
+                @if (selected) {
+                  <app-product-detail
+                    [product]="selected"
+                    (unselect)="clear()"
+                    (save)="save($event)"
+                  ></app-product-detail>
+                }
+              </div>
+            }
+          </div>
+          <app-modal
+            class="modal-product"
+            [message]="message"
+            [isOpen]="showModal"
+            (handleNo)="closeModal()"
+            (handleYes)="deleteProduct()"
+          ></app-modal>
+        </div>
+      }
     </div>
-  `,
+    `,
+    standalone: false
 })
 export class ProductsComponent implements OnInit {
   errorMessage: string;

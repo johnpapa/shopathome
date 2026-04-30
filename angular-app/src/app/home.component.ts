@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
-  template: `
+    selector: 'app-home',
+    template: `
     <div class="content-container">
       <div class="content-title-group">
         <h2 class="title">Shop at Home</h2>
@@ -40,5 +40,6 @@ import { Component } from '@angular/core';
       </div>
     </div>
   `,
+    standalone: false
 })
 export class HomeComponent {}
