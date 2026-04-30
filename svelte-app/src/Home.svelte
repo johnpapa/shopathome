@@ -13,11 +13,11 @@
     <br />
     <div class="button-group">
       <button class="button" aria-label="My List" tabindex="0">
-        <Link to="/products"><i class="fas fa-clipboard-list" /> My List</Link>
+        <Link to="/products"><i class="fas fa-clipboard-list"></i> My List</Link>
       </button>
       <button class="button" aria-label="My Discounts">
         <Link to="/discounts">
-          <i class="fas fa-money-bill-alt" />
+          <i class="fas fa-money-bill-alt"></i>
           My Discounts
         </Link>
       </button>
@@ -27,7 +27,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i class="fab fa-github" />
+          <i class="fab fa-github"></i>
           Code in GitHub
         </a>
       </button>

@@ -1,20 +1,25 @@
 <script lang="ts">
-  import { onMount, createEventDispatcher } from 'svelte';
+  import { onMount } from 'svelte';
   import { ButtonFooter } from '../components';
   import { Product } from '../models';
 
-  const dispatch = createEventDispatcher();
-  export let product: Product;
-  let editingProduct = { ...product };
+  interface Props {
+    product: Product;
+    onunselect?: () => void;
+    onsave?: (product: Product) => void;
+  }
+
+  let { product, onunselect, onsave }: Props = $props();
+  let editingProduct = $state({ ...product });
 
   onMount(() => watchProduct());
 
   function clear() {
-    dispatch('unselect');
+    onunselect?.();
   }
 
   function saveProduct() {
-    dispatch('save', editingProduct);
+    onsave?.(editingProduct as Product);
     clear();
   }
 
@@ -90,10 +95,10 @@
   </div>
 
   <footer class="card-footer">
-    <ButtonFooter {...cancelOptions} item={editingProduct} on:clicked={clear} />
+    <ButtonFooter {...cancelOptions} item={editingProduct} onclicked={clear} />
     <ButtonFooter
       {...saveOptions}
       item={editingProduct}
-      on:clicked={saveProduct} />
+      onclicked={saveProduct} />
   </footer>
 </div>

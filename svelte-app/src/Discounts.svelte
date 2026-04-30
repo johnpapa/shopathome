@@ -2,12 +2,10 @@
   import { ListHeader } from './components';
 
   import { onMount } from 'svelte';
-  import { state, getDiscountsAction } from './store';
+  import { state as appState, getDiscountsAction } from './store';
 
-  export const location: Object = {};
-
-  let errorMessage: string = '';
-  let { discounts } = state;
+  let errorMessage: string = $state('');
+  let { discounts } = appState;
 
   onMount(async () => await getDiscounts());
 
@@ -23,7 +21,7 @@
 </script>
 
 <div class="content-container">
-  <ListHeader title="My Discounts" on:refresh={getDiscounts} {showAdd} />
+  <ListHeader title="My Discounts" onrefresh={getDiscounts} {showAdd} />
   <div>
     {#if errorMessage}
       <div>{errorMessage}</div>

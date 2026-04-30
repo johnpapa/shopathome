@@ -11,8 +11,8 @@
   class="auth-link"
   role="button"
   tabindex="0"
-  on:click={goAuth}
-  on:keypress={goAuth}
+  onclick={goAuth}
+  onkeypress={goAuth}
 >
   Logout
 </div>

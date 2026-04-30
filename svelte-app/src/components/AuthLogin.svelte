@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let provider = '';
+  let { provider = '' }: { provider?: string } = $props();
 
   function goAuth() {
     const { pathname } = window.location;
@@ -13,8 +13,8 @@
   class="auth-link"
   role="button"
   tabindex="0"
-  on:click={goAuth}
-  on:keypress={goAuth}
+  onclick={goAuth}
+  onkeypress={goAuth}
 >
   {provider}
 </div>

@@ -1,30 +1,38 @@
 <script lang="ts">
-  import { createEventDispatcher } from 'svelte';
+  interface Props {
+    item?: object;
+    className?: string;
+    label?: string;
+    dataIndex?: number;
+    dataId?: number;
+    iconClasses?: string;
+    onclicked?: (item: object | undefined) => void;
+  }
 
-  const dispatch = createEventDispatcher();
-
-  export let item: object = undefined;
-  export let className = '';
-  export let label = '';
-  export let dataIndex = 0;
-  export let dataId: number = 0;
-  export let iconClasses = '';
+  let {
+    item = undefined,
+    className = '',
+    label = '',
+    dataIndex = 0,
+    dataId = 0,
+    iconClasses = '',
+    onclicked,
+  }: Props = $props();
 
   function handleClick() {
     console.log(`button clicked ${JSON.stringify(item)}`);
-    dispatch('clicked', item);
+    onclicked?.(item);
   }
-
 </script>
 
 <button
   class="link card-footer-item {className}"
   aria-label={label}
   tabindex="0"
-  on:click={handleClick}
+  onclick={handleClick}
   data-index={dataIndex}
   data-id={dataId}
 >
-  <i class={iconClasses} />
+  <i class={iconClasses}></i>
   <span>{label}</span>
 </button>
