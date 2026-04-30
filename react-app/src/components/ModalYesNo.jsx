@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Modal from './Modal';
 
 const ModalYesNo = ({ message, onYes, onNo }) => (
