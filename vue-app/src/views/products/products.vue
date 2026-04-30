@@ -1,5 +1,5 @@
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { useProductsStore } from '../../store/products';
 import ListHeader from '../../components/list-header.vue';
 import Modal from '../../components/modal.vue';
 import ProductDetail from './product-detail.vue';
@@ -26,19 +26,19 @@ export default {
     ProductDetail,
     Modal,
   },
+  setup() {
+    const productsStore = useProductsStore();
+    return { productsStore };
+  },
   async created() {
     await this.getProducts();
   },
   computed: {
-    ...mapGetters('products', { products: 'products' }),
+    products() {
+      return this.productsStore.products;
+    },
   },
   methods: {
-    ...mapActions('products', [
-      'getProductsAction',
-      'deleteProductAction',
-      'addProductAction',
-      'updateProductAction',
-    ]),
     askToDelete(product) {
       this.productToDelete = product;
       this.showModal = true;
@@ -59,7 +59,7 @@ export default {
         captains.log(
           `You said you want to delete ${this.productToDelete.name}`,
         );
-        this.deleteProductAction(this.productToDelete);
+        this.productsStore.deleteProductAction(this.productToDelete);
       }
       this.clear();
     },
@@ -69,7 +69,7 @@ export default {
     async getProducts() {
       this.errorMessage = undefined;
       try {
-        await this.getProductsAction();
+        await this.productsStore.getProductsAction();
       } catch (error) {
         this.errorMessage = 'Unauthorized';
       }
@@ -78,9 +78,9 @@ export default {
     save(product) {
       captains.log('product changed', product);
       if (product.id) {
-        this.updateProductAction(product);
+        this.productsStore.updateProductAction(product);
       } else {
-        this.addProductAction(product);
+        this.productsStore.addProductAction(product);
       }
     },
     select(product) {
