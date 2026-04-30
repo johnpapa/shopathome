@@ -1,11 +1,13 @@
 {
   "name": "functions",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
+  "main": "src/functions/*.js",
   "scripts": {
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "@azure/functions": "^4.14.0"
+  }
 }
