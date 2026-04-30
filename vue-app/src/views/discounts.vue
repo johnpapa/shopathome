@@ -1,5 +1,5 @@
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { useDiscountsStore } from '../store/discounts';
 import ListHeader from '../components/list-header.vue';
 
 export default {
@@ -12,18 +12,23 @@ export default {
   components: {
     ListHeader,
   },
+  setup() {
+    const discountsStore = useDiscountsStore();
+    return { discountsStore };
+  },
   async created() {
     await this.getDiscounts();
   },
   computed: {
-    ...mapGetters('discounts', { discounts: 'discounts' }),
+    discounts() {
+      return this.discountsStore.discounts;
+    },
   },
   methods: {
-    ...mapActions('discounts', ['getDiscountsAction']),
     async getDiscounts() {
       this.errorMessage = undefined;
       try {
-        await this.getDiscountsAction();
+        await this.discountsStore.getDiscountsAction();
       } catch (error) {
         this.errorMessage = 'Unauthorized';
       }
