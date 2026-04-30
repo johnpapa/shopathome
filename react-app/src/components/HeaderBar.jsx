@@ -1,4 +1,3 @@
-import React from 'react';
 import HeaderBarBrand from './HeaderBarBrand';
 
 const HeaderBar = () => (

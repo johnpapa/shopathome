@@ -1,5 +1,3 @@
-import React from 'react';
-
 const InputDetail = ({ name, value, placeholder, onChange, readOnly }) => (
   <div className="field">
     <label className="label" htmlFor={name}>

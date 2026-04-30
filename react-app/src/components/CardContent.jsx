@@ -1,5 +1,3 @@
-import React from 'react';
-
 const CardContent = ({ name, description }) => (
   <div className="card-content">
     <div className="content">

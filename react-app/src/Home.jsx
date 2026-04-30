@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Home = () => (
   <div className="content-container">
     <div className="content-title-group">
