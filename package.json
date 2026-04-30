@@ -1,0 +1,27 @@
+{
+  "name": "shopathome",
+  "version": "1.0.0",
+  "description": "[![AI Ready](https://img.shields.io/badge/AI--Ready-yes-brightgreen?style=flat)](https://github.com/johnpapa/ai-ready)",
+  "main": "index.js",
+  "scripts": {
+    "test:e2e": "npx playwright test",
+    "test:e2e:angular": "npx playwright test --project=angular",
+    "test:e2e:react": "npx playwright test --project=react",
+    "test:e2e:svelte": "npx playwright test --project=svelte",
+    "test:e2e:vue": "npx playwright test --project=vue"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnpapa/shopathome.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnpapa/shopathome/issues"
+  },
+  "homepage": "https://github.com/johnpapa/shopathome#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1"
+  }
+}

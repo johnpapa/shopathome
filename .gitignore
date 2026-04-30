@@ -353,3 +353,6 @@ MigrationBackup/
 
 local.settings.json
 .telemetry
+# Playwright
+test-results/
+playwright-report/
