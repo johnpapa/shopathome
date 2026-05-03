@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
-    "axios": "^1.15.0",
+    "axios": "^1.16.0",
     "bulma": "^0.9.4",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
