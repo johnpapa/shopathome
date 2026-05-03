@@ -21,7 +21,7 @@
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
     "@tsconfig/svelte": "^5.0.2",
     "autoprefixer": "^10.4.16",
-    "concurrently": "^8.2.2",
+    "concurrently": "^9.2.1",
     "prettier": "^3.8.3",
     "query-string": "^8.1.0",
     "sass": "^1.53.0",
