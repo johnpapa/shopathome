@@ -17,7 +17,7 @@
     "node": ">=20.0.0"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@fortawesome/fontawesome-free": "^7.2.0",
     "axios": "^1.15.0",
     "bulma": "^0.9.4",
     "react": "^19.2.5",
