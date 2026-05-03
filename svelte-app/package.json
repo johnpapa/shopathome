@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
-    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^7.2.0",
     "bulma": "^0.9.4",
     "sirv-cli": "^2.0.0"
   }
