@@ -21,7 +21,7 @@
     "@fastify/cors": "^11.2.0",
     "@fastify/helmet": "^13.0.2",
     "fastify": "^5.8.5",
-    "helmet": "^8.1.0"
+    "helmet": "^8.2.0"
   },
   "devDependencies": {
     "concurrently": "^9.2.1"
